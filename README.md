@@ -1,11 +1,9 @@
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-# Sampo-UI
+# WarSampo 2.0
 
-This fork of Sampo-UI has as main purpose to modernise the framework to make it more usable for new projects.
-Secondly, it also tries to move as much customisation as possible to configs to make it more robust and future-proof.
-
-See the [wiki page](https://github.com/GhentCDH/sampo-ui/wiki/Sampo%E2%80%90UI-updates-by-GhentCDH) for detailed
-explanations on changes made.
+The Sampo-UI framework is being developed by the [Semantic Computing Research Group (SeCo)](https://seco.cs.aalto.fi) 
+at the Aalto University, Finland. See the [research page](https://seco.cs.aalto.fi/tools/sampo-ui) for 
+more information plus instructions and tutorials. The [Ghent Centre for Digital Humanities - Ghent University](https://www.ghentcdh.ugent.be/) contributed to Sampo-UI. The GhentCDH contributions are funded by the Clariah-VL+ IRI. 
 
 ## Running development and production
 
