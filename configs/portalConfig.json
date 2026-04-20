@@ -1,24 +1,13 @@
 {
-    "portalID": "sampo",
+    "portalID": "warsampo",
     "rootUrl": "",
     "staticsUrl": "",
     "perspectives": {
         "searchPerspectives": [
-            "perspective1",
-            "customcomponent",
-            "perspective2",
-            "perspective3",
-            "perspective4",
-            "fullTextSearch"
+            "casualties",
+            "cemeteries"
         ],
         "onlyInstancePages": [
-            "manuscripts",
-            "collections",
-            "works",
-            "expressions",
-            "events",
-            "actors",
-            "places"
         ]
     },
     "localeConfig": {
@@ -32,7 +21,7 @@
             },
             {
                 "id": "fi",
-                "label": "English",
+                "label": "Finnish",
                 "filename": "localeFI.json"
             }
         ]
@@ -68,6 +57,7 @@
             "logoTextTransform": "none",
             "hideLogoTextOnMobile": true,
             "showLanguageButton": true,
+            "showSearchField": false,
             "feedbackLink": "https://link.webropolsurveys.com/...",
             "externalInstructions": false,
             "externalAboutPage": false,

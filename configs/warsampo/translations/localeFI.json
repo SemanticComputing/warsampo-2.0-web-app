@@ -1,0 +1,222 @@
+{
+  "languageLabel": "Suomi",
+  "html": {
+    "title": "Sotasampo 2.0",
+    "description": ""
+  },
+  "appTitle": {
+    "short": "Sotasampo 2.0",
+    "mobile": "Sotasampo 2.0",
+    "long": "&nbsp; &nbsp; Sotasampo 2.0 &nbsp; &nbsp;",
+    "subheading": "\"Here to forge for us the Sampo, Hammer us the lid in colors\""
+  },
+  "appDescription1": "Sotasampo 2.0 is a web service...",
+  "appDescription2": "Start by choosing source dataset(s) and input a place name on the search field. Alternatively you can search by area.",
+  "selectPerspective": "Valitse näkymä etsiäksesi ja selataksesi aineistoja:",
+  "mainPageImageLicence": "Kuvat käytössä Shutterstock.comin myöntämän lisenssin nojalla",
+  "backendErrorText": "One of the backend services is not available at the moment. Please try again later.",
+  "infoHeader": {
+    "toggleInstructions": "Paina näyttääksesi tai piilottaaksesi ohjeet"
+  },
+  "topBar": {
+    "feedback": "palaute",
+    "info": {
+      "info": "Info",
+      "blog": "Tutkimushankkeen kotisivu",
+      "blogUrl": "https://seco.cs.aalto.fi/tools/sampo-ui/",
+      "aboutThePortal": "Tietoa portaalista"
+    },
+    "searchBarPlaceHolder": "Hae kaikesta sisällöstä",
+    "searchBarPlaceHolderShort": "Hae",
+    "instructions": "ohjeet"
+  },
+  "facetBar": {
+    "results": "Tulokset",
+    "filters": "Suodattimet",
+    "activeFilters": "Aktiiviset suodattimet:",
+    "removeAllFilters": "Poista kaikki",
+    "narrowDownBy": "Rajaa",
+    "filterOptions": "Suodatinasetukset",
+    "filterByName": "Suodata nimen perusteella",
+    "filterByBoundingBox": "Suodata rajaavalla suorakaiteella",
+    "selectionOptions": "Valinta-asetukset",
+    "selectAlsoSubconcepts": "Valitse kaikki alakäsitteet automaattisesti",
+    "doNotSelectSubconcepts": "Älä valitse alakäsitteitä",
+    "sortingOptions": "Järjestysasetukset",
+    "sortAlphabetically": "Järjestä aakkosjärjestykseen",
+    "sortByNumberOfSearchResults": "Järjestä hakutulosten määrän mukaan",
+    "useDisjunction": "Käytä loogista OR-konnektiivia valintojen välillä",
+    "useConjuction": "Käytä loogista AND-konnektiivia valintojen välillä",
+    "minYear": "Minimivuosi",
+    "maxYear": "Maksimivuosi",
+    "min": "Min",
+    "max": "Max",
+    "facetSearchFieldPlaceholder": "Hae...",
+    "applyFacetSelection": "käytä",
+    "pieChart": {
+      "tooltip": "Ympyrädiagrammi"
+    },
+    "barChart": {
+      "tooltip": "Pylväsdiagrammi"
+    },
+    "lineChart": {
+      "tooltip": "Viivakaavio"
+    }
+  },
+  "tabs": {
+    "table": "taulukko",
+    "map": "kartta",
+    "pie_chart": "ympyräkaavio/pylväsdiagrammi",
+    "network": "verkosto",
+    "export": "vie",
+    "heatmap": "lämpökartta",
+    "statistics": "tilastot",
+    "download": "lataa",
+    "recommendations": "suositukset",
+    "export_csv": "CSV",
+    "export_sparql": "SPARQL-kysely",
+    "share": "jaa"
+  },
+  "table": {
+    "rowsPerPage": "Rivejä per sivu",
+    "of": "/"
+  },
+  "apexCharts": {
+    "grouping": "Lajitteluperuste:",
+    "by": "by",
+    "property": "X-akseli:",
+    "chartType": "Kaaviotyyppi:",
+    "pie": "ympyräkaavio",
+    "bar": "pylväsdiagrammi",
+    "other": "muu"
+  },
+  "lineChart": {
+  },
+  "timeseries": {
+  },
+  "exportToYasgui": "avaa tuloskysely YASGUI-editorissa",
+  "openInLinkedDataBrowser": "",
+  "resultsAsCSV": "",
+  "facets": {
+    "dateFacet": {
+      "invalidDate": "Epäkelpo päivämäärä.",
+      "toBeforeFrom": "Alkupäivämäärän täytyy olla ennen loppupäivämäärää.",
+      "minDate": "Aikaisin sallittu päivämäärä on {minDate}",
+      "maxDate": "Myöhäisin sallittu päivämäärä on {maxDate}",
+      "cancel": "Peruuta",
+      "fromLabel": "Alku",
+      "toLabel": "Loppu"
+    },
+    "textFacet": {
+      "inputLabel": "Etsi nimellä"
+    },
+    "sliderFacet": {
+      "invalidStartOrEnd": "Miniarvon täytyy olla pienempi kuin maksimiarvon. Pienin arvo voi olla {min} ja suurin arvo voi olla {max}."
+    }
+  },
+  "leafletMap": {
+    "basemaps": {
+      "mapbox": {
+        "light-v10": ""
+      },
+      "googleRoadmap": "",
+      "topographicalMapNLS": "",
+      "backgroundMapNLS": ""
+    },
+    "externalLayers": {
+      "arkeologiset_kohteet_alue": "",
+      "arkeologiset_kohteet_piste": "",
+      "fhaLidar": "",
+      "karelianMaps": "",
+      "senateAtlas": "",
+      "kotus:pitajat": "",
+      "kotus:rajat-sms-alueet": "",
+      "kotus:rajat-sms-alueosat": "",
+      "kotus:rajat-lansi-ita": ""
+    },
+    "mapModeButtons": {
+      "markers": "",
+      "heatmap": ""
+    },
+    "wrongZoomLevel": "",
+    "wrongZoomLevelFHA": "",
+    "tooManyResults": ""
+  },
+  "instancePageGeneral": {
+    "introduction": "",
+    "repetition": ""
+  },
+  "deckGlMap": {
+    "arcColouring": "",
+    "showMoreInformation": "",
+    "manuscriptMigrations": {
+      "legendTitle": "",
+      "legendFrom": "",
+      "legendTo": "",
+      "from": "",
+      "to": "",
+      "count": "",
+      "listHeadingSingleInstance": "",
+      "listHeadingMultipleInstances": ""
+    }
+  },
+  "perspectives": {
+    "casualties": {
+      "label": "Menehtyneet",
+      "facetResultsType": "menehtyneitä",
+      "shortDescription": "Näkymä, jossa voi hakea menehtyneitä.",
+      "longDescription": "",
+      "instancePage": {
+        "label": "Menehtynyt",
+        "description": ""
+      },
+      "properties": {
+        "uri": {
+          "label": "URI",
+          "description": "URI"
+        },
+        "prefLabel": {
+          "label": "Nimi",
+          "description": "Nimi",
+          "textFacetInputPlaceholder": ""
+        }
+      }
+    },
+    "cemeteries": {
+      "label": "Sankarihautausmaat",
+      "facetResultsType": "sankarihautausmaata",
+      "shortDescription": "Näkymä, jossa voi hakea sankarihautausmaita.",
+      "longDescription": "",
+      "instancePage": {
+        "label": "Sankarihautausmaa",
+        "description": ""
+      },
+      "properties": {
+        "uri": {
+          "label": "URI",
+          "description": "URI"
+        },
+        "prefLabel": {
+          "label": "Nimi",
+          "description": "Nimi",
+          "textFacetInputPlaceholder": ""
+        }
+      }
+    }
+  },
+  "aboutThePortalPartOne": "",
+  "aboutThePortalPartTwo": "",
+  "instructions": "",
+  "feedback": "",
+  "exportLink": {
+      "viewLabel": "Välilehti",
+      "viewInstructions": "Valitse välilehti, jossa haku avautuu",
+      "fieldLabel": "Luotu linkki (kirjoitussuojattu)",
+      "infoBody": "Voit jakaa tekemäsi haun alla olevan linkin avulla. Linkki luodaan sen perusteella, mitä olet valinnut eri fasetteja käyttäen, ja se avaa tämän näkymän hakunäkymän näillä valinnoilla valitulla välilehdellä. Voit vaihtaa avattavan välilehden mihin tahansa tuettuun välilehtivaihtoehtoon käyttäen alla olevaa pudotusvalikkoa. Jos teet uusia valintoja ollessasi tällä sivulla, linkki päivittyy automaattisesti sisältämään ne.", 
+      "warningTitle": "Luotu linkki saattaa olla liian pitkä joillekin selaimille",
+      "warningBody": "Luodun linkin tämänhetkinen pituus on päälle 2 000 merkkiä. Selaimilla on vaihtelevia rajoja niillä toimivien linkkien enimmäispituuksille. <strong>Tämä linkki ei välttämättä toimi kaikilla selaimilla</strong> — voit lyhentää linkin pituutta poistamalla joitakin valitsemiasi fasettivalintoja.",
+      "errorTitle": "Luotu linkki on liian pitkä",
+      "errorBody": "Luodun linkin tämänhetkinen pituus on päälle 15 800 merkkiä. <strong>Palvelin kieltäytyy käsittelemästä pyyntöjä, jotka ylittävät tietyt pituusrajat</strong> — voit lyhentää linkin pituutta poistamalla joitakin valitsemiasi fasettivalintoja.",
+      "copyLinkToClipboard": "Kopioi linkki leikepöydälle"
+  }
+}
