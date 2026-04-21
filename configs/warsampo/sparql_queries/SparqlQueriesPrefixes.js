@@ -14,4 +14,6 @@ export const prefixes = `
   PREFIX wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#>
   PREFIX foaf: <http://xmlns.com/foaf/0.1/>
   PREFIX warsa: <http://ldf.fi/schema/warsa/>
+  PREFIX cemeteries: <http://ldf.fi/schema/warsa/places/cemeteries/>
+  PREFIX photographs: <http://ldf.fi/schema/warsa/photographs/>
 `

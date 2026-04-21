@@ -231,6 +231,10 @@
         "description": "<p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\"></p>"
       },
       "properties": {
+        "image": {
+          "label": "Image",
+          "description": "Image"
+        },
         "uri": {
           "label": "URI",
           "description": "Uniform Resource Identifier"
@@ -239,6 +243,26 @@
           "label": "Name",
           "description": "Name of the war cemetery",
           "textFacetInputPlaceholder": "Search..."
+        },
+        "altLabel": {
+          "label": "Alternative name",
+          "description": "Alternative name of the war cemetery"
+        },
+        "formerMunicipality": {
+          "label": "Former municipality",
+          "description": "Former municipality of the war cemetery"
+        },
+        "currentMunicipality": {
+          "label": "Current municipality",
+          "description": "Current municipality of the war cemetery"
+        },
+        "numberOfGraves": {
+          "label": "Number of war graves",
+          "description": "Number of war graves of the war cemetery"
+        },
+        "architect": {
+          "label": "Architect",
+          "description": "Architect"
         }
       }
     }

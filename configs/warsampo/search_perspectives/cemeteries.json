@@ -6,12 +6,12 @@
         "prefixesFile": "SparqlQueriesPrefixes.js"
     },
     "sparqlQueriesFile": "SparqlQueriesCemeteries.js",
-    "baseURI": "http://ldf.fi/mmm",
-    "URITemplate": "<BASE_URI>/manifestation_singleton/<LOCAL_ID>",
+    "baseURI": "http://ldf.fi/warsa/places",
+    "URITemplate": "<BASE_URI>/cemeteries/<LOCAL_ID>",
     "facetClass": "warsa:Cemetery",
     "frontPageImage": "main_page/manuscripts-452x262.jpg",
     "searchMode": "faceted-search",
-    "enableDynamicLanguageChange": false,
+    "enableDynamicLanguageChange": true,
     "defaultActiveFacets": [
         "prefLabel"
     ],
@@ -46,6 +46,16 @@
     },
     "properties": [
         {
+            "id": "image",
+            "valueType": "image",
+            "previewImageHeight": 150,
+            "makeLink": true,
+            "externalLink": true,
+            "sortValues": true,
+            "numberedList": false,
+            "hideHeader": true
+        },
+        {
             "id": "uri",
             "valueType": "object",
             "makeLink": true,
@@ -62,6 +72,46 @@
             "sortValues": true,
             "numberedList": false,
             "minWidth": 200
+        },
+        {
+            "id": "altLabel",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false
+        },
+        {
+            "id": "formerMunicipality",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false
+        },
+        {
+            "id": "currentMunicipality",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false
+        },
+        {
+            "id": "numberOfGraves",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false
+        },
+        {
+            "id": "architect",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false
         }
     ],
     "facets": {
@@ -71,6 +121,49 @@
             "filterType": "textFilter",
             "sortByPredicate": "skos:prefLabel",
             "textQueryProperty": "skos:prefLabel"
+        },
+        "formerMunicipality": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "literal": true,
+            "filterType": "uriFilter",
+            "predicate": "cemeteries:former_municipality",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "cemeteries:former_municipality",
+            "sortDirection": "desc"
+        },
+        "currentMunicipality": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "literal": true,
+            "filterType": "uriFilter",
+            "predicate": "cemeteries:current_municipality",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "cemeteries:current_municipality",
+            "sortDirection": "desc"
+        },
+        "numberOfGraves": {
+            "containerClass": "five",
+            "facetType": "integer",
+            "filterType": "integerFilterRange",
+            "predicate": "cemeteries:number_of_graves",
+            "sortByPredicate": "cemeteries:number_of_graves"
+        },
+        "architect": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "literal": true,
+            "filterType": "uriFilter",
+            "predicate": "cemeteries:architect",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "cemeteries:architect",
+            "sortDirection": "desc"
         }
     }
 }

@@ -163,7 +163,7 @@
   "perspectives": {
     "casualties": {
       "label": "Menehtyneet",
-      "facetResultsType": "menehtyneitä",
+      "facetResultsType": "menehtynyttä",
       "shortDescription": "Näkymä, jossa voi hakea menehtyneitä.",
       "longDescription": "",
       "instancePage": {
@@ -192,6 +192,10 @@
         "description": ""
       },
       "properties": {
+        "image": {
+          "label": "Kuva",
+          "description": "Kuva"
+        },
         "uri": {
           "label": "URI",
           "description": "URI"
@@ -200,6 +204,26 @@
           "label": "Nimi",
           "description": "Nimi",
           "textFacetInputPlaceholder": ""
+        },
+        "altLabel": {
+          "label": "Vaihtoehtoinen nimi",
+          "description": "Vaihtoehtoinen nimi"
+        },
+        "formerMunicipality": {
+          "label": "Entinen kunta",
+          "description": "Entinen kunta"
+        },
+        "currentMunicipality": {
+          "label": "Nykyinen kunta",
+          "description": "Nykyinen kunta"
+        },
+        "numberOfGraves": {
+          "label": "Sankarihautojen lukumäärä",
+          "description": "Sankarihautojen lukumäärä"
+        },
+        "architect": {
+          "label": "Arkkitehti",
+          "description": "Arkkitehti"
         }
       }
     }
