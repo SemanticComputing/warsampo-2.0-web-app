@@ -179,6 +179,58 @@
           "label": "Nimi",
           "description": "Nimi",
           "textFacetInputPlaceholder": ""
+        },
+        "rank": {
+          "label": "Sotilasarvo",
+          "description": "Sotilasarvo"
+        },
+        "gender": {
+          "label": "Sukupuoli",
+          "description": "Sukupuoli"
+        },
+        "occupation": {
+          "label": "Ammatti",
+          "description": "Ammatti"
+        },
+        "motherTongue": {
+          "label": "Äidinkieli",
+          "description": "Äidinkieli"
+        },
+        "citizenship": {
+          "label": "Kansalaisuus",
+          "description": "Kansalaisuus"
+        },
+        "nationality": {
+          "label": "Kansallisuus",
+          "description": "Kansallisuus"
+        },
+        "maritalStatus": {
+          "label": "Siviilisääty",
+          "description": "Siviilisääty"
+        },
+        "perishingCategory": {
+          "label": "Menehtymisluokka",
+          "description": "Menehtymisluokka"
+        },
+        "buriedIn": {
+          "label": "Hautausmaa",
+          "description": "Hautausmaa"
+        },
+        "municipalityOfDomicile": {
+          "label": "Kotikunta",
+          "description": "Kotikunta"
+        },
+        "municipalityOfDeath": {
+          "label": "Kuolinkunta",
+          "description": "Kuolinkunta"
+        },
+        "deathTimeTimespan": {
+          "label": "Kuolinaika",
+          "description": "Kuolinaika"
+        },
+        "unit": {
+          "label": "Joukko-osasto",
+          "description": "Joukko-osasto"
         }
       }
     },

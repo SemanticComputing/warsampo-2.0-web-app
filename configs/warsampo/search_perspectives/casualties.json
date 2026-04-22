@@ -11,7 +11,7 @@
     "facetClass": "warsa:DeathRecord",
     "frontPageImage": "main_page/works-452x262.jpg",
     "searchMode": "faceted-search",
-    "enableDynamicLanguageChange": false,
+    "enableDynamicLanguageChange": true,
     "defaultActiveFacets": [
         "prefLabel"
     ],
@@ -61,7 +61,79 @@
             "externalLink": false,
             "sortValues": true,
             "numberedList": false,
-            "minWidth": 250
+            "minWidth": 150
+        },
+        {
+            "id": "rank",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false
+        },
+        {
+            "id": "unit",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false
+        },
+        {
+            "id": "deathTimeTimespan",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false
+        },
+        {
+            "id": "municipalityOfDeath",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false
+        },
+        {
+            "id": "municipalityOfDomicile",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false
+        },
+        {
+            "id": "occupation",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false
+        },
+        {
+            "id": "perishingCategory",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false
+        },
+        {
+            "id": "maritalStatus",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false
+        },
+        {
+            "id": "buriedIn",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false
         }
     ],
     "facets": {
@@ -71,6 +143,158 @@
             "filterType": "textFilter",
             "sortByPredicate": "skos:prefLabel",
             "textQueryProperty": "skos:prefLabel"
+        },
+        "rank": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "facetLabelFilter": "FILTER(LANG(?prefLabel_) = '<LANG>')",
+            "filterType": "uriFilter",
+            "predicate": "casualties:rank",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "casualties:rank/skos:prefLabel",
+            "sortDirection": "desc"
+        },
+        "gender": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "facetLabelFilter": "FILTER(LANG(?prefLabel_) = '<LANG>')",
+            "filterType": "uriFilter",
+            "predicate": "warsa:gender",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "warsa:gender/skos:prefLabel",
+            "sortDirection": "desc"
+        },
+        "occupation": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "facetLabelFilter": "FILTER(LANG(?prefLabel_) = '<LANG>')",
+            "filterType": "uriFilter",
+            "predicate": "bioc:has_occupation",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "bioc:has_occupation/skos:prefLabel",
+            "sortDirection": "desc"
+        },
+        "motherTongue": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "facetLabelFilter": "FILTER(LANG(?prefLabel_) = '<LANG>')",
+            "filterType": "uriFilter",
+            "predicate": "warsa:mother_tongue",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "warsa:mother_tongue/skos:prefLabel",
+            "sortDirection": "desc"
+        },
+        "citizenship": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "facetLabelFilter": "FILTER(LANG(?prefLabel_) = '<LANG>')",
+            "filterType": "uriFilter",
+            "predicate": "warsa:citizenship",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "warsa:citizenship/skos:prefLabel",
+            "sortDirection": "desc"
+        },
+        "nationality": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "facetLabelFilter": "FILTER(LANG(?prefLabel_) = '<LANG>')",
+            "filterType": "uriFilter",
+            "predicate": "warsa:nationality",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "warsa:nationality/skos:prefLabel",
+            "sortDirection": "desc"
+        },
+        "maritalStatus": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "facetLabelFilter": "FILTER(LANG(?prefLabel_) = '<LANG>')",
+            "filterType": "uriFilter",
+            "predicate": "warsa:marital_status",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "warsa:marital_status/skos:prefLabel",
+            "sortDirection": "desc"
+        },
+        "perishingCategory": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "facetLabelFilter": "FILTER(LANG(?prefLabel_) = '<LANG>')",
+            "filterType": "uriFilter",
+            "predicate": "casualties:perishing_category",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "casualties:perishing_category/skos:prefLabel",
+            "sortDirection": "desc"
+        },
+        "buriedIn": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "predicate": "warsa:buried_in",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "warsa:buried_in/skos:prefLabel",
+            "sortDirection": "desc"
+        },
+        "municipalityOfDomicile": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "predicate": "casualties:municipality_of_domicile",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "casualties:municipality_of_domicile/skos:prefLabel",
+            "sortDirection": "desc"
+        },
+        "municipalityOfDeath": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "predicate": "casualties:municipality_of_death",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "casualties:municipality_of_death/skos:prefLabel",
+            "sortDirection": "desc"
+        },
+        "deathTimeTimespan": {
+            "containerClass": "four",
+            "facetType": "timespan",
+            "filterType": "dateFilter",
+            "predicate": "^crm:P70i_is_documented_in/^crm:P100_was_death_of/crm:P4_has_time-span",
+            "sortByAscPredicate": "^crm:P70i_is_documented_in/^crm:P100_was_death_of/crm:P4_has_time-span/crm:P82a_begin_of_the_begin",
+            "sortByDescPredicate": "^crm:P70i_is_documented_in/^crm:P100_was_death_of/crm:P4_has_time-span/crm:P82b_end_of_the_end",
+            "startProperty": "crm:P82a_begin_of_the_begin",
+            "endProperty": "crm:P82b_end_of_the_end",
+            "min": null,
+            "max": null
+        },
+        "unit": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "predicate": "casualties:unit",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "casualties:unit/skos:prefLabel",
+            "sortDirection": "desc"
         }
     }
 }

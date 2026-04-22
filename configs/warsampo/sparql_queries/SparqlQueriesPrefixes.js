@@ -16,4 +16,6 @@ export const prefixes = `
   PREFIX warsa: <http://ldf.fi/schema/warsa/>
   PREFIX cemeteries: <http://ldf.fi/schema/warsa/places/cemeteries/>
   PREFIX photographs: <http://ldf.fi/schema/warsa/photographs/>
+  PREFIX casualties: <http://ldf.fi/schema/warsa/casualties/> 
+  PREFIX bioc: <http://ldf.fi/schema/bioc/>
 `

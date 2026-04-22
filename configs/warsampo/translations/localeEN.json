@@ -218,6 +218,58 @@
           "label": "Name",
           "description": "Name of the casualty",
           "textFacetInputPlaceholder": "Search..."
+        },
+        "rank": {
+          "label": "Rank",
+          "description": "Rank of the casualty"
+        },
+        "gender": {
+          "label": "Gender",
+          "description": "Gender of the casualty"
+        },
+        "occupation": {
+          "label": "Occupation",
+          "description": "Occupation of the casualty"
+        },
+        "motherTongue": {
+          "label": "Mother tongue",
+          "description": "Mother tongue of the casualty"
+        },
+        "citizenship": {
+          "label": "Citizenship",
+          "description": "Citizenship of the casualty"
+        },
+        "nationality": {
+          "label": "Nationality",
+          "description": "Nationality of the casualty"
+        },
+        "maritalStatus": {
+          "label": "Marital status",
+          "description": "Marital status of the casualty"
+        },
+        "perishingCategory": {
+          "label": "Perishing category",
+          "description": "Perishing category of the casualty"
+        },
+        "buriedIn": {
+          "label": "Cemetery of burial",
+          "description": "Cemetery of burial of the casualty"
+        },
+        "municipalityOfDomicile": {
+          "label": "Municipality of domicile",
+          "description": "Municipality of domicile of the casualty"
+        },
+        "municipalityOfDeath": {
+          "label": "Municipality of death",
+          "description": "Municipality of death of the casualty"
+        },
+        "deathTimeTimespan": {
+          "label": "Death time",
+          "description": "Death time of the casualty"
+        },
+        "unit": {
+          "label": "Unit",
+          "description": "Unit of the casualty"
         }
       }
     },
