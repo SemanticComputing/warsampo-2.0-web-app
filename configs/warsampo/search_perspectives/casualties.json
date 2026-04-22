@@ -9,7 +9,7 @@
     "baseURI": "http://ldf.fi/warsa",
     "URITemplate": "<BASE_URI>/casualties/<LOCAL_ID>",
     "facetClass": "warsa:DeathRecord",
-    "frontPageImage": "main_page/works-452x262.jpg",
+    "frontPageImage": "main_page/casualties.jpg",
     "searchMode": "faceted-search",
     "enableDynamicLanguageChange": true,
     "defaultActiveFacets": [

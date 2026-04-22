@@ -9,7 +9,7 @@
     "baseURI": "http://ldf.fi/warsa/places",
     "URITemplate": "<BASE_URI>/cemeteries/<LOCAL_ID>",
     "facetClass": "warsa:Cemetery",
-    "frontPageImage": "main_page/manuscripts-452x262.jpg",
+    "frontPageImage": "main_page/cemeteries.jpg",
     "searchMode": "faceted-search",
     "enableDynamicLanguageChange": true,
     "defaultActiveFacets": [
