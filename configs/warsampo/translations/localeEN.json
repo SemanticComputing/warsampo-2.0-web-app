@@ -263,7 +263,7 @@
           "label": "Municipality of death",
           "description": "Municipality of death of the casualty"
         },
-        "deathTimeTimespan": {
+        "deathTime": {
           "label": "Death time",
           "description": "Death time of the casualty"
         },

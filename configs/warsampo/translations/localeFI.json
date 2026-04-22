@@ -224,7 +224,7 @@
           "label": "Kuolinkunta",
           "description": "Kuolinkunta"
         },
-        "deathTimeTimespan": {
+        "deathTime": {
           "label": "Kuolinaika",
           "description": "Kuolinaika"
         },

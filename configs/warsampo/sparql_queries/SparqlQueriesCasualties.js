@@ -57,8 +57,8 @@ export const casualtyProperties = `
     }
     UNION
     {
-      ?id warsa:date_of_death ?deathTimeTimespan__id .
-      BIND(STR(?deathTimeTimespan__id) AS ?deathTimeTimespan__prefLabel) .
+      ?id warsa:date_of_death ?deathTime__id .
+      BIND(STR(?deathTime__id) AS ?deathTime__prefLabel) .
     }
     UNION
     {

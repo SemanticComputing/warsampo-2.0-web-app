@@ -80,7 +80,7 @@
             "numberedList": false
         },
         {
-            "id": "deathTimeTimespan",
+            "id": "deathTime",
             "valueType": "object",
             "makeLink": false,
             "externalLink": false,
@@ -273,17 +273,19 @@
             "sortByPredicate": "casualties:municipality_of_death/skos:prefLabel",
             "sortDirection": "desc"
         },
-        "deathTimeTimespan": {
-            "containerClass": "four",
-            "facetType": "timespan",
-            "filterType": "dateFilter",
-            "predicate": "^crm:P70i_is_documented_in/^crm:P100_was_death_of/crm:P4_has_time-span",
-            "sortByAscPredicate": "^crm:P70i_is_documented_in/^crm:P100_was_death_of/crm:P4_has_time-span/crm:P82a_begin_of_the_begin",
-            "sortByDescPredicate": "^crm:P70i_is_documented_in/^crm:P100_was_death_of/crm:P4_has_time-span/crm:P82b_end_of_the_end",
-            "startProperty": "crm:P82a_begin_of_the_begin",
-            "endProperty": "crm:P82b_end_of_the_end",
-            "min": null,
-            "max": null
+        "deathTime": {
+            "containerClass": "five",
+            "facetType": "integer",
+            "filterType": "dateNoTimespanFilter",
+            "facetValueFilter": "FILTER(datatype(?value) = xsd:date)",
+            "predicate": "warsa:date_of_death",
+            "startProperty": "warsa:date_of_death",
+            "endProperty": "warsa:date_of_death",
+            "min": "1750-01-01",
+            "max": "2010-01-01",
+            "sortByPredicate": "warsa:date_of_death",
+            "sortByAscPredicate": "warsa:date_of_death",
+            "sortByDescPredicate": "warsa:date_of_death"
         },
         "unit": {
             "containerClass": "ten",
