@@ -314,7 +314,43 @@
         },
         "architect": {
           "label": "Architect",
-          "description": "Architect"
+          "description": "Architect of the war cemetery"
+        },
+        "address": {
+          "label": "Street address",
+          "description": "Street address of the war cemetery"
+        },
+        "lat": {
+          "label": "Latitude",
+          "description": "Latitude of the war cemetery"
+        },
+        "long": {
+          "label": "Longitude",
+          "description": "Longitude of the war cemetery"
+        },
+        "dateOfFoundation": {
+          "label": "Date of foundation",
+          "description": "Date of foundation of the war cemetery"
+        },
+        "cameraClub": {
+          "label": "Camera club",
+          "description": "Camera club"
+        },
+        "memorial": {
+          "label": "Memorial",
+          "description": "Memorial of the war cemetery"
+        },
+        "memorialSculptor": {
+          "label": "Memorial sculptor",
+          "description": "Memorial sculptor of the war cemetery"
+        },
+        "memorialUnveilingDate": {
+          "label": "Memorial unveiling date",
+          "description": "Memorial unveiling date of the war cemetery"
+        },
+        "source": {
+          "label": "Source",
+          "description": "Source"
         }
       }
     }

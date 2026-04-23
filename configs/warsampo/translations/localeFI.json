@@ -276,6 +276,42 @@
         "architect": {
           "label": "Arkkitehti",
           "description": "Arkkitehti"
+        },
+        "address": {
+          "label": "Katuosoite",
+          "description": "Katuosoite"
+        },
+        "lat": {
+          "label": "Leveysaste",
+          "description": "Leveysaste"
+        },
+        "long": {
+          "label": "Pituusaste",
+          "description": "Pituusaste"
+        },
+        "dateOfFoundation": {
+          "label": "Perustettu",
+          "description": "Perustettu"
+        },
+        "cameraClub": {
+          "label": "Kameraseura",
+          "description": "Kameraseura"
+        },
+        "memorial": {
+          "label": "Muistomerkki",
+          "description": "Muistomerkki"
+        },
+        "memorialSculptor": {
+          "label": "Muistomerkin kuvanveistäjä",
+          "description": "Muistomerkin kuvanveistäjä"
+        },
+        "memorialUnveilingDate": {
+          "label": "Muistomerkki paljastettu",
+          "description": "Muistomerkki paljastettu"
+        },
+        "source": {
+          "label": "Lähde",
+          "description": "Lähde"
         }
       }
     }
