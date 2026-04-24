@@ -95,7 +95,8 @@
     "emloSentReceived": "Sent and received letters",
     "download": "download",
     "recommendations": "recommendations",
-    "share": "share"
+    "share": "share",
+    "choropleth_map": "choropleth map"
   },
   "table": {
     "rowsPerPage": "Rows per page",

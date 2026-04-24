@@ -17,6 +17,15 @@
     ],
     "defaultTab": "table",
     "defaultInstancePageTab": "table",
+    "maps": {
+        "deathsByMunicipalityOfDomicile": {
+            "center": [
+                65.184809,
+                27.314050
+            ],
+            "zoom": 4
+        }
+    },
     "resultClasses": {
         "casualties": {
             "paginatedResultsConfig": {
@@ -137,6 +146,22 @@
                             "createChartData": "createApexBarChartData"
                         }
                     ]
+                }
+            }
+        },
+        "deathsByMunicipalityOfDomicile": {
+            "tabID": 2,
+            "component": "Deck",
+            "tabPath": "choropleth_map",
+            "tabIcon": "LocationOn",
+            "sparqlQuery": "deathsByMunicipalityOfDomicileQuery",
+            "facetClass": "casualties",
+            "filterTarget": "record",
+            "layerType": "polygonLayer",
+            "postprocess": {
+                "func": "toPolygonLayerFormat",
+                "config": {
+                    "ckmeansClustering": true
                 }
             }
         }

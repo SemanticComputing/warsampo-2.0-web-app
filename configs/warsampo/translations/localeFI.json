@@ -75,7 +75,8 @@
     "recommendations": "suositukset",
     "export_csv": "CSV",
     "export_sparql": "SPARQL-kysely",
-    "share": "jaa"
+    "share": "jaa",
+    "choropleth_map": "koropleettikartta"
   },
   "table": {
     "rowsPerPage": "Rivejä per sivu",

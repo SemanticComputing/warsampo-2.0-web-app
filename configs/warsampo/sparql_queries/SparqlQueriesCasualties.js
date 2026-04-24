@@ -247,3 +247,26 @@ export const deathsByNumberOfChildrenQuery = `
   GROUP BY ?category ?prefLabel
   ORDER BY DESC(?instanceCount)
 `
+
+export const deathsByMunicipalityOfDomicileQuery = `
+  SELECT DISTINCT ?id ?prefLabel ?polygon (COUNT(DISTINCT ?record) as ?instanceCount)
+  WHERE {
+    {
+      ?id a <http://www.yso.fi/onto/suo/kunta> ;
+          skos:prefLabel ?prefLabel ;
+          sch:polygon ?polygon .
+    }
+    UNION {
+      <FILTER>
+
+      ?record a warsa:DeathRecord ;
+              casualties:municipality_of_domicile/casualties:preferred_municipality ?id .
+          
+      ?id a <http://www.yso.fi/onto/suo/kunta> ;
+          skos:prefLabel ?prefLabel ;
+          sch:polygon ?polygon .
+    }
+  }
+  GROUP BY ?id ?prefLabel ?polygon
+  ORDER BY DESC(?instanceCount)
+`
