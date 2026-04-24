@@ -183,3 +183,67 @@ export const casualtyPropertiesInstancePage = `
       FILTER(LANG(?motherTongue__prefLabel) = '<LANG>')
     }
 `
+
+export const deathsByPerishingCategoryQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?record) AS ?instanceCount)
+  WHERE {
+    <FILTER>
+    ?record a warsa:DeathRecord ;
+            casualties:perishing_category ?category .
+    ?category skos:prefLabel ?prefLabel .
+    FILTER(LANG(?prefLabel) = '<LANG>')
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`
+
+export const deathsByMaritalStatusQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?record) AS ?instanceCount)
+  WHERE {
+    <FILTER>
+    ?record a warsa:DeathRecord ;
+            warsa:marital_status ?category .
+    ?category skos:prefLabel ?prefLabel .
+    FILTER(LANG(?prefLabel) = '<LANG>')
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`
+
+export const deathsByGenderQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?record) AS ?instanceCount)
+  WHERE {
+    <FILTER>
+    ?record a warsa:DeathRecord ;
+            warsa:gender ?category .
+    ?category skos:prefLabel ?prefLabel .
+    FILTER(LANG(?prefLabel) = '<LANG>')
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`
+
+export const deathsByMotherTongueQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?record) AS ?instanceCount)
+  WHERE {
+    <FILTER>
+    ?record a warsa:DeathRecord ;
+            warsa:mother_tongue ?category .
+    ?category skos:prefLabel ?prefLabel .
+    FILTER(LANG(?prefLabel) = '<LANG>')
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`
+
+export const deathsByNumberOfChildrenQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?record) AS ?instanceCount)
+  WHERE {
+    <FILTER>
+    ?record a warsa:DeathRecord ;
+            warsa:number_of_children ?category .
+    BIND(CONCAT(STR(?category), ' ', IF(STR(?category) = '1', IF('<LANG>' = 'en', 'child', 'lapsi'), IF('<LANG>' = 'en', 'children', 'lasta'))) AS ?prefLabel)
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`

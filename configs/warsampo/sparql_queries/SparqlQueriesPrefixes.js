@@ -18,4 +18,5 @@ export const prefixes = `
   PREFIX photographs: <http://ldf.fi/schema/warsa/photographs/>
   PREFIX casualties: <http://ldf.fi/schema/warsa/casualties/> 
   PREFIX bioc: <http://ldf.fi/schema/bioc/>
+  PREFIX analytics: <http://ldf.fi/schema/warsa/analytics/>
 `

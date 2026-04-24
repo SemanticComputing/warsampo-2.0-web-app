@@ -78,6 +78,7 @@
   "tabs": {
     "table": "table",
     "map": "map",
+    "pie_chart": "pie/bar chart",
     "production_places": "production places",
     "production_places_heatmap": "production heatmap",
     "last_known_locations": "last known locations",
@@ -107,7 +108,15 @@
     "chartType": "Chart type:",
     "pie": "pie chart",
     "bar": "bar chart",
-    "other": "other"
+    "other": "other",
+    "resultClasses": {
+      "deathsByPerishingCategory": "perishing category",
+      "deathsByGender": "gender",
+      "deathsByMaritalStatus": "marital status",
+      "deathsByMotherTongue": "mother tongue",
+      "deathsByNumberOfChildren": "number of children",
+      "deathsByProvinceOfDomicile": "province of domicile"
+    }
   },
   "lineChart": {
     "productionCount": "Production",
