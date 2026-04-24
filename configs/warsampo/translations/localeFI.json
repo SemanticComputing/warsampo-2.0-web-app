@@ -152,6 +152,11 @@
     "resultClasses": {
       "deathPlacesMap": {
         "deathsHappenedAt": "Täällä kaatuneet:"
+      },
+      "cemeteriesMap": {
+        "peopleBuriedAt": "Tänne haudatut:",
+        "numberOfGraves": "Sankarihautojen lukumäärä: ",
+        "unknown": "tuntematon"
       }
     }
   },

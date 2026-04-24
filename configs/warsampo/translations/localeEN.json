@@ -180,6 +180,11 @@
     "resultClasses": {
       "deathPlacesMap": {
         "deathsHappenedAt": "People who died here:"
+      },
+      "cemeteriesMap": {
+        "peopleBuriedAt": "People buried here:",
+        "numberOfGraves": "Number of war graves: ",
+        "unknown": "unknown"
       }
     }
   },

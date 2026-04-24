@@ -17,6 +17,15 @@
     ],
     "defaultTab": "table",
     "defaultInstancePageTab": "table",
+    "maps": {
+        "cemeteriesMap": {
+            "center": [
+                65.184809,
+                27.314050
+            ],
+            "zoom": 4
+        }
+    },
     "resultClasses": {
         "cemeteries": {
             "paginatedResultsConfig": {
@@ -41,6 +50,91 @@
                         "tabIcon": "CalendarViewDay"
                     }
                 }
+            }
+        },
+        "cemeteriesMap": {
+            "tabID": 3,
+            "component": "LeafletMap",
+            "tabPath": "map",
+            "tabIcon": "AddLocation",
+            "sparqlQuery": "cemeteryPlacesQuery",
+            "facetClass": "cemeteries",
+            "filterTarget": "cemetery",
+            "resultMapper": "mapPlaces",
+            "showExternalLayers": true,
+            "instanceConfig": {
+                "propertiesQueryBlock": "placePropertiesInfoWindow",
+                "relatedInstances": "peopleBuriedAt",
+                "filterTarget": "related__id",
+                "createPopUpContent": "createConfigurablePopUpContent",
+                "popUpElements": [
+                    { 
+                        "htmlElement": "img",
+                        "arrayParentElement": null,
+                        "type": "object",
+                        "source": "sparql",
+                        "variableName": "image",
+                        "isArray": false,
+                        "makeLink": false,
+                        "externalLink": false
+                    },
+                    { 
+                        "htmlElement": "h3",
+                        "arrayParentElement": null,
+                        "type": "object",
+                        "source": "sparql",
+                        "variableName": "prefLabel",
+                        "isArray": false,
+                        "makeLink": true,
+                        "externalLink": false
+                    },
+                    { 
+                        "htmlElement": "span",
+                        "arrayParentElement": null,
+                        "type": "string",
+                        "source": "intl",
+                        "variableName": "leafletMap.resultClasses.cemeteriesMap.numberOfGraves",
+                        "isArray": false,
+                        "orderBy": null,
+                        "makeLink": false,
+                        "externalLink": false
+                    },
+                    { 
+                        "htmlElement": "span",
+                        "arrayParentElement": null,
+                        "type": "string",
+                        "source": "sparql",
+                        "variableName": "numberOfGraves",
+                        "isArray": false,
+                        "includeUndefined": true,
+                        "undefinedReplacementIntl": "leafletMap.resultClasses.cemeteriesMap.unknown",
+                        "makeLink": false,
+                        "externalLink": false
+                    },
+                    { 
+                        "htmlElement": "p",
+                        "arrayParentElement": null,
+                        "type": "string",
+                        "source": "intl",
+                        "variableName": "leafletMap.resultClasses.cemeteriesMap.peopleBuriedAt",
+                        "isArray": false,
+                        "orderBy": null,
+                        "makeLink": false,
+                        "externalLink": false
+                    },
+                    { 
+                        "htmlElement": "li",
+                        "arrayParentElement": "ul",
+                        "type": "object",
+                        "source": "sparql",
+                        "variableName": "related",
+                        "isArray": true,
+                        "orderBy": "prefLabel",
+                        "includeUndefined": true,
+                        "makeLink": true,
+                        "externalLink": false
+                    }
+                ]
             }
         }
     },
