@@ -231,6 +231,38 @@
         "unit": {
           "label": "Joukko-osasto",
           "description": "Joukko-osasto"
+        },
+        "municipalityOfResidence": {
+          "label": "Asuinkunta",
+          "description": "Asuinkunta"
+        },
+        "municipalityOfBurial": {
+          "label": "Hautauskunta",
+          "description": "Hautauskunta"
+        },
+        "placeOfWounding": {
+          "label": "Haavoittumispaikka",
+          "description": "Haavoittumispaikka"
+        },
+        "dateOfWounding": {
+          "label": "Haavoittumispäivä",
+          "description": "Haavoittumispäivä"
+        },
+        "placeOfBurialNumber": {
+          "label": "Hautapaikan numero",
+          "description": "Hautapaikan numero"
+        },
+        "unitCode": {
+          "label": "Joukko-osaston peiteluku",
+          "description": "Joukko-osaston peiteluku"
+        },
+        "numberOfChildren": {
+          "label": "Lasten lukumäärä",
+          "description": "Lasten lukumäärä"
+        },
+        "dateOfBirth": {
+          "label": "Syntymäpäivä",
+          "description": "Syntymäpäivä"
         }
       }
     },

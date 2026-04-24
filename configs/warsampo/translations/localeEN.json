@@ -270,6 +270,38 @@
         "unit": {
           "label": "Unit",
           "description": "Unit of the casualty"
+        },
+        "municipalityOfResidence": {
+          "label": "Municipality of residence",
+          "description": "Municipality of residence"
+        },
+        "municipalityOfBurial": {
+          "label": "Municipality of burial",
+          "description": "Municipality of burial"
+        },
+        "placeOfWounding": {
+          "label": "Place of wounding",
+          "description": "Place of wounding"
+        },
+        "dateOfWounding": {
+          "label": "Date of wounding",
+          "description": "Date of wounding"
+        },
+        "placeOfBurialNumber": {
+          "label": "Place of burial (number)",
+          "description": "Place of burial (number)"
+        },
+        "unitCode": {
+          "label": "Military unit identification code",
+          "description": "Military unit identification code"
+        },
+        "numberOfChildren": {
+          "label": "Number of children",
+          "description": "Number of children"
+        },
+        "dateOfBirth": {
+          "label": "Date of birth",
+          "description": "Date of birth"
         }
       }
     },
