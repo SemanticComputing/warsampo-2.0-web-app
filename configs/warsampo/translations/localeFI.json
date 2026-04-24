@@ -148,7 +148,12 @@
     },
     "wrongZoomLevel": "",
     "wrongZoomLevelFHA": "",
-    "tooManyResults": ""
+    "tooManyResults": "",
+    "resultClasses": {
+      "deathPlacesMap": {
+        "deathsHappenedAt": "Täällä kaatuneet:"
+      }
+    }
   },
   "instancePageGeneral": {
     "introduction": "",

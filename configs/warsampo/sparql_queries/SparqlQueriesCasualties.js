@@ -270,3 +270,30 @@ export const deathsByMunicipalityOfDomicileQuery = `
   GROUP BY ?id ?prefLabel ?polygon
   ORDER BY DESC(?instanceCount)
 `
+
+export const deathPlacesQuery = `
+  SELECT ?id ?lat ?long
+  (COUNT(DISTINCT ?record) as ?instanceCount)
+  WHERE {
+    <FILTER>
+    ?record casualties:municipality_of_death ?id .
+    ?id casualties:wartime_municipality ?wartime_id .
+    ?wartime_id wgs84:lat ?lat ;
+        wgs84:long ?long .
+  }
+  GROUP BY ?id ?lat ?long
+`
+
+export const placePropertiesInfoWindow = `
+  ?id skos:prefLabel ?prefLabel__id .
+  BIND(?prefLabel__id AS ?prefLabel__prefLabel)
+`
+
+export const deathsHappenedAt = `
+  OPTIONAL {
+    <FILTER>
+    ?related__id casualties:municipality_of_death ?id .
+    ?related__id skos:prefLabel ?related__prefLabel .
+    BIND(CONCAT("/casualties/page/", REPLACE(STR(?related__id), "^.*\\\\/(.+)", "$1")) AS ?related__dataProviderUrl)
+  }
+`

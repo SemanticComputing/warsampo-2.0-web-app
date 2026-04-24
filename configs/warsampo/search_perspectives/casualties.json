@@ -24,6 +24,13 @@
                 27.314050
             ],
             "zoom": 4
+        },
+        "deathPlacesMap": {
+            "center": [
+                65.184809,
+                27.314050
+            ],
+            "zoom": 4
         }
     },
     "resultClasses": {
@@ -163,6 +170,59 @@
                 "config": {
                     "ckmeansClustering": true
                 }
+            }
+        },
+        "deathPlacesMap": {
+            "tabID": 3,
+            "component": "LeafletMap",
+            "tabPath": "death_places",
+            "tabIcon": "AddLocation",
+            "sparqlQuery": "deathPlacesQuery",
+            "facetClass": "casualties",
+            "filterTarget": "record",
+            "resultMapper": "mapPlaces",
+            "showExternalLayers": true,
+            "instanceConfig": {
+                "propertiesQueryBlock": "placePropertiesInfoWindow",
+                "relatedInstances": "deathsHappenedAt",
+                "filterTarget": "related__id",
+                "createPopUpContent": "createConfigurablePopUpContent",
+                "popUpElements": [
+                    { 
+                        "htmlElement": "h3",
+                        "arrayParentElement": null,
+                        "type": "object",
+                        "source": "sparql",
+                        "variableName": "prefLabel",
+                        "isArray": false,
+                        "orderBy": null,
+                        "makeLink": false,
+                        "externalLink": false
+                    },
+                    { 
+                        "htmlElement": "p",
+                        "arrayParentElement": null,
+                        "type": "string",
+                        "source": "intl",
+                        "variableName": "leafletMap.resultClasses.deathPlacesMap.deathsHappenedAt",
+                        "isArray": false,
+                        "orderBy": null,
+                        "makeLink": false,
+                        "externalLink": false
+                    },
+                    { 
+                        "htmlElement": "li",
+                        "arrayParentElement": "ul",
+                        "type": "object",
+                        "source": "sparql",
+                        "variableName": "related",
+                        "isArray": true,
+                        "orderBy": "prefLabel",
+                        "includeUndefined": true,
+                        "makeLink": true,
+                        "externalLink": false
+                    }
+                ]
             }
         }
     },
