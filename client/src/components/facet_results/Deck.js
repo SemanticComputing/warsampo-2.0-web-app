@@ -377,36 +377,34 @@ class Deck extends React.Component {
     const { layerType } = this.props
 
     return (
-      <Map
-        reuseMaps
-        mapStyle={this.getMapStyle()}
-        initialViewState={this.state.viewport}
-        onMove={(evt) => this.handleOnViewportChange(evt.viewState)}
-        attributionControl={false}
-        style={{ width: '100%', height: '100%' }}
-      >
-        <DeckGLOverlay
-          layers={[layer]}
-          controller={true}
-          getCursor={({ isDragging, isHovering }) => {
-            if (isDragging) return 'grabbing'
-            if (isHovering) return 'pointer'
-            return 'grab'
-          }}
-          {...(layerType === 'polygonLayer'
-            ? {
-                getTooltip: ({ object }) =>
-                  object && {
-                    html: `<h2>${object.prefLabel}</h2><div>${object.instanceCount}</div>`
-                  }
-              }
-            : {})}
-        />
+      <>
+        <Map
+          reuseMaps
+          mapStyle={this.getMapStyle()}
+          initialViewState={this.state.viewport}
+          onMove={(evt) => this.handleOnViewportChange(evt.viewState)}
+          attributionControl={false}
+          style={{ width: '100%', height: '100%', zIndex: '0' }}
+        >
+          <DeckGLOverlay
+            layers={[layer]}
+            controller={true}
+            {...(layerType === 'polygonLayer'
+              ? {
+                  getTooltip: ({ object }) =>
+                    object && {
+                      html: `<h2>${object.prefLabel}</h2><div>${object.instanceCount}</div>`
+                    }
+                }
+              : {})}
+          />
 
-        <NavigationControl position="top-left" />
-        <FullscreenControl position="top-left" />
-        <AttributionControl compact={false} position="bottom-right" />
-
+          <NavigationControl position="top-left" />
+          <FullscreenControl position="top-left" />
+          <AttributionControl compact={false} position="bottom-right" />
+          
+          {this.renderSpinner()}
+        </Map>
         {layerType === 'arcLayer' &&
           <DeckArcLayerLegend
             title={this.props.legendTitle}
@@ -438,9 +436,7 @@ class Deck extends React.Component {
             countText={this.props.countText}
             showMoreText={this.props.showMoreText}
           />}
-        
-        {this.renderSpinner()}
-      </Map>
+      </>
     )
   }
 
