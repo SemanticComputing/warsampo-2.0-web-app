@@ -196,15 +196,15 @@
   "deckGlMap": {
     "arcColouring": "Arc colouring:",
     "showMoreInformation": "Click to show more information.",
-    "placesMsMigrations": {
+    "casualtyMigrations": {
       "legendTitle": "Arc colouring",
-      "legendFrom": "Manuscript production place",
-      "legendTo": "Last known location",
-      "from": "Production place:",
-      "to": "Last known location:",
-      "count": "Manuscript count",
-      "listHeadingSingleInstance": "Manuscript:",
-      "listHeadingMultipleInstances": "Manuscripts:"
+      "legendFrom": "(Wartime) municipality of domicile",
+      "legendTo": "(Wartime) municipality of death",
+      "from": "(Wartime) municipality of domicile:",
+      "to": "(Wartime) municipality of death:",
+      "count": "Casualty count",
+      "listHeadingSingleInstance": "Casualty:",
+      "listHeadingMultipleInstances": "Casualties:"
     }
   },
   "perspectives": {

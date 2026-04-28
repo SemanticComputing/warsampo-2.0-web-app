@@ -297,3 +297,38 @@ export const deathsHappenedAt = `
     BIND(CONCAT("/casualties/page/", REPLACE(STR(?related__id), "^.*\\\\/(.+)", "$1")) AS ?related__dataProviderUrl)
   }
 `
+
+
+export const migrationsQuery = `
+  SELECT DISTINCT ?id 
+  ?from__id ?from__prefLabel ?from__lat ?from__long ?from__dataProviderUrl
+  ?to__id ?to__prefLabel ?to__lat ?to__long ?to__dataProviderUrl
+  (COUNT(DISTINCT ?record) as ?instanceCount)
+  WHERE {
+    <FILTER>
+    ?record casualties:municipality_of_domicile/casualties:wartime_municipality ?from__id ;
+            casualties:municipality_of_death/casualties:wartime_municipality ?to__id .
+    ?from__id skos:prefLabel ?from__prefLabel ;
+              wgs84:lat ?from__lat ;
+              wgs84:long ?from__long .
+    ?to__id skos:prefLabel ?to__prefLabel ;
+            wgs84:lat ?to__lat ;
+            wgs84:long ?to__long .
+    BIND(IRI(CONCAT(STR(?from__id), "-", STR(?to__id))) as ?id)
+    FILTER(?from__id != ?to__id)
+  }
+  GROUP BY ?id 
+  ?from__id ?from__prefLabel ?from__lat ?from__long ?from__dataProviderUrl
+  ?to__id ?to__prefLabel ?to__lat ?to__long ?to__dataProviderUrl
+  ORDER BY DESC(?instanceCount)
+`
+
+export const migrationsDialogQuery = `
+  SELECT * {
+    <FILTER>
+    ?id casualties:municipality_of_domicile/casualties:wartime_municipality <FROM_ID> ;
+        casualties:municipality_of_death/casualties:wartime_municipality <TO_ID> ;
+        skos:prefLabel ?prefLabel .
+    BIND(CONCAT("/${perspectiveID}/page/", REPLACE(STR(?id), "^.*\\\\/(.+)", "$1")) AS ?dataProviderUrl)
+  }
+`

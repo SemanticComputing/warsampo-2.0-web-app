@@ -31,6 +31,13 @@
                 27.314050
             ],
             "zoom": 4
+        },
+        "casualtyMigrations": {
+            "center": [
+                65.184809,
+                27.314050
+            ],
+            "zoom": 4
         }
     },
     "resultClasses": {
@@ -224,6 +231,33 @@
                     }
                 ]
             }
+        },
+        "casualtyMigrations": {
+            "tabID": 6,
+            "component": "Deck",
+            "tabPath": "migrations",
+            "tabIcon": "Redo",
+            "sparqlQuery": "migrationsQuery",
+            "facetClass": "casualties",
+            "filterTarget": "record",
+            "resultMapper": "makeObjectList",
+            "layerType": "arcLayer",
+            "arcWidthVariable": "instanceCountScaled",
+            "instanceVariable": "record",
+            "showTooltips": true,
+            "postprocess": {
+                "func": "linearScale",
+                "config": {
+                    "variable": "instanceCount",
+                    "minAllowed": 1,
+                    "maxAllowed": 30
+                }
+            }
+        },
+        "casualtyMigrationsDialog": {
+            "sparqlQuery": "migrationsDialogQuery",
+            "filterTarget": "id",
+            "resultMapper": "makeObjectList"
         }
     },
     "properties": [

@@ -67,6 +67,7 @@
     "table": "taulukko",
     "map": "kartta",
     "pie_chart": "ympyräkaavio/pylväsdiagrammi",
+    "migrations": "migraatiot",
     "network": "verkosto",
     "export": "vie",
     "heatmap": "lämpökartta",
@@ -166,17 +167,17 @@
     "repetition": ""
   },
   "deckGlMap": {
-    "arcColouring": "",
-    "showMoreInformation": "",
-    "manuscriptMigrations": {
-      "legendTitle": "",
-      "legendFrom": "",
-      "legendTo": "",
-      "from": "",
-      "to": "",
-      "count": "",
-      "listHeadingSingleInstance": "",
-      "listHeadingMultipleInstances": ""
+    "arcColouring": "Kaaren väritys:",
+    "showMoreInformation": "Napsauta nähdäksesi lisätietoja.",
+    "casualtyMigrations": {
+      "legendTitle": "Kaaren väritys",
+      "legendFrom": "(Sota-ajan) kotikunta",
+      "legendTo": "(Sota-ajan) kuolinkunta",
+      "from": "(Sota-ajan) kotikunta:",
+      "to": "(Sota-ajan) kuolinkunta:",
+      "count": "Menehtyineiden lukumäärä",
+      "listHeadingSingleInstance": "Menehtynyt:",
+      "listHeadingMultipleInstances": "Menehtyneet:"
     }
   },
   "perspectives": {
