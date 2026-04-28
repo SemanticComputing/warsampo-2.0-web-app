@@ -76,7 +76,8 @@
     "export_csv": "CSV",
     "export_sparql": "SPARQL-kysely",
     "share": "jaa",
-    "choropleth_map": "koropleettikartta"
+    "choropleth_map": "koropleettikartta",
+    "death_places": "kuolinpaikat"
   },
   "table": {
     "rowsPerPage": "Rivejä per sivu",

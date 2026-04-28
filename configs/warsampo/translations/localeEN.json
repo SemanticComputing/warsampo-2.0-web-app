@@ -96,7 +96,8 @@
     "download": "download",
     "recommendations": "recommendations",
     "share": "share",
-    "choropleth_map": "choropleth map"
+    "choropleth_map": "choropleth map",
+    "death_places": "places of death"
   },
   "table": {
     "rowsPerPage": "Rows per page",
