@@ -149,23 +149,29 @@ class TemporalMap extends Component {
 
   _renderTooltip () {
     const { hoveredObject, pointerX, pointerY } = this.state || {}
+    const greaterPlaceLabel = intl.get(`temporalMap.resultClasses.${this.props.resultClass}.greaterPlace`)
+    const startDateLabel = intl.get(`temporalMap.resultClasses.${this.props.resultClass}.startDate`)
+    const endDateLabel = intl.get(`temporalMap.resultClasses.${this.props.resultClass}.endDate`)
+    const descriptionLabel = intl.get(`temporalMap.resultClasses.${this.props.resultClass}.description`)
     return hoveredObject && (
       <Paper className={this.props.classes.tooltipContainer} style={{ left: pointerX + 10, top: pointerY + 10 }}>
         <Typography variant='h6'>
           {hoveredObject.prefLabel}
         </Typography>
-        <Typography>
-          {intl.get('perspectives.battles.temporalMap.municipality')}: {hoveredObject.greaterPlace}
-        </Typography>
-        <Typography>
-          {intl.get('perspectives.battles.temporalMap.startDate')}: {moment(hoveredObject.startDate).format('DD.MM.YYYY')}
-        </Typography>
-        <Typography>
-          {intl.get('perspectives.battles.temporalMap.endDate')}: {moment(hoveredObject.endDate).format('DD.MM.YYYY')}
-        </Typography>
-        {has(hoveredObject, 'units') &&
+        {has(hoveredObject, 'greaterPlace') && 
           <Typography>
-            {intl.get('perspectives.battles.temporalMap.units')}: {hoveredObject.units}
+            {greaterPlaceLabel ? `${greaterPlaceLabel}: ` : ''}{hoveredObject.greaterPlace}
+          </Typography>}
+        <Typography>
+          {startDateLabel ? `${startDateLabel}: ` : ''}{moment(hoveredObject.startDate).format('DD.MM.YYYY')}
+        </Typography>
+        {has(hoveredObject, 'endDate') &&
+          <Typography>
+            {endDateLabel ? `${endDateLabel}: ` : ''}{moment(hoveredObject.endDate).format('DD.MM.YYYY')}
+          </Typography>}
+        {has(hoveredObject, 'description') &&
+          <Typography>
+            {descriptionLabel ? `${descriptionLabel}: ` : ''}{hoveredObject.description}
           </Typography>}
       </Paper>
     )
