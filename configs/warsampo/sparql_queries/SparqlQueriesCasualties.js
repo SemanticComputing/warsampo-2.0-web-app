@@ -332,3 +332,25 @@ export const migrationsDialogQuery = `
     BIND(CONCAT("/${perspectiveID}/page/", REPLACE(STR(?id), "^.*\\\\/(.+)", "$1")) AS ?dataProviderUrl)
   }
 `
+
+export const deathPlacesAnimationQuery = `
+  SELECT ?id ?prefLabel ?startDate ?endDate ?lat ?long (COUNT(?record) AS ?instanceCount) (COUNT(?record) AS ?description)
+  WHERE {
+    <FILTER>
+    ?record a warsa:DeathRecord ;
+        skos:prefLabel ?prefLabel_temp ;
+        warsa:date_of_death ?date ;
+        casualties:municipality_of_death ?municipality .
+
+    BIND(CONCAT(STR(?municipality), "-", STR(?date)) AS ?id)
+    FILTER(datatype(?date) = xsd:date)
+    BIND(STR(?date) AS ?startDate)
+
+    ?municipality skos:prefLabel ?prefLabel ;
+                  casualties:wartime_municipality ?wartime_municipality .
+    ?wartime_municipality wgs84:lat ?lat ;
+        wgs84:long ?long .
+  }
+  GROUP BY ?id ?prefLabel ?startDate ?endDate ?lat ?long
+  ORDER BY ?startDate
+`

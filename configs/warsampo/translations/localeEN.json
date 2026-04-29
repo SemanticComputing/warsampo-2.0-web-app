@@ -97,7 +97,8 @@
     "recommendations": "recommendations",
     "share": "share",
     "choropleth_map": "choropleth map",
-    "death_places": "places of death"
+    "death_places": "places of death",
+    "casualties_animation": "casualties animated"
   },
   "table": {
     "rowsPerPage": "Rows per page",
@@ -127,6 +128,16 @@
     "sentCount": "Sent",
     "receivedCount": "Received",
     "allCount": "All"
+  },
+  "temporalMap": {
+    "resultClasses": {
+      "deathPlacesAnimation": {
+        "greaterPlace": "",
+        "startDate": "",
+        "endDate": "",
+        "description": "Casualties"
+      }
+    }
   },
   "exportToYasgui": "open the result table query in yasgui sparql editor",
   "openInLinkedDataBrowser": "open in linked data browser",

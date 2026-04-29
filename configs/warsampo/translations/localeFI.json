@@ -78,7 +78,8 @@
     "export_sparql": "SPARQL-kysely",
     "share": "jaa",
     "choropleth_map": "koropleettikartta",
-    "death_places": "kuolinpaikat"
+    "death_places": "kuolinpaikat",
+    "casualties_animation": "kaatuneet animaationa"
   },
   "table": {
     "rowsPerPage": "Rivejä per sivu",
@@ -101,6 +102,16 @@
     }
   },
   "lineChart": {
+  },
+  "temporalMap": {
+    "resultClasses": {
+      "deathPlacesAnimation": {
+        "greaterPlace": "",
+        "startDate": "",
+        "endDate": "",
+        "description": "Kaatuneita"
+      }
+    }
   },
   "timeseries": {
   },

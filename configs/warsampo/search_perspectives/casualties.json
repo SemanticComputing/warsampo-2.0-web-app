@@ -233,7 +233,7 @@
             }
         },
         "casualtyMigrations": {
-            "tabID": 6,
+            "tabID": 4,
             "component": "Deck",
             "tabPath": "migrations",
             "tabIcon": "Redo",
@@ -258,6 +258,27 @@
             "sparqlQuery": "migrationsDialogQuery",
             "filterTarget": "id",
             "resultMapper": "makeObjectList"
+        },
+        "deathPlacesAnimation": {
+            "tabID": 5,
+            "component": "TemporalMap",
+            "tabPath": "casualties_animation",
+            "tabIcon": "Animation",
+            "sparqlQuery": "deathPlacesAnimationQuery",
+            "facetClass": "casualties",
+            "filterTarget": "record",
+            "config": {
+                "radiusScale": 50,
+                "radiusMinPixels": 3,
+                "radiusMaxPixels": 100,
+                "radiusVariable": "instanceCount",
+                "radiusVariableMultiplier": 2,
+                "sliderDuration": {
+                    "halfSpeed": 300,
+                    "normalSpeed": 150,
+                    "doubleSpeed": 75
+                }
+            }
         }
     },
     "properties": [
