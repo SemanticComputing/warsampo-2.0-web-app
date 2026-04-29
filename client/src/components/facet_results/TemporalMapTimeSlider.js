@@ -3,6 +3,9 @@ import { withStyles } from 'tss-react/mui'
 import PropTypes from 'prop-types'
 import Slider from '@mui/material/Slider'
 import moment from 'moment'
+import FastRewindIcon from '@mui/icons-material/FastRewind'
+import PlayArrowIcon from '@mui/icons-material/PlayArrow'
+import PauseIcon from '@mui/icons-material/Pause'
 
 const blue = 'rgb(0, 126, 230)'
 const iOSBoxShadow =
@@ -239,10 +242,10 @@ class TemporalMapTimeSlider extends React.Component {
             <div className='row'>
               <div className='control-buttons row'>
                 <div className='button' onClick={this.handleResetSlider}>
-                  <i className='icon undo' />
+                  <FastRewindIcon />
                 </div>
                 <div className='button' onClick={this.handleAnimation}>
-                  <i className={`icon ${playOrPause}`} />
+                  {playOrPause == 'play' ? <PlayArrowIcon /> : <PauseIcon /> }
                 </div>
               </div>
 
