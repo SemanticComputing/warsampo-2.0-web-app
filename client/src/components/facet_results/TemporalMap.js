@@ -177,15 +177,18 @@ class TemporalMap extends Component {
       new ScatterplotLayer({
         id: 'time-layer',
         data,
-        opacity: 0.3,
+        opacity: this.props.perspectiveConfig.resultClasses[this.props.resultClass].config?.opacity ?? 0.3,
         stroked: true,
         filled: true,
-        radiusScale: 15,
-        radiusMinPixels: 8,
-        radiusMaxPixels: 100,
+        radiusScale: this.props.perspectiveConfig.resultClasses[this.props.resultClass].config?.radiusScale ?? 15,
+        radiusMinPixels: this.props.perspectiveConfig.resultClasses[this.props.resultClass].config?.radiusMinPixels ?? 8,
+        radiusMaxPixels: this.props.perspectiveConfig.resultClasses[this.props.resultClass].config?.radiusMaxPixels ?? 100,
         lineWidthMinPixels: 1,
         getPosition: d => [+d.long, +d.lat],
         getFillColor: d => d.isNew ? [255, 0, 0] : [0, 0, 0],
+        ...(this.props.perspectiveConfig.resultClasses[this.props.resultClass].config?.radiusVariable && { 
+          getRadius: d => (this.props.perspectiveConfig.resultClasses[this.props.resultClass].config?.radiusVariableMultiplier ?? 1) * d[this.props.perspectiveConfig.resultClasses[this.props.resultClass].config?.radiusVariable] 
+        }),
         pickable: true,
         autoHighlight: true,
         onHover: info => this.setState({
