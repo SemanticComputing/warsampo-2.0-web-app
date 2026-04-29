@@ -306,7 +306,7 @@ class TemporalMap extends Component {
           dates={dates}
           animateMap={animateMap}
           initialValue={this.props.animationValue[0]}
-          sliderDuration={portalConfig.temporalMapConfig.sliderDuration}
+          sliderDuration={this.props.perspectiveConfig.resultClasses[this.props.resultClass].config?.sliderDuration ?? portalConfig.temporalMapConfig.sliderDuration}
         />
         {this._renderTooltip()}
       </div>
