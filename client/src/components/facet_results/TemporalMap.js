@@ -2,8 +2,11 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { withStyles } from 'tss-react/mui'
 import intl from 'react-intl-universal'
-import ReactMapGL, { NavigationControl, FullscreenControl } from 'react-map-gl'
+import ReactMapGL, { Map, useControl, FullscreenControl, NavigationControl, AttributionControl } from 'react-map-gl/maplibre'
+import 'maplibre-gl/dist/maplibre-gl.css'
+
 import DeckGL, { ScatterplotLayer } from 'deck.gl'
+import { MapboxOverlay as DeckOverlay } from '@deck.gl/mapbox'
 import Paper from '@mui/material/Paper'
 import TemporalMapTimeSlider from './TemporalMapTimeSlider'
 import './TemporalMapCommon.scss'
@@ -38,6 +41,14 @@ const styles = (theme) => ({
     marginTop: theme.spacing(1)
   }
 })
+
+// https://github.com/visgl/deck.gl/blob/master/examples/website/maplibre/app.tsx
+function DeckGLOverlay(props) {
+  const overlay = useControl(() => new DeckOverlay(props))
+  overlay.setProps(props)
+  return null
+}
+
 /**
  * A component for displaying a WebGL map with an animated layer.
  * Based on https://github.com/AdriSolid/DECK.GL-Time-Slider
@@ -177,6 +188,63 @@ class TemporalMap extends Component {
     ]
   }
 
+  getMapStyle = () => {
+    const { portalConfig } = this.props
+    const { mapboxAccessToken, mapboxStyle } = portalConfig.mapboxConfig
+
+    if (mapboxAccessToken) {
+      return {
+        version: 8,
+        sources: {
+          'mapbox-tiles': {
+            type: 'raster',
+            tiles: [
+              `https://api.mapbox.com/styles/v1/mapbox/${mapboxStyle}/tiles/256/{z}/{x}/{y}?access_token=${mapboxAccessToken}`
+            ],
+            tileSize: 256,
+            attribution: '&copy; <a href="https://www.mapbox.com/map-feedback/" target="_blank">Mapbox</a> &copy; <a href="http://osm.org/copyright" target="_blank">OpenStreetMap</a>'
+          }
+        },
+        layers: [{
+          id: 'mapbox-tiles-layer',
+          type: 'raster',
+          source: 'mapbox-tiles',
+          minzoom: 0,
+          maxzoom: 22
+        }]
+      }
+    }
+
+    // fallback OSM tiles base
+    return {
+      version: 8,
+      sources: {
+        'osm-tiles': {
+          type: 'raster',
+          tiles: [
+            `http://tile.openstreetmap.org/{z}/{x}/{y}.png`
+          ],
+          tileSize: 256,
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }
+      },
+      layers: [{
+        id: 'osm-tiles-layer',
+        type: 'raster',
+        source: 'osm-tiles',
+        minzoom: 0,
+        maxzoom: 22
+      }]
+    }
+
+    // fallback gray base
+    /*return {
+      version: 8,
+      sources: {},
+      layers: [{ id: 'background', type: 'background', paint: { 'background-color': '#e0e0e0' } }]
+    }*/
+  }
+
   handleOnViewportChange = viewport =>
     this.state.mounted && this.setState({ viewport })
 
@@ -186,15 +254,16 @@ class TemporalMap extends Component {
     const { mapboxAccessToken, mapboxStyle } = portalConfig.mapboxConfig
     return (
       <div id='temporal-map-root' ref={this.mapElementRef} className={classes.root}>
-        <ReactMapGL
+        <Map
           {...viewport}
           width='100%'
           height='100%'
           reuseMaps
-          mapStyle={`mapbox://styles/mapbox/${mapboxStyle}`}
+          mapStyle={this.getMapStyle()}
           preventStyleDiffing
-          mapboxApiAccessToken={mapboxAccessToken}
           onViewportChange={this.handleOnViewportChange}
+          onMove={(evt) => this.handleOnViewportChange(evt.viewState)}
+          attributionControl={false}
         >
           <div className={classes.navigationContainer}>
             <NavigationControl />
@@ -203,7 +272,7 @@ class TemporalMap extends Component {
               container={document.querySelector('temporal-map-root')}
             />
           </div>
-          <DeckGL
+          <DeckGLOverlay
             layers={this._renderLayers()}
             viewState={viewport}
           />
@@ -216,7 +285,7 @@ class TemporalMap extends Component {
             sliderDuration={portalConfig.temporalMapConfig.sliderDuration}
           />
           {this._renderTooltip()}
-        </ReactMapGL>
+        </Map>
       </div>
     )
   }
