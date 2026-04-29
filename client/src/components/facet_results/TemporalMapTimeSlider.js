@@ -185,7 +185,7 @@ class TemporalMapTimeSlider extends React.Component {
 
   _sliderValueText = value => {
     const isoDate = this.props.dates[value]
-    return moment(isoDate).format('DD.MM.YYYY')
+    return isoDate ? moment(isoDate).format('DD.MM.YYYY') : '...'
   }
 
   render () {
