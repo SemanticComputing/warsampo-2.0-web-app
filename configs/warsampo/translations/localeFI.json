@@ -61,7 +61,8 @@
     },
     "lineChart": {
       "tooltip": "Viivakaavio"
-    }
+    },
+    "defaultMissingValueLabel": "> Tieto puuttuu"
   },
   "tabs": {
     "table": "taulukko",

@@ -73,7 +73,8 @@
         "yaxisTitle": "Manuscript count",
         "seriesTitle": "Manuscript count"
       }
-    }
+    },
+    "defaultMissingValueLabel": "> Data missing"
   },
   "tabs": {
     "table": "table",
