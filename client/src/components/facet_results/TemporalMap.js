@@ -11,6 +11,7 @@ import Paper from '@mui/material/Paper'
 import TemporalMapTimeSlider from './TemporalMapTimeSlider'
 import './TemporalMapCommon.scss'
 import Typography from '@mui/material/Typography'
+import CircularProgress from '@mui/material/CircularProgress'
 import { has } from 'lodash'
 import Moment from 'moment'
 import { extendMoment } from 'moment-range'
@@ -39,6 +40,14 @@ const styles = (theme) => ({
   },
   fullscreenButton: {
     marginTop: theme.spacing(1)
+  },
+  spinner: {
+    height: 40,
+    width: 40,
+    position: 'absolute',
+    left: '50%',
+    top: '50%',
+    transform: 'translate(-50%,-50%)'
   }
 })
 
@@ -245,6 +254,17 @@ class TemporalMap extends Component {
     }*/
   }
 
+  renderSpinner () {
+    if (this.props.fetching) {
+      return (
+        <div className={this.props.classes.spinner}>
+          <CircularProgress />
+        </div>
+      )
+    }
+    return null
+  }
+
   handleOnViewportChange = viewport =>
     this.state.mounted && this.setState({ viewport })
 
@@ -285,6 +305,7 @@ class TemporalMap extends Component {
             sliderDuration={portalConfig.temporalMapConfig.sliderDuration}
           />
           {this._renderTooltip()}
+          {this.renderSpinner()}
         </Map>
       </div>
     )
@@ -323,7 +344,11 @@ TemporalMap.propTypes = {
   /**
    * ID for detecting updates in facets.
    */
-  facetUpdateID: PropTypes.number.isRequired
+  facetUpdateID: PropTypes.number.isRequired,
+  /**
+   * Loading indicator.
+   */
+  fetching: PropTypes.bool.isRequired
 }
 
 export const TemporalMapComponent = TemporalMap
