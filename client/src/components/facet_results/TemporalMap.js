@@ -279,14 +279,13 @@ class TemporalMap extends Component {
       <div id='temporal-map-root' ref={this.mapElementRef} className={classes.root}>
         <Map
           {...viewport}
-          width='100%'
-          height='100%'
           reuseMaps
           mapStyle={this.getMapStyle()}
           preventStyleDiffing
           onViewportChange={this.handleOnViewportChange}
           onMove={(evt) => this.handleOnViewportChange(evt.viewState)}
           attributionControl={false}
+          style={{ width: '100%', height: '100%', zIndex: '0' }}
         >
           <div className={classes.navigationContainer}>
             <NavigationControl />
@@ -299,17 +298,17 @@ class TemporalMap extends Component {
             layers={this._renderLayers()}
             viewState={viewport}
           />
-          <TemporalMapTimeSlider
-            mapElementRef={this.mapElementRef}
-            memory={memory}
-            dates={dates}
-            animateMap={animateMap}
-            initialValue={this.props.animationValue[0]}
-            sliderDuration={portalConfig.temporalMapConfig.sliderDuration}
-          />
-          {this._renderTooltip()}
           {this.renderSpinner()}
         </Map>
+        <TemporalMapTimeSlider
+          mapElementRef={this.mapElementRef}
+          memory={memory}
+          dates={dates}
+          animateMap={animateMap}
+          initialValue={this.props.animationValue[0]}
+          sliderDuration={portalConfig.temporalMapConfig.sliderDuration}
+        />
+        {this._renderTooltip()}
       </div>
     )
   }
