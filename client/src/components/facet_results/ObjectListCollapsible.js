@@ -2,12 +2,16 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { withStyles } from 'tss-react/mui'
 import Collapse from '@mui/material/Collapse'
+import Tooltip from '@mui/material/Tooltip'
+import IconButton from '@mui/material/IconButton'
+import FeedbackOutlinedIcon from '@mui/icons-material/FeedbackOutlined'
 import { ISOStringToDate } from './Dates'
 import { orderBy, has } from 'lodash'
 import ObjectListItem from './ObjectListItem'
 import ObjectListItemSources from './ObjectListItemSources'
 import ObjectListItemEvent from './ObjectListItemEvent'
 import classNames from 'classnames'
+import intl from 'react-intl-universal'
 
 const styles = (theme, props) => ({
   resultTableList: {
@@ -82,6 +86,12 @@ const ObjectListCollapsible = props => {
             isFirstValue={isFirstValue}
             collapsedMaxWords={collapsedMaxWords}
           />
+          {itemData.commentReceived && 
+          <Tooltip title={intl.get(`commentTooltip`)} enterDelay={300} placement="right" arrow>
+            <IconButton size='large'>
+              <FeedbackOutlinedIcon />
+            </IconButton>
+          </Tooltip>}
           {addThreeDots &&
             <span className={classes.threeDots} onClick={() => props.onExpandClick(props.rowId)}> ...</span>}
           {showSource && itemData.source &&

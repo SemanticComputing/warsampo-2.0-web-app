@@ -15,6 +15,7 @@
   "selectPerspective": "Select a perspective to search and browse the knowledge graph:",
   "mainPageImageLicence": "Original images: SA-kuva",
   "backendErrorText": "One of the backend services is not available at the moment. Please try again later.",
+  "commentTooltip": "Feedback and/or a correction regarding this information has been received and entered a verification process.",
   "infoHeader": {
     "toggleInstructions": "Click to show or hide instructions"
   },
