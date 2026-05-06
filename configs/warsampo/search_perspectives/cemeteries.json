@@ -1,7 +1,7 @@
 {
     "id": "cemeteries",
     "endpoint": {
-        "url": "https://ldf.fi/warsa/sparql",
+        "url": "https://ldf.fi/warsampo-qlever/sparql",
         "useAuth": false,
         "prefixesFile": "SparqlQueriesPrefixes.js"
     },

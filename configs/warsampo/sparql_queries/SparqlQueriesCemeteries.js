@@ -2,6 +2,7 @@ const perspectiveID = 'cemeteries'
 
 export const cemeteryProperties = `
     {
+      <SUBQUERY>
       ?id skos:prefLabel ?prefLabel__id .
       BIND(?prefLabel__id AS ?prefLabel__prefLabel)
       BIND(CONCAT("/${perspectiveID}/page/", REPLACE(STR(?id), "^.*\\\\/(.+)", "$1")) AS ?prefLabel__dataProviderUrl)
@@ -11,26 +12,32 @@ export const cemeteryProperties = `
     }
     UNION
     {
+      <SUBQUERY>
       ?id skos:altLabel ?altLabel .
     }
     UNION
     {
+      <SUBQUERY>
       ?id cemeteries:former_municipality ?formerMunicipality .
     }
     UNION
     {
+      <SUBQUERY>
       ?id cemeteries:current_municipality ?currentMunicipality .
     }
     UNION
     {
+      <SUBQUERY>
       ?id cemeteries:number_of_graves ?numberOfGraves .
     }
     UNION
     {
+      <SUBQUERY>
       ?id cemeteries:architect ?architect .
     }
     UNION
     {
+      <SUBQUERY>
       ?image__id crm-org:P138_represents ?id ;
                   crm-org:P138i_has_representation ?image__representation ;
                   dct:description ?image__content_description .
@@ -55,6 +62,7 @@ export const cemeteryProperties = `
 
 export const cemeteryPropertiesInstancePage = `
     {
+      BIND(<ID> as ?id)
       ?id skos:prefLabel ?prefLabel__id .
       BIND(?prefLabel__id AS ?prefLabel__prefLabel)
       BIND(CONCAT("/${perspectiveID}/page/", REPLACE(STR(?id), "^.*\\\\/(.+)", "$1")) AS ?prefLabel__dataProviderUrl)
@@ -64,26 +72,32 @@ export const cemeteryPropertiesInstancePage = `
     }
     UNION
     {
+      BIND(<ID> as ?id)
       ?id skos:altLabel ?altLabel .
     }
     UNION
     {
+      BIND(<ID> as ?id)
       ?id cemeteries:former_municipality ?formerMunicipality .
     }
     UNION
     {
+      BIND(<ID> as ?id)
       ?id cemeteries:current_municipality ?currentMunicipality .
     }
     UNION
     {
+      BIND(<ID> as ?id)
       ?id cemeteries:number_of_graves ?numberOfGraves .
     }
     UNION
     {
+      BIND(<ID> as ?id)
       ?id cemeteries:architect ?architect .
     }
     UNION
     {
+      BIND(<ID> as ?id)
       ?image__id crm-org:P138_represents ?id ;
                   crm-org:P138i_has_representation ?image__representation ;
                   dct:description ?image__content_description .
@@ -105,38 +119,47 @@ export const cemeteryPropertiesInstancePage = `
     }
     UNION
     {
+      BIND(<ID> as ?id)
       ?id cemeteries:address ?address .
     }
     UNION
     {
+      BIND(<ID> as ?id)
       ?id wgs84:lat ?lat .
     }
     UNION
     {
+      BIND(<ID> as ?id)
       ?id wgs84:long ?long .
     }
     UNION
     {
+      BIND(<ID> as ?id)
       ?id cemeteries:date_of_foundation ?dateOfFoundation .
     }
     UNION
     {
+      BIND(<ID> as ?id)
       ?id cemeteries:memorial ?memorial .
     }
     UNION
     {
+      BIND(<ID> as ?id)
       ?id cemeteries:memorial_sculptor ?memorialSculptor .
     }
     UNION
     {
+      BIND(<ID> as ?id)
       ?id cemeteries:memorial_unveiling_date ?memorialUnveilingDate .
     }
     UNION
     {
+      BIND(<ID> as ?id)
       ?id cemeteries:camera_club ?cameraClub .
     }
     UNION
     {
+      BIND(<ID> as ?id)
       ?id dct:source ?source__id .
       ?source__id skos:prefLabel ?source__prefLabel .
       FILTER(LANG(?source__prefLabel) = '<LANG>')
