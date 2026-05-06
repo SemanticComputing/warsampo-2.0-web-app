@@ -205,7 +205,6 @@ const generateSelectedBlock = ({
 }) => {
   const selectedFilter = generateSelectedFilter({
     currentSelectionsWithoutUnknown,
-    inverse: false,
     literal
   })
   return `
@@ -279,13 +278,13 @@ const getUriFilters = (constraints, facetID) => {
 
 export const generateSelectedFilter = ({
   currentSelectionsWithoutUnknown,
-  inverse,
   literal
 }) => {
-  const selections = literal ? `'${currentSelectionsWithoutUnknown.join("', '")}'` : `<${currentSelectionsWithoutUnknown.join('>, <')}>`
+  const selections = literal ? `'${currentSelectionsWithoutUnknown.join("' '")}'` : `<${currentSelectionsWithoutUnknown.join('> <')}>`
   return (`
-          FILTER(?id ${inverse ? 'NOT' : ''} IN ( ${selections} ))
+          VALUES ?id { ${selections} }
   `)
+
 }
 
 const unknownBlock = `
