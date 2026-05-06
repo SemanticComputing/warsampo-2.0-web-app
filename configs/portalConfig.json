@@ -11,18 +11,18 @@
         ]
     },
     "localeConfig": {
-        "defaultLocale": "en",
+        "defaultLocale": "fi",
         "readTranslationsFromGoogleSheets": false,
         "availableLocales": [
-            {
-                "id": "en",
-                "label": "English",
-                "filename": "localeEN.json"
-            },
             {
                 "id": "fi",
                 "label": "Finnish",
                 "filename": "localeFI.json"
+            },
+            {
+                "id": "en",
+                "label": "English",
+                "filename": "localeEN.json"
             }
         ]
     },
