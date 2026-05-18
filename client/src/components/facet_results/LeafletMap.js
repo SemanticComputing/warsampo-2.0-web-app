@@ -335,8 +335,8 @@ class LeafletMap extends React.Component {
     } else {
       baseLayer = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-        tileSize: 512,
-        zoomOffset: -1
+        tileSize: 256,
+        zoomOffset: 0
       })
     }
 
