@@ -175,8 +175,8 @@ export const cemeteryPlacesQuery = `
     ?cemetery a warsa:Cemetery  ;
               wgs84:lat ?lat ;
               wgs84:long ?long .
-    FILTER(datatype(?lat) = xsd:float)
-    FILTER(datatype(?long) = xsd:float)
+    FILTER(datatype(?lat) = xsd:double)
+    FILTER(datatype(?long) = xsd:double)
     BIND(?cemetery as ?id)
   }
   GROUP BY ?id ?lat ?long
