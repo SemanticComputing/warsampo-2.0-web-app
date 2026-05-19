@@ -48,6 +48,28 @@
                         "component": "InstancePageTable",
                         "tabPath": "table",
                         "tabIcon": "CalendarViewDay"
+                    },
+                    "instancePageCasualties": {
+                        "tabID": 1,
+                        "component": "InstancePageTable",
+                        "tabPath": "buried_casualties",
+                        "tabIcon": "FormatListBulleted",
+                        "fetchResultsWhenMounted": true,
+                        "sparqlQuery": "casualtiesInstancePageQuery",
+                        "properties": [
+                            {
+                                "id": "buriedCasualties",
+                                "valueType": "object",
+                                "makeLink": true,
+                                "externalLink": false,
+                                "sortValues": true,
+                                "numberedList": false,
+                                "minWidth": 250,
+                                "maxHeight": 700,
+                                "onlyOnInstancePage": true,
+                                "expandedOnInstancePage": true
+                            }
+                        ]
                     }
                 }
             }

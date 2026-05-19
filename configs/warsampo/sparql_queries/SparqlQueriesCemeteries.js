@@ -207,3 +207,24 @@ export const peopleBuriedAt = `
     BIND(CONCAT("/casualties/page/", REPLACE(STR(?related__id), "^.*\\\\/(.+)", "$1")) AS ?related__dataProviderUrl)
   }
 `
+
+export const casualtiesInstancePageQuery = `
+  SELECT * WHERE { 
+    BIND (<ID> as ?id)
+    BIND (?id as ?uri__id)
+    BIND (STR(?id) as ?uri__prefLabel)
+    BIND (?id as ?uri__dataProviderUrl)
+    {
+      BIND (<ID> as ?id)
+      ?id skos:prefLabel ?prefLabel__id .
+      BIND (?prefLabel__id as ?prefLabel__prefLabel)
+    }
+    UNION {
+      BIND (<ID> as ?id)
+      ?id ^warsa:buried_in ?buriedCasualties__id .
+      ?buriedCasualties__id skos:prefLabel ?buriedCasualties__prefLabel .
+      BIND (?prefLabel__id as ?prefLabel__prefLabel)
+      BIND(CONCAT("/casualties/page/", REPLACE(STR(?buriedCasualties__id), "^.*\\\\/(.+)", "$1")) AS ?buriedCasualties__dataProviderUrl)
+    }
+  }
+`

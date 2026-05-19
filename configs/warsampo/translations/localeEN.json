@@ -100,7 +100,8 @@
     "share": "share",
     "choropleth_map": "choropleth map",
     "death_places": "places of death",
-    "casualties_animation": "casualties animated"
+    "casualties_animation": "casualties animated",
+    "buried_casualties": "casualties buried here"
   },
   "table": {
     "rowsPerPage": "Rows per page",

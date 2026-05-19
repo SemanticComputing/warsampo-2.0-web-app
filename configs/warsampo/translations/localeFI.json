@@ -81,7 +81,8 @@
     "share": "jaa",
     "choropleth_map": "koropleettikartta",
     "death_places": "kuolinpaikat",
-    "casualties_animation": "kaatuneet animaationa"
+    "casualties_animation": "kaatuneet animaationa",
+    "buried_casualties": "tänne haudatut menehtyneet"
   },
   "table": {
     "rowsPerPage": "Rivejä per sivu",
