@@ -295,7 +295,8 @@
             "facetType": "text",
             "filterType": "textFilter",
             "sortByPredicate": "skos:prefLabel",
-            "textQueryProperty": "skos:prefLabel"
+            "textQueryProperty": "skos:prefLabel",
+            "textQueryType": "regex"
         },
         "formerMunicipality": {
             "containerClass": "ten",
