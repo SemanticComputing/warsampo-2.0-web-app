@@ -15,9 +15,9 @@ import intl from 'react-intl-universal'
 
 const styles = (theme, props) => ({
   resultTableList: {
-    maxHeight: props.tableData && props.tableData.paginatedResultsRowContentMaxHeight
+    maxHeight: props.maxHeight ?? (props.tableData && props.tableData.paginatedResultsRowContentMaxHeight
       ? props.tableData.paginatedResultsRowContentMaxHeight
-      : 200,
+      : 200),
     overflow: 'auto'
   },
   valueList: {
@@ -152,7 +152,8 @@ ObjectListCollapsible.propTypes = {
   columnId: PropTypes.string.isRequired,
   linkAsButton: PropTypes.bool,
   showSource: PropTypes.bool,
-  shortenLabel: PropTypes.bool.isRequired
+  shortenLabel: PropTypes.bool.isRequired,
+  maxHeight: PropTypes.number
 }
 
 export default withStyles(ObjectListCollapsible, styles)
