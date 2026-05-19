@@ -65,7 +65,7 @@
             "instanceConfig": {
                 "propertiesQueryBlock": "placePropertiesInfoWindow",
                 "relatedInstances": "peopleBuriedAt",
-                "filterTarget": "related__id",
+                "filterTarget": "id",
                 "createPopUpContent": "createConfigurablePopUpContent",
                 "popUpElements": [
                     { 
