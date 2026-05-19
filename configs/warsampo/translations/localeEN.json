@@ -417,6 +417,10 @@
         "source": {
           "label": "Source",
           "description": "Source"
+        },
+        "buriedCasualties": {
+          "label": "Buried casualties",
+          "description": "Casualties buried in the cemetery"
         }
       }
     }

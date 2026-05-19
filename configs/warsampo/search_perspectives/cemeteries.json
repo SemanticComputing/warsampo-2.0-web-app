@@ -340,6 +340,17 @@
             "sortBy": "instanceCount",
             "sortByPredicate": "cemeteries:architect",
             "sortDirection": "desc"
+        },
+        "buriedCasualties": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "predicate": "^warsa:buried_in",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "^warsa:buried_in/skos:prefLabel",
+            "sortDirection": "desc"
         }
     }
 }

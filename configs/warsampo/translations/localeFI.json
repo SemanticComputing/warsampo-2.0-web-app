@@ -377,6 +377,10 @@
         "source": {
           "label": "Lähde",
           "description": "Lähde"
+        },
+        "buriedCasualties": {
+          "label": "Haudatut menehtyneet",
+          "description": "Menehtyneet, jotka on haudattu hautausmaalle"
         }
       }
     }
