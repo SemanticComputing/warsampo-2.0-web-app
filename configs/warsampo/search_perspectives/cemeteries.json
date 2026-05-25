@@ -70,6 +70,75 @@
                                 "expandedOnInstancePage": true
                             }
                         ]
+                    },
+                    "perishingCategoryPieChart": {
+                        "tabID": 2,
+                        "component": "ApexCharts",
+                        "doNotRenderOnMount": true,
+                        "tabPath": "perishing_category",
+                        "tabIcon": "PieChart",
+                        "pageType": "instancePage",
+                        "sparqlQuery": "deathsByPerishingCategoryQuery",
+                        "resultMapper": "mapPieChart",
+                        "sliceVisibilityThreshold": null,
+                        "dropdownForResultClasses": false,
+                        "dropdownForChartTypes": true,
+                        "chartTypes": [
+                            {
+                                "id": "pie",
+                                "createChartData": "createApexPieChartData"
+                            },
+                            {
+                                "id": "bar",
+                                "createChartData": "createApexBarChartData"
+                            }
+                        ]
+                    },
+                    "rankPieChart": {
+                        "tabID": 3,
+                        "component": "ApexCharts",
+                        "doNotRenderOnMount": true,
+                        "tabPath": "rank",
+                        "tabIcon": "PieChart",
+                        "pageType": "instancePage",
+                        "sparqlQuery": "deathsByRankQuery",
+                        "resultMapper": "mapPieChart",
+                        "sliceVisibilityThreshold": null,
+                        "dropdownForResultClasses": false,
+                        "dropdownForChartTypes": true,
+                        "chartTypes": [
+                            {
+                                "id": "pie",
+                                "createChartData": "createApexPieChartData"
+                            },
+                            {
+                                "id": "bar",
+                                "createChartData": "createApexBarChartData"
+                            }
+                        ]
+                    },
+                    "unitPieChart": {
+                        "tabID": 4,
+                        "component": "ApexCharts",
+                        "doNotRenderOnMount": true,
+                        "tabPath": "unit",
+                        "tabIcon": "PieChart",
+                        "pageType": "instancePage",
+                        "sparqlQuery": "deathsByUnitQuery",
+                        "resultMapper": "mapPieChart",
+                        "sliceVisibilityThreshold": null,
+                        "dropdownForResultClasses": false,
+                        "dropdownForChartTypes": true,
+                        "chartTypes": [
+                            {
+                                "id": "pie",
+                                "createChartData": "createApexPieChartData"
+                            },
+                            {
+                                "id": "bar",
+                                "createChartData": "createApexBarChartData"
+                            }
+                        ]
                     }
                 }
             }

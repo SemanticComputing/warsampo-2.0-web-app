@@ -101,7 +101,10 @@
     "choropleth_map": "choropleth map",
     "death_places": "places of death",
     "casualties_animation": "casualties animated",
-    "buried_casualties": "casualties buried here"
+    "buried_casualties": "casualties buried here",
+    "perishing_category": "perishing categories of buried casualties",
+    "rank": "ranks of buried casualties",
+    "unit": "units of buried casualties"
   },
   "table": {
     "rowsPerPage": "Rows per page",

@@ -82,7 +82,10 @@
     "choropleth_map": "koropleettikartta",
     "death_places": "kuolinpaikat",
     "casualties_animation": "kaatuneet animaationa",
-    "buried_casualties": "tänne haudatut menehtyneet"
+    "buried_casualties": "tänne haudatut menehtyneet",
+    "perishing_category": "tänne haudattujen menehtymisluokat",
+    "rank": "tänne haudattujen sotilasarvot",
+    "unit": "tänne haudattujen joukko-osastot"
   },
   "table": {
     "rowsPerPage": "Rivejä per sivu",

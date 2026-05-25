@@ -228,3 +228,57 @@ export const casualtiesInstancePageQuery = `
     }
   }
 `
+
+export const deathsByPerishingCategoryQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?record) as ?instanceCount)
+  WHERE {
+    BIND(<ID> as ?cemetery)
+    ?cemetery a warsa:Cemetery .
+    ?record a warsa:DeathRecord ;
+            warsa:buried_in ?cemetery ;
+            casualties:perishing_category ?category .
+    OPTIONAL {
+      ?category skos:prefLabel ?prefLabel_ .
+    }
+    BIND(COALESCE(?prefLabel_, ?category) as ?prefLabel)
+    FILTER(LANG(?prefLabel) = '<LANG>')
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`
+
+export const deathsByRankQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?record) as ?instanceCount)
+  WHERE {
+    BIND(<ID> as ?cemetery)
+    ?cemetery a warsa:Cemetery .
+    ?record a warsa:DeathRecord ;
+            warsa:buried_in ?cemetery ;
+            casualties:rank ?category .
+    OPTIONAL {
+      ?category skos:prefLabel ?prefLabel_ .
+    }
+    BIND(COALESCE(?prefLabel_, ?category) as ?prefLabel)
+    FILTER(LANG(?prefLabel) = '<LANG>')
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`
+
+export const deathsByUnitQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?record) as ?instanceCount)
+  WHERE {
+    BIND(<ID> as ?cemetery)
+    ?cemetery a warsa:Cemetery .
+    ?record a warsa:DeathRecord ;
+            warsa:buried_in ?cemetery ;
+            casualties:unit ?category .
+    OPTIONAL {
+      ?category skos:prefLabel ?prefLabel_ .
+    }
+    BIND(COALESCE(?prefLabel_, ?category) as ?prefLabel)
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`
+
