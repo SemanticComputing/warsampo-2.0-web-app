@@ -200,7 +200,6 @@ class Deck extends React.Component {
   }
 
   setDialog = info => {
-    console.log('set dialog')
     this.setState({
       dialog: {
         open: true,
