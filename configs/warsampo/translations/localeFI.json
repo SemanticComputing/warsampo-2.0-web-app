@@ -85,7 +85,8 @@
     "buried_casualties": "tänne haudatut menehtyneet",
     "perishing_category": "tänne haudattujen menehtymisluokat",
     "rank": "tänne haudattujen sotilasarvot",
-    "unit": "tänne haudattujen joukko-osastot"
+    "unit": "tänne haudattujen joukko-osastot",
+    "age": "tänne haudattujen kuoliniät"
   },
   "table": {
     "rowsPerPage": "Rivejä per sivu",

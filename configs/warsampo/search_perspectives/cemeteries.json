@@ -139,6 +139,30 @@
                                 "createChartData": "createApexBarChartData"
                             }
                         ]
+                    },
+                    "agePieChart": {
+                        "tabID": 5,
+                        "component": "ApexCharts",
+                        "doNotRenderOnMount": true,
+                        "tabPath": "age",
+                        "tabIcon": "PieChart",
+                        "pageType": "instancePage",
+                        "sparqlQuery": "deathsByAgeQuery",
+                        "resultMapper": "mapIntBarChart",
+                        "sliceVisibilityThreshold": -1,
+                        "dropdownForResultClasses": false,
+                        "dropdownForChartTypes": false,
+                        "fillEmptyValues": true,
+                        "seriesTitle": "Lukumäärä / Count",
+                        "chartTypes": [
+                            {
+                                "id": "bar",
+                                "createChartData": "createApexBarChartData"
+                            }
+                        ],
+                        "resultMapperConfig": {
+                            "fillEmptyValues": true
+                        }
                     }
                 }
             }

@@ -282,3 +282,75 @@ export const deathsByUnitQuery = `
   ORDER BY DESC(?instanceCount)
 `
 
+export const deathsByAgeQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?record) as ?instanceCount)
+  WHERE {
+    {
+      BIND(<ID> as ?cemetery)
+      ?cemetery a warsa:Cemetery .
+      ?record a warsa:DeathRecord ;
+              warsa:buried_in ?cemetery .
+      
+      ?record warsa:date_of_death ?dod . 
+      ?record warsa:date_of_birth ?dob .
+    
+      FILTER(datatype(?dod) = xsd:date)
+      FILTER(datatype(?dob) = xsd:date)
+
+      # calculate age
+      BIND((YEAR(?dod)-YEAR(?dob)-IF(MONTH(?dod) < MONTH(?dob), 1, IF(DAY(?dod) < DAY(?dob), 1, 0))) AS ?age)
+
+      # group one person with age 1747 (or other people with unusually high ages) under muu / other to prevent visualization from unnecessarily filling in empty values
+      BIND(IF(?age > 120, 'Muu / Other', ?age) as ?category)
+
+      BIND(?category as ?prefLabel)
+    }
+  	UNION
+    {
+      BIND(<ID> as ?cemetery)
+      ?cemetery a warsa:Cemetery .
+      ?record a warsa:DeathRecord ;
+              warsa:buried_in ?cemetery .
+      
+      ?record warsa:date_of_death ?dod . 
+      ?record warsa:date_of_birth ?dob .
+    
+      FILTER(datatype(?dod) != xsd:date)
+      
+      BIND('Unknown' as ?category)
+      BIND('Tuntematon / Unknown' as ?prefLabel)
+    }
+    UNION
+    {
+      BIND(<ID> as ?cemetery)
+      ?cemetery a warsa:Cemetery .
+      ?record a warsa:DeathRecord ;
+              warsa:buried_in ?cemetery .
+      
+      ?record warsa:date_of_death ?dod . 
+      ?record warsa:date_of_birth ?dob .
+    
+      FILTER(datatype(?dob) != xsd:date)
+      
+      BIND('Unknown' as ?category)
+      BIND('Tuntematon / Unknown' as ?prefLabel)
+    }
+    UNION
+    {
+      BIND(<ID> as ?cemetery)
+      ?cemetery a warsa:Cemetery .
+      ?record a warsa:DeathRecord ;
+              warsa:buried_in ?cemetery .
+      
+      FILTER NOT EXISTS { 
+        ?record warsa:date_of_death [] . 
+        ?record warsa:date_of_birth [] . 
+      }
+      
+      BIND('Unknown' as ?category)
+      BIND('Tuntematon / Unknown' as ?prefLabel)
+    }
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY ASC(?prefLabel)
+`
