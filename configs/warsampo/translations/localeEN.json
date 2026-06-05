@@ -341,6 +341,10 @@
         "dateOfBirth": {
           "label": "Date of birth",
           "description": "Date of birth"
+        },
+        "warsaPage": {
+          "label": "Original WarSampo page",
+          "description": "The page for the person in the original WarSampo portal"
         }
       }
     },

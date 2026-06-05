@@ -301,6 +301,10 @@
         "dateOfBirth": {
           "label": "Syntymäpäivä",
           "description": "Syntymäpäivä"
+        },
+        "warsaPage": {
+          "label": "Alkuperäinen Sotasampo-sivu",
+          "description": "Henkilön sivu alkuperäisessä Sotasampo-portaalissa"
         }
       }
     },
