@@ -653,6 +653,13 @@
             "sortBy": "instanceCount",
             "sortByPredicate": "casualties:unit/skos:prefLabel",
             "sortDirection": "desc"
+        },
+        "numberOfChildren": {
+            "containerClass": "five",
+            "facetType": "integer",
+            "filterType": "integerFilterRange",
+            "predicate": "warsa:number_of_children",
+            "sortByPredicate": "warsa:number_of_children"
         }
     }
 }
