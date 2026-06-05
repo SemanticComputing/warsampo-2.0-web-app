@@ -309,6 +309,10 @@
         "externalPage": {
           "label": "Muut sivut",
           "description": "Henkilön sivu muissa ulkoisissa lähteissä"
+        },
+        "article": {
+          "label": "Kansa Taisteli -artikkelit",
+          "description": "Kansa Taisteli -artikkelit, joihin henkilö on (automaattisest) linkitetty"
         }
       }
     },

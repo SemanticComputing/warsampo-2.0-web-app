@@ -463,6 +463,16 @@
             "onlyOnInstancePage": true
         },
         {
+            "id": "article",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": true,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true,
+            "expandedOnInstancePage": true
+        },
+        {
             "id": "warsaPage",
             "valueType": "object",
             "makeLink": true,
@@ -660,6 +670,18 @@
             "filterType": "integerFilterRange",
             "predicate": "warsa:number_of_children",
             "sortByPredicate": "warsa:number_of_children"
+        },
+        "article": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "predicate": "crm-org:P70_documents/^articles:mentionsPerson",
+            "labelPattern": "OPTIONAL { ?id dce:title ?title_ ; articles:issue/skos:prefLabel ?issue_ . BIND(CONCAT(STR(?title_), \" (Kansa Taisteli \", STR(?issue_), \")\") AS ?prefLabel_) } BIND(COALESCE(STR(?prefLabel_), STR(?id)) AS ?prefLabel)",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "crm-org:P70_documents/^articles:mentionsPerson/dce:title",
+            "sortDirection": "desc"
         }
     }
 }

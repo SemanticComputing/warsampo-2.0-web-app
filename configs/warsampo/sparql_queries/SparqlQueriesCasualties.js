@@ -225,6 +225,17 @@ export const casualtyPropertiesInstancePage = `
       BIND(?externalPage__id AS ?externalPage__prefLabel)
       BIND(?externalPage__id AS ?externalPage__dataProviderUrl)
     }
+    UNION
+    {
+      BIND(<ID> AS ?id)
+      ?id crm-org:P70_documents/^articles:mentionsPerson ?article__id .
+
+      ?article__id dce:title ?article__title ;
+                    articles:issue/skos:prefLabel ?article__issue ;
+                    dct:hasFormat ?article__dataProviderUrl .
+      
+      BIND(CONCAT(STR(?article__title), " (Kansa Taisteli ", STR(?article__issue), ")") AS ?article__prefLabel)
+    }
 `
 
 export const deathsByPerishingCategoryQuery = `
