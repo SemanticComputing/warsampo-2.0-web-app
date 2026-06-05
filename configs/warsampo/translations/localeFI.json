@@ -305,6 +305,10 @@
         "warsaPage": {
           "label": "Alkuperäinen Sotasampo-sivu",
           "description": "Henkilön sivu alkuperäisessä Sotasampo-portaalissa"
+        },
+        "externalPage": {
+          "label": "Muut sivut",
+          "description": "Henkilön sivu muissa ulkoisissa lähteissä"
         }
       }
     },

@@ -472,6 +472,16 @@
             "onlyOnInstancePage": true
         },
         {
+            "id": "externalPage",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": true,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true,
+            "expandedOnInstancePage": true
+        },
+        {
             "id": "uri",
             "valueType": "object",
             "makeLink": true,

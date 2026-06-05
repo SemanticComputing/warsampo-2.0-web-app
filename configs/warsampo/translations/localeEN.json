@@ -345,6 +345,10 @@
         "warsaPage": {
           "label": "Original WarSampo page",
           "description": "The page for the person in the original WarSampo portal"
+        },
+        "externalPage": {
+          "label": "Other pages",
+          "description": "The pages for the person in other external sources"
         }
       }
     },

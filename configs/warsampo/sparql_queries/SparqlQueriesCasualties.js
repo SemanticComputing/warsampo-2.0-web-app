@@ -218,6 +218,13 @@ export const casualtyPropertiesInstancePage = `
       ?motherTongue__id skos:prefLabel ?motherTongue__prefLabel .
       FILTER(LANG(?motherTongue__prefLabel) = '<LANG>')
     }
+    UNION
+    {
+      BIND(<ID> AS ?id)
+      ?id crm-org:P70_documents/foaf:page ?externalPage__id .
+      BIND(?externalPage__id AS ?externalPage__prefLabel)
+      BIND(?externalPage__id AS ?externalPage__dataProviderUrl)
+    }
 `
 
 export const deathsByPerishingCategoryQuery = `
