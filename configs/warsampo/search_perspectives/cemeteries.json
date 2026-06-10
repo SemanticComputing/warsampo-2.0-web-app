@@ -24,6 +24,13 @@
                 27.314050
             ],
             "zoom": 4
+        },
+        "cemeteryLocation": {
+            "center": [
+                65.184809,
+                27.314050
+            ],
+            "zoom": 4
         }
     },
     "resultClasses": {
@@ -49,8 +56,36 @@
                         "tabPath": "table",
                         "tabIcon": "CalendarViewDay"
                     },
-                    "instancePageCasualties": {
+                    "cemeteryLocation": {
                         "tabID": 1,
+                        "pageType": "instancePage",
+                        "component": "LeafletMap",
+                        "tabPath": "map",
+                        "tabIcon": "AddLocation",
+                        "sparqlQuery": "cemeteryMapQuery",
+                        "facetClass": "cemeteries",
+                        "filterTarget": "id",
+                        "resultMapper": "mapInstancePagePlaces",
+                        "instanceConfig": {
+                            "createPopUpContent": "createConfigurablePopUpContent",
+                            "popUpElements": [
+                                { 
+                                    "htmlElement": "h3",
+                                    "arrayParentElement": null,
+                                    "type": "object",
+                                    "source": "sparql",
+                                    "variableName": "prefLabel",
+                                    "isArray": false,
+                                    "makeLink": false,
+                                    "externalLink": false
+                                }
+                            ]
+                        },
+                        "showExternalLayers": false,
+                        "showInstanceCountInClusters": false
+                    },
+                    "instancePageCasualties": {
+                        "tabID": 2,
                         "component": "InstancePageTable",
                         "tabPath": "buried_casualties",
                         "tabIcon": "FormatListBulleted",
@@ -72,7 +107,7 @@
                         ]
                     },
                     "perishingCategoryPieChart": {
-                        "tabID": 2,
+                        "tabID": 3,
                         "component": "ApexCharts",
                         "doNotRenderOnMount": true,
                         "tabPath": "perishing_category",
@@ -95,7 +130,7 @@
                         ]
                     },
                     "rankPieChart": {
-                        "tabID": 3,
+                        "tabID": 4,
                         "component": "ApexCharts",
                         "doNotRenderOnMount": true,
                         "tabPath": "rank",
@@ -118,7 +153,7 @@
                         ]
                     },
                     "unitPieChart": {
-                        "tabID": 4,
+                        "tabID": 5,
                         "component": "ApexCharts",
                         "doNotRenderOnMount": true,
                         "tabPath": "unit",
@@ -140,8 +175,8 @@
                             }
                         ]
                     },
-                    "agePieChart": {
-                        "tabID": 5,
+                    "ageBarChart": {
+                        "tabID": 6,
                         "component": "ApexCharts",
                         "doNotRenderOnMount": true,
                         "tabPath": "age",

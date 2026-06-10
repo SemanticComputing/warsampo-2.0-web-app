@@ -354,3 +354,19 @@ export const deathsByAgeQuery = `
   GROUP BY ?category ?prefLabel
   ORDER BY ASC(?prefLabel)
 `
+
+export const cemeteryMapQuery = `
+  SELECT DISTINCT ?id ?lat ?long ?prefLabel ?dataProviderUrl ?markerColor
+  WHERE {
+    VALUES ?id { <ID> }
+    ?id a warsa:Cemetery .
+    ?id skos:prefLabel ?prefLabel .
+
+    ?id wgs84:lat ?lat ; 
+      wgs84:long ?long .
+
+    FILTER(datatype(?lat) = xsd:double)
+    FILTER(datatype(?long) = xsd:double)
+  }
+  GROUP BY ?id ?lat ?long ?prefLabel ?dataProviderUrl ?markerColor
+`
