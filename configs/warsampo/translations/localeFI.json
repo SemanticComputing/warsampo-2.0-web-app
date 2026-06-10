@@ -300,6 +300,10 @@
           "label": "Lasten lukumäärä",
           "description": "Lasten lukumäärä"
         },
+        "municipalityOfBirth": {
+          "label": "Synnyinkunta",
+          "description": "Synnyinkunta"
+        },
         "dateOfBirth": {
           "label": "Syntymäpäivä",
           "description": "Syntymäpäivä"

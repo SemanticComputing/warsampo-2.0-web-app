@@ -454,6 +454,15 @@
             "onlyOnInstancePage": true
         },
         {
+            "id": "municipalityOfBirth",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true
+        },
+        {
             "id": "dateOfBirth",
             "valueType": "string",
             "makeLink": false,

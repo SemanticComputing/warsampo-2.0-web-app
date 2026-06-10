@@ -338,6 +338,10 @@
           "label": "Number of children",
           "description": "Number of children"
         },
+        "municipalityOfBirth": {
+          "label": "Municipality of birth",
+          "description": "Municipality of birth of the casualty"
+        },
         "dateOfBirth": {
           "label": "Date of birth",
           "description": "Date of birth"

@@ -195,6 +195,12 @@ export const casualtyPropertiesInstancePage = `
     UNION
     {
       BIND(<ID> AS ?id)
+      ?id casualties:municipality_of_birth ?municipalityOfBirth__id .
+      ?municipalityOfBirth__id skos:prefLabel ?municipalityOfBirth__prefLabel .
+    }
+    UNION
+    {
+      BIND(<ID> AS ?id)
       ?id warsa:date_of_birth ?dateOfBirth .
     }
     UNION
