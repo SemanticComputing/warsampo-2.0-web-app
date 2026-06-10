@@ -42,8 +42,12 @@ export const createConfigurablePopUpContent = ({ data, resultClass, popUpElement
 
       instances.forEach(i => {
         const li = document.createElement(element.htmlElement)
-        const link = createLink(element.externalLink, i.dataProviderUrl, i.prefLabel)
-        li.appendChild(link)
+        if (element.makeLink && i.dataProviderUrl) {
+          const link = createLink(element.externalLink, i.dataProviderUrl, i.prefLabel)
+          li.appendChild(link)
+        } else {
+          li.textContent = i.prefLabel
+        }
         listing.appendChild(li)
       })
 
