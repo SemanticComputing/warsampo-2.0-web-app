@@ -438,7 +438,7 @@ export const fhaLegend = [
     https://www.museovirasto.fi/uploads/Tietotuotemaarittely_kulttuuriymparisto_kaikki.pdf
   */
 export const layerConfigs = [
-  {
+  /*{
     // id: 'WFS_MV_KulttuuriymparistoSuojellut:Muinaisjaannokset_alue',
     id: 'WFS_MV_Kulttuuriymparisto:Arkeologiset_kohteet_alue',
     type: 'GeoJSON',
@@ -489,7 +489,7 @@ export const layerConfigs = [
     attribution: 'Museovirasto',
     minZoom: 13,
     maxZoom: 18
-  },
+  },*/
   {
     id: 'karelianMaps',
     type: 'WMTS',
