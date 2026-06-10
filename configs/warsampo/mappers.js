@@ -28,3 +28,21 @@ export const mapIntBarChart = ({ sparqlBindings, config }) => {
 
   return results
 }
+
+export const mapInstancePagePlaces = sparqlBindings => {
+  const results = sparqlBindings.map(b => {
+    return {
+      id: b.id.value,
+      lat: b.lat.value,
+      long: b.long.value,
+      prefLabel: { 
+        prefLabel: b.prefLabel ? b.prefLabel.value : '', 
+        dataProviderUrl: b.dataProviderUrl ? b.dataProviderUrl.value : null 
+      },
+      markerColor: b.markerColor ? b.markerColor.value : '',
+      description: b.description ? b.description.value : ''
+    }
+  })
+  console.log('results:', results)
+  return results
+}
