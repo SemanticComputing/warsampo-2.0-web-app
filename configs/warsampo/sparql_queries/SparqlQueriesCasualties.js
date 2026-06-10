@@ -414,3 +414,40 @@ export const deathPlacesAnimationQuery = `
   GROUP BY ?id ?prefLabel ?startDate ?endDate ?lat ?long
   ORDER BY ?startDate
 `
+
+export const eventMapQuery = `
+  SELECT DISTINCT ?id ?lat ?long ?prefLabel ?dataProviderUrl ?markerColor ?description
+  WHERE {
+    VALUES ?record { <ID> }
+    ?record a warsa:DeathRecord .
+
+    VALUES (?p ?markerColor ?description) {
+      ( warsa:buried_in "orange" "Hautausmaa / Cemetery of burial")
+      ( casualties:municipality_of_domicile "violet" "Kotikunta / Municipality of domicile")
+      ( casualties:municipality_of_residence "yellow" "Asuinkunta / Municipality of residence")
+      ( casualties:municipality_of_death "red" "Kuolinkunta / Municipality of death")
+      ( casualties:municipality_of_birth "green" "Synnyinkunta / Municipality of birth")
+    }
+
+    ?record ?p ?id .
+    
+    ?id skos:prefLabel ?prefLabel .
+
+    OPTIONAL {
+      ?id wgs84:lat ?lat ; 
+        wgs84:long ?long .
+      FILTER(datatype(?lat) = xsd:double)
+      FILTER(datatype(?long) = xsd:double)
+    }
+
+    OPTIONAL {
+      ?id <http://www.georss.org/georss/point> ?point .
+      BIND(xsd:decimal(REPLACE(?point, "([0-9\\\\.\\\\-]+) ([0-9\\\\.\\\\-]+)", "$1")) AS ?lat)
+      BIND(xsd:decimal(REPLACE(?point, "([0-9\\\\.\\\\-]+) ([0-9\\\\.\\\\-]+)", "$2")) AS ?long)
+    }
+
+    FILTER(BOUND(?lat) && BOUND(?long) || BOUND(?point))
+
+  }
+  GROUP BY ?id ?lat ?long ?prefLabel ?dataProviderUrl ?markerColor ?description
+`

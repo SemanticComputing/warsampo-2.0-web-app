@@ -38,6 +38,13 @@
                 27.314050
             ],
             "zoom": 4
+        },
+        "eventLocations": {
+            "center": [
+                65.184809,
+                27.314050
+            ],
+            "zoom": 4
         }
     },
     "resultClasses": {
@@ -62,6 +69,44 @@
                         "component": "InstancePageTable",
                         "tabPath": "table",
                         "tabIcon": "CalendarViewDay"
+                    },
+                    "eventLocations": {
+                        "tabID": 1,
+                        "pageType": "instancePage",
+                        "component": "LeafletMap",
+                        "tabPath": "map",
+                        "tabIcon": "AddLocation",
+                        "sparqlQuery": "eventMapQuery",
+                        "facetClass": "casualties",
+                        "filterTarget": "record",
+                        "resultMapper": "mapInstancePagePlaces",
+                        "instanceConfig": {
+                            "createPopUpContent": "createConfigurablePopUpContent",
+                            "popUpElements": [
+                                { 
+                                    "htmlElement": "h3",
+                                    "arrayParentElement": null,
+                                    "type": "object",
+                                    "source": "sparql",
+                                    "variableName": "prefLabel",
+                                    "isArray": false,
+                                    "makeLink": false,
+                                    "externalLink": false
+                                },
+                                { 
+                                    "htmlElement": "p",
+                                    "arrayParentElement": null,
+                                    "type": "string",
+                                    "source": "sparql",
+                                    "variableName": "description",
+                                    "isArray": false,
+                                    "makeLink": false,
+                                    "externalLink": false
+                                }
+                            ]
+                        },
+                        "showExternalLayers": false,
+                        "showInstanceCountInClusters": false
                     }
                 }
             }
