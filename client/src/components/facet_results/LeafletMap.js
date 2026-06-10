@@ -1007,7 +1007,7 @@ class LeafletMap extends React.Component {
           data: result,
           resultClass: this.props.resultClass,
           perspectiveID: this.props.perspectiveConfig.id,
-          popUpElements: this.props.perspectiveConfig.resultClasses[this.props.resultClass]?.instanceConfig?.popUpElements
+          popUpElements: this.props.perspectiveConfig.resultClasses[this.props.perspectiveConfig.id]?.instanceConfig?.instancePageResultClasses[this.props.resultClass]?.instanceConfig?.popUpElements
         }))
       }
       return marker
