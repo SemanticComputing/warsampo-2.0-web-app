@@ -145,18 +145,20 @@
   "leafletMap": {
     "basemaps": {
       "mapbox": {
-        "light-v10": ""
+        "light-v10": "Mapbox Light (OpenStreetMap)"
       },
       "googleRoadmap": "",
       "topographicalMapNLS": "",
       "backgroundMapNLS": ""
     },
     "externalLayers": {
-      "arkeologiset_kohteet_alue": "",
-      "arkeologiset_kohteet_piste": "",
-      "fhaLidar": "",
-      "karelianMaps": "",
-      "senateAtlas": "",
+      "WFS_MV_Kulttuuriymparisto:Arkeologiset_kohteet_alue": "Arkeologiset kohteet, alueet (Museovirasto, Muinaisjäännösrekisteri)",
+      "WFS_MV_Kulttuuriymparisto:Arkeologiset_kohteet_piste": "Arkeologiset kohteet, pisteet (Museovirasto, Muinaisjäännösrekisteri)",
+      "WFS_MV_KulttuuriymparistoSuojellut:Muinaisjaannokset_alue": "Muinaisjäännökset ja muut kulttuuriperintökohteet, alue (Museovirasto, Muinaisjäännösrekisteri)",
+      "WFS_MV_KulttuuriymparistoSuojellut:Muinaisjaannokset_piste": "Muinaisjäännökset ja muut kulttuuriperintökohteet, piste (Museovirasto, Muinaisjäännösrekisteri)",
+      "fhaLidar": "Korkeusmalli (Museovirasto)",
+      "karelianMaps": "Karjalan kartat 1:100 000 topografinen (SeCo)",
+      "senateAtlas": "Senaatin kartat 1:21 000 topografinen (SeCo)",
       "kotus:pitajat": "",
       "kotus:rajat-sms-alueet": "",
       "kotus:rajat-sms-alueosat": "",
