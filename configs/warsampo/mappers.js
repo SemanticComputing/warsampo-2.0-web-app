@@ -43,6 +43,5 @@ export const mapInstancePagePlaces = sparqlBindings => {
       description: b.description ? b.description.value : ''
     }
   })
-  console.log('results:', results)
   return results
 }
