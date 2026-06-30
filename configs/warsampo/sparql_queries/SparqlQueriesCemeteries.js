@@ -2,7 +2,7 @@ const perspectiveID = 'cemeteries'
 
 export const cemeteryProperties = `
     {
-      <SUBQUERY>
+      <SUBQUERY_FILTER>
       ?id skos:prefLabel ?prefLabel__id .
       BIND(?prefLabel__id AS ?prefLabel__prefLabel)
       BIND(CONCAT("/${perspectiveID}/page/", REPLACE(STR(?id), "^.*\\\\/(.+)", "$1")) AS ?prefLabel__dataProviderUrl)
@@ -12,32 +12,32 @@ export const cemeteryProperties = `
     }
     UNION
     {
-      <SUBQUERY>
+      <SUBQUERY_FILTER>
       ?id skos:altLabel ?altLabel .
     }
     UNION
     {
-      <SUBQUERY>
+      <SUBQUERY_FILTER>
       ?id cemeteries:former_municipality ?formerMunicipality .
     }
     UNION
     {
-      <SUBQUERY>
+      <SUBQUERY_FILTER>
       ?id cemeteries:current_municipality ?currentMunicipality .
     }
     UNION
     {
-      <SUBQUERY>
+      <SUBQUERY_FILTER>
       ?id cemeteries:number_of_graves ?numberOfGraves .
     }
     UNION
     {
-      <SUBQUERY>
+      <SUBQUERY_FILTER>
       ?id cemeteries:architect ?architect .
     }
     UNION
     {
-      <SUBQUERY>
+      <SUBQUERY_FILTER>
       ?image__id crm-org:P138_represents ?id ;
                   crm-org:P138i_has_representation ?image__representation ;
                   dct:description ?image__content_description .

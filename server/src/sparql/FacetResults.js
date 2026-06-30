@@ -35,9 +35,8 @@ export const getPaginatedResults = ({
     postprocess = null
   } = resultClassConfig.paginatedResultsConfig
   q = q.replaceAll('<RESULT_SET_PROPERTIES>', propertiesQueryBlock)
-  q = q.replaceAll('<SUBQUERY>', `
+  q = q.replaceAll('<SUBQUERY_FILTER>', `
     {
-      # score and literal are used only for Jena full text index
       SELECT DISTINCT ?id ?orderBy {
         <FILTER>
         VALUES ?facetClass { <FACET_CLASS> }
