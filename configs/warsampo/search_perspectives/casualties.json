@@ -312,7 +312,7 @@
             "sparqlQuery": "deathPlacesAnimationQuery",
             "facetClass": "casualties",
             "filterTarget": "record",
-            "config": {
+            "componentConfig": {
                 "radiusScale": 50,
                 "radiusMinPixels": 3,
                 "radiusMaxPixels": 100,

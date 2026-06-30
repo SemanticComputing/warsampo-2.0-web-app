@@ -183,17 +183,17 @@ class TemporalMap extends Component {
       new ScatterplotLayer({
         id: 'time-layer',
         data,
-        opacity: this.props.perspectiveConfig.resultClasses[this.props.resultClass].config?.opacity ?? 0.3,
+        opacity: this.props.perspectiveConfig.resultClasses[this.props.resultClass].componentConfig?.opacity ?? 0.3,
         stroked: true,
         filled: true,
-        radiusScale: this.props.perspectiveConfig.resultClasses[this.props.resultClass].config?.radiusScale ?? 15,
-        radiusMinPixels: this.props.perspectiveConfig.resultClasses[this.props.resultClass].config?.radiusMinPixels ?? 8,
-        radiusMaxPixels: this.props.perspectiveConfig.resultClasses[this.props.resultClass].config?.radiusMaxPixels ?? 100,
+        radiusScale: this.props.perspectiveConfig.resultClasses[this.props.resultClass].componentConfig?.radiusScale ?? 15,
+        radiusMinPixels: this.props.perspectiveConfig.resultClasses[this.props.resultClass].componentConfig?.radiusMinPixels ?? 8,
+        radiusMaxPixels: this.props.perspectiveConfig.resultClasses[this.props.resultClass].componentConfig?.radiusMaxPixels ?? 100,
         lineWidthMinPixels: 1,
         getPosition: d => [+d.long, +d.lat],
         getFillColor: d => d.isNew ? [255, 0, 0] : [0, 0, 0],
-        ...(this.props.perspectiveConfig.resultClasses[this.props.resultClass].config?.radiusVariable && { 
-          getRadius: d => (this.props.perspectiveConfig.resultClasses[this.props.resultClass].config?.radiusVariableMultiplier ?? 1) * d[this.props.perspectiveConfig.resultClasses[this.props.resultClass].config?.radiusVariable] 
+        ...(this.props.perspectiveConfig.resultClasses[this.props.resultClass].componentConfig?.radiusVariable && { 
+          getRadius: d => (this.props.perspectiveConfig.resultClasses[this.props.resultClass].componentConfig?.radiusVariableMultiplier ?? 1) * d[this.props.perspectiveConfig.resultClasses[this.props.resultClass].componentConfig?.radiusVariable] 
         }),
         pickable: true,
         autoHighlight: true,
@@ -312,7 +312,7 @@ class TemporalMap extends Component {
           dates={dates}
           animateMap={animateMap}
           initialValue={this.props.animationValue[0]}
-          sliderDuration={this.props.perspectiveConfig.resultClasses[this.props.resultClass].config?.sliderDuration ?? portalConfig.temporalMapConfig.sliderDuration}
+          sliderDuration={this.props.perspectiveConfig.resultClasses[this.props.resultClass].componentConfig?.sliderDuration}
         />
         {this._renderTooltip()}
       </div>
