@@ -52,7 +52,7 @@ class TemporalMapTimeSlider extends React.Component {
     currentDay: null,
     hideContainer: '',
     value: 0,
-    sliderDuration: this.props.sliderDuration.normalSpeed,
+    sliderDuration: this.props.sliderDuration?.normalSpeed ?? 600,
     intervalSetter: null,
     isPlaying: false,
     playOrPause: 'play',
@@ -139,7 +139,7 @@ class TemporalMapTimeSlider extends React.Component {
     if (type === 'half') {
       this.setState(
         {
-          sliderDuration: this.props.sliderDuration.halfSpeed,
+          sliderDuration: this.props.sliderDuration?.halfSpeed ?? 1200,
           halfSpeedEnabled: true,
           regularSpeedEnabled: false,
           doubleSpeedEnabled: false
@@ -152,7 +152,7 @@ class TemporalMapTimeSlider extends React.Component {
     } else if (type === 'regular') {
       this.setState(
         {
-          sliderDuration: this.props.sliderDuration.normalSpeed,
+          sliderDuration: this.props.sliderDuration?.normalSpeed ?? 600,
           halfSpeedEnabled: false,
           regularSpeedEnabled: true,
           doubleSpeedEnabled: false
@@ -165,7 +165,7 @@ class TemporalMapTimeSlider extends React.Component {
     } else if (type === 'double') {
       this.setState(
         {
-          sliderDuration: this.props.sliderDuration.doubleSpeed,
+          sliderDuration: this.props.sliderDuration?.doubleSpeed ?? 300,
           halfSpeedEnabled: false,
           regularSpeedEnabled: false,
           doubleSpeedEnabled: true
