@@ -99,3 +99,21 @@ The example fetches only master branch:
 10. Go to the branch of your new repository where you want to merge the changes in upstream.
 Merge, solve conflicts and enjoy:
 `git merge upstream/master`
+
+## Credits
+
+Developed by the [Semantic Computing Research Group (SeCo)](https://seco.cs.aalto.fi/) and the [Ghent Centre for Digital Humanities (GhentCDH)](https://www.ghentcdh.ugent.be/).
+
+Funded by [FIN-CLARIAH](https://www.kielipankki.fi/organization/fin-clariah/) and [Clariah-VL](https://clariahvl.hypotheses.org/).
+
+Supported by [CSC – IT Center for Science](https://csc.fi/en/).
+
+<img src="https://www.ldf.fi/img/seco-logo.png" alt="SeCo logo" width="300">
+
+<img src="https://www.ghentcdh.ugent.be/ghentcdh_logo_blue_text_transparent_bg_landscape.svg" alt="GhentCDH logo" width="400">
+
+<img src="https://www.kielipankki.fi/wp-content/uploads/FIN-CLARIN_logo_2016_transparent.png" alt="FIN-CLARIN logo" width="400">
+
+<img src="https://seco.cs.aalto.fi/projects/fin-clariah/dariah_logo.png" alt="DARIAH-FI logo" width="400">
+
+<img src="https://www.ghentcdh.ugent.be/sites/default/files/clariah_small.jpg" alt="CLARIAH-VL logo" width="400">
