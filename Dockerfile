@@ -34,9 +34,9 @@ FROM node:22-alpine AS combo-prd
 # wget: busybox wget is already present on alpine
 RUN apk add --no-cache nginx gettext \
     && rm -f /etc/nginx/http.d/default.conf \
-    && mkdir -p /etc/nginx/http.d /etc/nginx/templates \
-    && chgrp -R 0 /etc/nginx \
-    && chmod -R g=u /etc/nginx
+    && mkdir -p /etc/nginx/http.d /etc/nginx/templates /var/lib/nginx/logs /var/lib/nginx/tmp \
+    && chgrp -R 0 /etc/nginx /var/lib/nginx \
+    && chmod -R g=u /etc/nginx /var/lib/nginx
 
 # Client static files → nginx webroot (same path as standalone client-prod stage)
 COPY --from=client-build /app/client/dist/public /usr/share/nginx/html
