@@ -147,6 +147,7 @@
       "mapbox": {
         "light-v10": "Mapbox Light (OpenStreetMap)"
       },
+      "openStreetMap": "OpenStreetMap",
       "googleRoadmap": "",
       "topographicalMapNLS": "",
       "backgroundMapNLS": ""
