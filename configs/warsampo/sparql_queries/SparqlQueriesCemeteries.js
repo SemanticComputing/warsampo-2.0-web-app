@@ -370,3 +370,28 @@ export const cemeteryMapQuery = `
   }
   GROUP BY ?id ?lat ?long ?prefLabel ?dataProviderUrl ?markerColor
 `
+
+export const cemeteryCasualtyMapQuery = `
+  SELECT DISTINCT ?id ?lat ?long ?prefLabel ?dataProviderUrl ?description
+  WHERE {
+    VALUES ?cemetery { <ID> }
+    ?cemetery a warsa:Cemetery .
+
+    ?id warsa:buried_in ?cemetery ;
+                  casualties:municipality_of_death ?municipality__id ;
+                  warsa:date_of_death ?dod .
+    ?municipality__id casualties:wartime_municipality ?wartime_id ;
+        skos:prefLabel ?municipality__prefLabel .
+    ?wartime_id wgs84:lat ?lat ;
+                wgs84:long ?long .
+
+    FILTER(datatype(?lat) = xsd:double)
+    FILTER(datatype(?long) = xsd:double)
+
+    BIND(CONCAT(STR(?municipality__prefLabel), ', ', COALESCE(STR(?dod), '-')) AS ?description)
+
+    ?id skos:prefLabel ?prefLabel .
+    BIND(CONCAT("/casualties/page/", REPLACE(STR(?id), "^.*\\\\/(.+)", "$1")) AS ?dataProviderUrl)
+  }
+  GROUP BY ?id ?lat ?long ?prefLabel ?dataProviderUrl ?description
+`

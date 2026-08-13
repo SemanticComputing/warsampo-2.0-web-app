@@ -105,7 +105,8 @@
     "perishing_category": "perishing categories of buried casualties",
     "rank": "ranks of buried casualties",
     "unit": "units of buried casualties",
-    "age": "ages of buried casualties"
+    "age": "ages of buried casualties",
+    "casualty_map": "places of death of buried casualties"
   },
   "table": {
     "rowsPerPage": "Rows per page",
@@ -205,6 +206,9 @@
         "peopleBuriedAt": "People buried here:",
         "numberOfGraves": "Number of war graves: ",
         "unknown": "unknown"
+      },
+      "casualtyLocation": {
+        "description": "Place and date of death:"
       }
     }
   },

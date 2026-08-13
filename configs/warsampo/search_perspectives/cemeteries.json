@@ -31,6 +31,13 @@
                 27.314050
             ],
             "zoom": 4
+        },
+        "casualtyLocation": {
+            "center": [
+                65.184809,
+                27.314050
+            ],
+            "zoom": 4
         }
     },
     "resultClasses": {
@@ -198,6 +205,55 @@
                         "resultMapperConfig": {
                             "fillEmptyValues": true
                         }
+                    },
+                    "casualtyLocation": {
+                        "tabID": 7,
+                        "pageType": "instancePage",
+                        "component": "LeafletMap",
+                        "tabPath": "casualty_map",
+                        "tabIcon": "AddLocation",
+                        "sparqlQuery": "cemeteryCasualtyMapQuery",
+                        "facetClass": "cemeteries",
+                        "filterTarget": "cemetery",
+                        "resultMapper": "mapInstancePagePlaces",
+                        "instanceConfig": {
+                            "createPopUpContent": "createConfigurablePopUpContent",
+                            "popUpElements": [
+                                { 
+                                    "htmlElement": "h3",
+                                    "arrayParentElement": null,
+                                    "type": "object",
+                                    "source": "sparql",
+                                    "variableName": "prefLabel",
+                                    "isArray": false,
+                                    "makeLink": true,
+                                    "externalLink": false
+                                },
+                                { 
+                                    "htmlElement": "p",
+                                    "arrayParentElement": null,
+                                    "type": "string",
+                                    "source": "intl",
+                                    "variableName": "leafletMap.resultClasses.casualtyLocation.description",
+                                    "isArray": false,
+                                    "orderBy": null,
+                                    "makeLink": false,
+                                    "externalLink": false
+                                },
+                                { 
+                                    "htmlElement": "p",
+                                    "arrayParentElement": null,
+                                    "type": "string",
+                                    "source": "sparql",
+                                    "variableName": "description",
+                                    "isArray": false,
+                                    "makeLink": true,
+                                    "externalLink": false
+                                }
+                            ]
+                        },
+                        "showExternalLayers": false,
+                        "showInstanceCountInClusters": false
                     }
                 }
             }
