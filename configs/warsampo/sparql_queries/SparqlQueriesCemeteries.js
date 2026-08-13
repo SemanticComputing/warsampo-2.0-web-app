@@ -372,14 +372,13 @@ export const cemeteryMapQuery = `
 `
 
 export const cemeteryCasualtyMapQuery = `
-  SELECT DISTINCT ?id ?lat ?long ?prefLabel ?dataProviderUrl ?description
+  SELECT DISTINCT ?id ?lat ?long ?prefLabel ?dataProviderUrl ?description ?subheading
   WHERE {
     VALUES ?cemetery { <ID> }
     ?cemetery a warsa:Cemetery .
 
     ?id warsa:buried_in ?cemetery ;
-                  casualties:municipality_of_death ?municipality__id ;
-                  warsa:date_of_death ?dod .
+                  casualties:municipality_of_death ?municipality__id .
     ?municipality__id casualties:wartime_municipality ?wartime_id ;
         skos:prefLabel ?municipality__prefLabel .
     ?wartime_id wgs84:lat ?lat ;
@@ -388,10 +387,19 @@ export const cemeteryCasualtyMapQuery = `
     FILTER(datatype(?lat) = xsd:double)
     FILTER(datatype(?long) = xsd:double)
 
+    OPTIONAL {
+      ?id warsa:date_of_death ?dod .
+    }
+
+    OPTIONAL {
+      ?id casualties:perishing_category/skos:prefLabel ?subheading .
+      FILTER(LANG(?subheading) = '<LANG>')
+    }
+
     BIND(CONCAT(STR(?municipality__prefLabel), ', ', COALESCE(STR(?dod), '-')) AS ?description)
 
     ?id skos:prefLabel ?prefLabel .
     BIND(CONCAT("/casualties/page/", REPLACE(STR(?id), "^.*\\\\/(.+)", "$1")) AS ?dataProviderUrl)
   }
-  GROUP BY ?id ?lat ?long ?prefLabel ?dataProviderUrl ?description
+  GROUP BY ?id ?lat ?long ?prefLabel ?dataProviderUrl ?description ?subheading
 `

@@ -40,7 +40,8 @@ export const mapInstancePagePlaces = sparqlBindings => {
         dataProviderUrl: b.dataProviderUrl ? b.dataProviderUrl.value : null 
       },
       markerColor: b.markerColor ? b.markerColor.value : '',
-      description: b.description ? b.description.value : ''
+      description: b.description ? b.description.value : '',
+      subheading: b.subheading ? b.subheading.value : ''
     }
   })
   return results

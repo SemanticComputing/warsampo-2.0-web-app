@@ -230,6 +230,16 @@
                                     "externalLink": false
                                 },
                                 { 
+                                    "htmlElement": "i",
+                                    "arrayParentElement": null,
+                                    "type": "string",
+                                    "source": "sparql",
+                                    "variableName": "subheading",
+                                    "isArray": false,
+                                    "makeLink": true,
+                                    "externalLink": false
+                                },
+                                { 
                                     "htmlElement": "p",
                                     "arrayParentElement": null,
                                     "type": "string",
