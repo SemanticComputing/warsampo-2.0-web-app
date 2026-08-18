@@ -451,3 +451,57 @@ export const eventMapQuery = `
   }
   GROUP BY ?id ?lat ?long ?prefLabel ?dataProviderUrl ?markerColor ?description
 `
+
+export const astiaLinkQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?record) AS ?instanceCount)
+  WHERE {
+    {
+      <FILTER>
+      ?record a warsa:DeathRecord ;
+              crm-org:P70_documents/foaf:page ?link .
+      FILTER CONTAINS(STR(?link), "astia.narc.fi")
+      BIND('1' as ?category)
+      BIND(IF('<LANG>' = 'en', 'military service card on Astia service linked', 'kantakortti Astia-palvelussa linkitetty') AS ?prefLabel)
+    }
+    UNION
+    {
+      <FILTER>
+      ?record a warsa:DeathRecord .
+      FILTER NOT EXISTS {
+        ?record crm-org:P70_documents/foaf:page ?link .
+        FILTER CONTAINS(STR(?link), "astia.narc.fi")
+      }
+      BIND('0' as ?category)
+      BIND(IF('<LANG>' = 'en', 'no military service card linked', 'ei linkitettyä kantakorttia') AS ?prefLabel)
+    }
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`
+
+export const sotapolkuLinkQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?record) AS ?instanceCount)
+  WHERE {
+    {
+      <FILTER>
+      ?record a warsa:DeathRecord ;
+              crm-org:P70_documents/foaf:page ?link .
+      FILTER CONTAINS(STR(?link), "sotapolku.fi")
+      BIND('1' as ?category)
+      BIND(IF('<LANG>' = 'en', 'Sotapolku page linked', 'Sotapolku-sivu linkitetty') AS ?prefLabel)
+    }
+    UNION
+    {
+      <FILTER>
+      ?record a warsa:DeathRecord .
+      FILTER NOT EXISTS {
+        ?record crm-org:P70_documents/foaf:page ?link .
+        FILTER CONTAINS(STR(?link), "sotapolku.fi")
+      }
+      BIND('0' as ?category)
+      BIND(IF('<LANG>' = 'en', 'no Sotapolku page linked', 'ei linkitettyä Sotapolku-sivua') AS ?prefLabel)
+    }
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`

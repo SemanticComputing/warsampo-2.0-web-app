@@ -87,7 +87,8 @@
     "rank": "tänne haudattujen sotilasarvot",
     "unit": "tänne haudattujen joukko-osastot",
     "age": "tänne haudattujen kuoliniät",
-    "casualty_map": "tänne haudattujen kuolinpaikat"
+    "casualty_map": "tänne haudattujen kuolinpaikat",
+    "links": "linkityskattavuus"
   },
   "table": {
     "rowsPerPage": "Rivejä per sivu",
@@ -106,7 +107,9 @@
       "deathsByGender": "sukupuoli",
       "deathsByMaritalStatus": "siviilisääty",
       "deathsByMotherTongue": "äidinkieli",
-      "deathsByNumberOfChildren": "lasten lukumäärä"
+      "deathsByNumberOfChildren": "lasten lukumäärä",
+      "astiaLinks": "Astia-linkitykset",
+      "sotapolkuLinks": "Sotapolku-linkitykset"
     }
   },
   "lineChart": {

@@ -106,7 +106,8 @@
     "rank": "ranks of buried casualties",
     "unit": "units of buried casualties",
     "age": "ages of buried casualties",
-    "casualty_map": "places of death of buried casualties"
+    "casualty_map": "places of death of buried casualties",
+    "links": "linking coverage"
   },
   "table": {
     "rowsPerPage": "Rows per page",
@@ -126,7 +127,9 @@
       "deathsByMaritalStatus": "marital status",
       "deathsByMotherTongue": "mother tongue",
       "deathsByNumberOfChildren": "number of children",
-      "deathsByProvinceOfDomicile": "province of domicile"
+      "deathsByProvinceOfDomicile": "province of domicile",
+      "astiaLinks": "Astia links",
+      "sotapolkuLinks": "Sotapolku links"
     }
   },
   "lineChart": {
