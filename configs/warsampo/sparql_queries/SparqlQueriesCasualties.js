@@ -459,7 +459,7 @@ export const astiaLinkQuery = `
       <FILTER>
       ?record a warsa:DeathRecord ;
               crm-org:P70_documents/foaf:page ?link .
-      FILTER CONTAINS(STR(?link), "astia.narc.fi")
+      FILTER(CONTAINS(STR(?link), "astia.narc.fi"))
       BIND('1' as ?category)
       BIND(IF('<LANG>' = 'en', 'military service card on Astia service linked', 'kantakortti Astia-palvelussa linkitetty') AS ?prefLabel)
     }
@@ -469,7 +469,7 @@ export const astiaLinkQuery = `
       ?record a warsa:DeathRecord .
       FILTER NOT EXISTS {
         ?record crm-org:P70_documents/foaf:page ?link .
-        FILTER CONTAINS(STR(?link), "astia.narc.fi")
+        FILTER(CONTAINS(STR(?link), "astia.narc.fi"))
       }
       BIND('0' as ?category)
       BIND(IF('<LANG>' = 'en', 'no military service card linked', 'ei linkitettyä kantakorttia') AS ?prefLabel)
@@ -486,7 +486,7 @@ export const sotapolkuLinkQuery = `
       <FILTER>
       ?record a warsa:DeathRecord ;
               crm-org:P70_documents/foaf:page ?link .
-      FILTER CONTAINS(STR(?link), "sotapolku.fi")
+      FILTER(CONTAINS(STR(?link), "sotapolku.fi"))
       BIND('1' as ?category)
       BIND(IF('<LANG>' = 'en', 'Sotapolku page linked', 'Sotapolku-sivu linkitetty') AS ?prefLabel)
     }
@@ -496,7 +496,7 @@ export const sotapolkuLinkQuery = `
       ?record a warsa:DeathRecord .
       FILTER NOT EXISTS {
         ?record crm-org:P70_documents/foaf:page ?link .
-        FILTER CONTAINS(STR(?link), "sotapolku.fi")
+        FILTER(CONTAINS(STR(?link), "sotapolku.fi"))
       }
       BIND('0' as ?category)
       BIND(IF('<LANG>' = 'en', 'no Sotapolku page linked', 'ei linkitettyä Sotapolku-sivua') AS ?prefLabel)
