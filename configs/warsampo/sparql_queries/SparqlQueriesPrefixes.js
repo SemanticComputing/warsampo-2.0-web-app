@@ -21,4 +21,5 @@ export const prefixes = `
   PREFIX articles: <http://ldf.fi/schema/warsa/articles/> 
   PREFIX bioc: <http://ldf.fi/schema/bioc/>
   PREFIX analytics: <http://ldf.fi/schema/warsa/analytics/>
+  PREFIX prisoners: <http://ldf.fi/schema/warsa/prisoners/>
 `

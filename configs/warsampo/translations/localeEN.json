@@ -452,6 +452,63 @@
           "description": "Casualties buried in the cemetery"
         }
       }
+    },
+    "prisoners": {
+      "label": "War prisoners",
+      "facetResultsType": "war prisoners",
+      "shortDescription": "Perspective description",
+      "longDescription": "",
+      "instancePage": {
+        "label": "War prisoner",
+        "description": ""
+      },
+      "properties": {
+        "uri": {
+          "label": "URI",
+          "description": "URI"
+        },
+        "prefLabel": {
+          "label": "Name",
+          "description": "Name of the casualty",
+          "textFacetInputPlaceholder": "Search..."
+        },
+        "rank": {
+          "label": "Rank",
+          "description": "Rank of the casualty"
+        },
+        "occupation": {
+          "label": "Occupation",
+          "description": "Occupation of the casualty"
+        },
+        "motherTongue": {
+          "label": "Mother tongue",
+          "description": "Mother tongue of the casualty"
+        },
+        "maritalStatus": {
+          "label": "Marital status",
+          "description": "Marital status of the casualty"
+        },
+        "municipalityOfDeath": {
+          "label": "Municipality of death",
+          "description": "Municipality of death of the casualty"
+        },
+        "deathTime": {
+          "label": "Death time",
+          "description": "Death time of the casualty"
+        },
+        "unit": {
+          "label": "Unit",
+          "description": "Unit of the casualty"
+        },
+        "article": {
+          "label": "Kansa Taisteli articles",
+          "description": "Kansa Taisteli articles that have been (automatically) linked to the person"
+        },
+        "source": {
+          "label": "Source",
+          "description": "Source"
+        }
+      }
     }
   },
   "aboutThePortalPartOne": "<p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\">The WarSampo 2.0 project is part of the broader WarSampo initiative and portal, which has already had over 1,300,000 visitors by the end of 2025. Internationally recognized (LODLAM Open Data Prize, Venice, 2017), WarSampo is part of the Sampo systems series and utilizes the national linked open data infrastructure FIN-CLARIN/DARIAH-FI.</p><p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\">Our goal is to develop a new Sampo-UI-based version of WarSampo that enables data analysis and visualization of the materials. The user interface is still under development, so not all features have been implemented yet, and the information texts within the interface are still incomplete. You may also encounter bugs or other errors while using the system; you can submit feedback about these via the feedback link on the WarSampo 2.0 portal.</p><p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\">If you encounter <b>data-related errors</b> that are not related to military cards or Sotapolku links, please report them <a href=\"https://www.sotasampo.fi/palaute.html\">via the feedback form on the original WarSampo portal</a> (WarSampo portal > Feedback > The feedback concerns correction of the contained information).</p>",
