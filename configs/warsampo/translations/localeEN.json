@@ -128,7 +128,13 @@
       "deathsByMotherTongue": "mother tongue",
       "deathsByNumberOfChildren": "number of children",
       "deathsByAge": "age",
-      "deathsByProvinceOfDomicile": "province of domicile",
+      "deathsByMunicipalityOfDomicilePie": "municipality of domicile",
+      "deathsByMunicipalityOfBirth": "municipality of birth",
+      "deathsByMunicipalityOfDeath": "municipality of death",
+      "deathsByNationality": "nationality",
+      "deathsByRank": "rank",
+      "deathsByUnit": "unit",
+      "deathsByCemetery": "cemetery",
       "astiaLinks": "Astia links",
       "sotapolkuLinks": "Sotapolku links"
     }

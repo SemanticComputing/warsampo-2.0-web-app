@@ -223,6 +223,125 @@
                     "resultMapperConfig": {
                         "fillEmptyValues": true
                     }
+                },
+                "deathsByMunicipalityOfDomicilePie": {
+                    "sparqlQuery": "deathsByMunicipalityOfDomicilePieQuery",
+                    "filterTarget": "record",
+                    "resultMapper": "mapPieChart",
+                    "sliceVisibilityThreshold": 0.005,
+                    "dropdownForChartTypes": "true",
+                    "chartTypes": [
+                        {
+                            "id": "pie",
+                            "createChartData": "createApexPieChartData"
+                        },
+                        {
+                            "id": "bar",
+                            "createChartData": "createApexBarChartData"
+                        }
+                    ]
+                },
+                "deathsByMunicipalityOfBirth": {
+                    "sparqlQuery": "deathsByMunicipalityOfBirthQuery",
+                    "filterTarget": "record",
+                    "resultMapper": "mapPieChart",
+                    "sliceVisibilityThreshold": 0.005,
+                    "dropdownForChartTypes": "true",
+                    "chartTypes": [
+                        {
+                            "id": "pie",
+                            "createChartData": "createApexPieChartData"
+                        },
+                        {
+                            "id": "bar",
+                            "createChartData": "createApexBarChartData"
+                        }
+                    ]
+                },
+                "deathsByMunicipalityOfDeath": {
+                    "sparqlQuery": "deathsByMunicipalityOfDeathQuery",
+                    "filterTarget": "record",
+                    "resultMapper": "mapPieChart",
+                    "sliceVisibilityThreshold": 0.005,
+                    "dropdownForChartTypes": "true",
+                    "chartTypes": [
+                        {
+                            "id": "pie",
+                            "createChartData": "createApexPieChartData"
+                        },
+                        {
+                            "id": "bar",
+                            "createChartData": "createApexBarChartData"
+                        }
+                    ]
+                },
+                "deathsByNationality": {
+                    "sparqlQuery": "deathsByNationalityQuery",
+                    "filterTarget": "record",
+                    "resultMapper": "mapPieChart",
+                    "sliceVisibilityThreshold": null,
+                    "dropdownForChartTypes": "true",
+                    "chartTypes": [
+                        {
+                            "id": "pie",
+                            "createChartData": "createApexPieChartData"
+                        },
+                        {
+                            "id": "bar",
+                            "createChartData": "createApexBarChartData"
+                        }
+                    ]
+                },
+                "deathsByRank": {
+                    "sparqlQuery": "deathsByRankQuery",
+                    "filterTarget": "record",
+                    "resultMapper": "mapPieChart",
+                    "sliceVisibilityThreshold": null,
+                    "dropdownForChartTypes": "true",
+                    "chartTypes": [
+                        {
+                            "id": "pie",
+                            "createChartData": "createApexPieChartData"
+                        },
+                        {
+                            "id": "bar",
+                            "createChartData": "createApexBarChartData"
+                        }
+                    ]
+                },
+                "deathsByUnit": {
+                    "sparqlQuery": "deathsByUnitQuery",
+                    "filterTarget": "record",
+                    "resultMapper": "mapPieChart",
+                    "sliceVisibilityThreshold": 0.0025,
+                    "dropdownForChartTypes": "true",
+                    "chartTypes": [
+                        {
+                            "id": "pie",
+                            "createChartData": "createApexPieChartData"
+                        },
+                        {
+                            "id": "bar",
+                            "createChartData": "createApexBarChartData"
+                        }
+                    ]
+                },
+                "deathsByCemetery": {
+                    "sparqlQuery": "deathsByCemeteryQuery",
+                    "filterTarget": "record",
+                    "resultMapper": "mapPieChart",
+                    "sliceVisibilityThreshold": 0.0025,
+                    "dropdownForChartTypes": "true",
+                    "chartTypes": [
+                        {
+                            "id": "pie",
+                            "createChartData": "createApexPieChartData"
+                        },
+                        {
+                            "id": "bar",
+                            "createChartData": "createApexBarChartData"
+                        }
+                    ]
                 }
             }
         },

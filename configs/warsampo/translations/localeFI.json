@@ -109,6 +109,13 @@
       "deathsByMotherTongue": "äidinkieli",
       "deathsByNumberOfChildren": "lasten lukumäärä",
       "deathsByAge": "ikä",
+      "deathsByMunicipalityOfDomicilePie": "asuinkunta",
+      "deathsByMunicipalityOfBirth": "synnyinkunta",
+      "deathsByMunicipalityOfDeath": "kuolinkunta",
+      "deathsByNationality": "kansallisuus",
+      "deathsByRank": "sotilasarvo",
+      "deathsByUnit": "joukko-osasto",
+      "deathsByCemetery": "hautausmaa",
       "astiaLinks": "Astia-linkitykset",
       "sotapolkuLinks": "Sotapolku-linkitykset"
     }

@@ -308,6 +308,93 @@ export const deathsByNumberOfChildrenQuery = `
   ORDER BY DESC(?instanceCount)
 `
 
+export const deathsByMunicipalityOfDomicilePieQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?record) AS ?instanceCount)
+  WHERE {
+    <FILTER>
+    ?record a warsa:DeathRecord ;
+            casualties:municipality_of_domicile/casualties:wartime_municipality ?category .
+    ?category skos:prefLabel ?prefLabel .
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`
+
+export const deathsByMunicipalityOfBirthQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?record) AS ?instanceCount)
+  WHERE {
+    <FILTER>
+    ?record a warsa:DeathRecord ;
+            casualties:municipality_of_birth/casualties:wartime_municipality ?category .
+    ?category skos:prefLabel ?prefLabel .
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`
+
+export const deathsByMunicipalityOfDeathQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?record) AS ?instanceCount)
+  WHERE {
+    <FILTER>
+    ?record a warsa:DeathRecord ;
+            casualties:municipality_of_death/casualties:wartime_municipality ?category .
+    ?category skos:prefLabel ?prefLabel .
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`
+
+export const deathsByNationalityQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?record) AS ?instanceCount)
+  WHERE {
+    <FILTER>
+    ?record a warsa:DeathRecord ;
+            warsa:nationality ?category .
+    ?category skos:prefLabel ?prefLabel .
+    FILTER(LANG(?prefLabel) = '<LANG>')
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`
+
+export const deathsByRankQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?record) AS ?instanceCount)
+  WHERE {
+    <FILTER>
+    ?record a warsa:DeathRecord ;
+            casualties:rank ?category .
+    ?category skos:prefLabel ?prefLabel .
+    FILTER(LANG(?prefLabel) = '<LANG>')
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`
+
+export const deathsByUnitQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?record) AS ?instanceCount)
+  WHERE {
+    <FILTER>
+    ?record a warsa:DeathRecord ;
+            casualties:unit ?category .
+    ?category skos:prefLabel ?prefLabel .
+    FILTER(LANG(?prefLabel) = '<LANG>')
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`
+
+export const deathsByCemeteryQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?record) AS ?instanceCount)
+  WHERE {
+    <FILTER>
+    ?record a warsa:DeathRecord ;
+            warsa:buried_in ?category .
+    ?category skos:prefLabel ?prefLabel .
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`
+
 export const deathsByMunicipalityOfDomicileQuery = `
   SELECT DISTINCT ?id ?prefLabel ?polygon (COUNT(DISTINCT ?record) as ?instanceCount)
   WHERE {
