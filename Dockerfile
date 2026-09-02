@@ -54,7 +54,7 @@ COPY ./configs /app/configs
 
 # Custom components dir (copy here to avoid dealing with Rahti volumes)
 RUN mkdir -p /app/custom-components
-COPY ./custom_components /app/custom-components
+COPY ./custom_components/dist /app/custom-components
 
 # Combo startup entrypoint
 COPY combo-entrypoint.sh /combo-entrypoint.sh

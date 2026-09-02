@@ -107,6 +107,18 @@
                         },
                         "showExternalLayers": false,
                         "showInstanceCountInClusters": false
+                    },
+                    "activityPage": {
+                        "tabID": 2,
+                        "tabPath": "activity",
+                        "tabIcon": "BubbleChart",
+                        "component": "CustomComponent",
+                        "componentName": "ExternalSiteLink",
+                        "sparqlQuery": "externalSiteInstancePageQuery",
+                        "facetClass": "casualties",
+                        "filterTarget": "id",
+                        "resultMapper": "makeObjectList",
+                        "pageType": "instancePage"
                     }
                 }
             }

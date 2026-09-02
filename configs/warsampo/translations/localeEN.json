@@ -107,7 +107,8 @@
     "unit": "units of buried casualties",
     "age": "ages of buried casualties",
     "casualty_map": "places of death of buried casualties",
-    "links": "linking coverage"
+    "links": "linking coverage",
+    "activity": "timeline"
   },
   "table": {
     "rowsPerPage": "Rows per page",
@@ -373,6 +374,9 @@
           "label": "Kansa Taisteli articles",
           "description": "Kansa Taisteli articles that have been (automatically) linked to the person"
         }
+      },
+      "externalSite": {
+        "openInNewTab": "Open the page in a new tab on the older version of WarSampo"
       }
     },
     "cemeteries": {

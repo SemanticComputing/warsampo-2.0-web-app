@@ -741,3 +741,10 @@ export const deathsByAgeQuery = `
   GROUP BY ?category ?prefLabel
   ORDER BY ASC(?prefLabel)
 `
+
+export const externalSiteInstancePageQuery = `
+  SELECT ?id ?url WHERE { 
+    BIND (<ID> as ?id)
+    BIND(CONCAT("https://www.sotasampo.fi/fi/persons/person_", REPLACE(STR(?id), "^.*\\\\/(.+)", "$1"), "?tab=2") AS ?url)
+  }
+`

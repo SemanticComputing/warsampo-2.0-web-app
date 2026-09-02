@@ -88,7 +88,8 @@
     "unit": "tänne haudattujen joukko-osastot",
     "age": "tänne haudattujen kuoliniät",
     "casualty_map": "tänne haudattujen kuolinpaikat",
-    "links": "linkityskattavuus"
+    "links": "linkityskattavuus",
+    "activity": "aikajana"
   },
   "table": {
     "rowsPerPage": "Rivejä per sivu",
@@ -336,6 +337,9 @@
           "label": "Kansa Taisteli -artikkelit",
           "description": "Kansa Taisteli -artikkelit, joihin henkilö on (automaattisest) linkitetty"
         }
+      },
+      "externalSite": {
+        "openInNewTab": "Avaa sivu uuteen välilehteen Sotasammon vanhemmassa versiossa"
       }
     },
     "cemeteries": {

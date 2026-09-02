@@ -28,7 +28,7 @@ services:
   combo:
     build:
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
       target: combo-prd
     image: sampo-ui-combo:prod
     container_name: sampo-ui-combo-prod
@@ -38,4 +38,4 @@ services:
       SPARQL_ENDPOINT_BASIC_AUTH: ${SPARQL_ENDPOINT_BASIC_AUTH}
     volumes:
       - ./configs:/app/configs
-      - ./custom_components/dist:/app/custom-components
+    #  - ./custom_components/dist:/app/custom-components
