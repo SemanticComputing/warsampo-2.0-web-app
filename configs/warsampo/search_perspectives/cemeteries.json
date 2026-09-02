@@ -269,7 +269,7 @@
             }
         },
         "cemeteriesMap": {
-            "tabID": 3,
+            "tabID": 1,
             "component": "LeafletMap",
             "tabPath": "map",
             "tabIcon": "AddLocation",
