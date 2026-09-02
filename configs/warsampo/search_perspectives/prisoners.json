@@ -228,11 +228,11 @@
             "containerClass": "ten",
             "facetType": "list",
             "filterType": "uriFilter",
-            "predicate": "casualties:unit",
+            "predicate": "prisoners:unit",
             "searchField": true,
             "sortButton": true,
             "sortBy": "instanceCount",
-            "sortByPredicate": "casualties:unit/skos:prefLabel",
+            "sortByPredicate": "prisoners:unit/skos:prefLabel",
             "sortDirection": "desc"
         },
         "article": {
