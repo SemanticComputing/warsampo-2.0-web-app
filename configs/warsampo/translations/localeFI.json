@@ -108,6 +108,7 @@
       "deathsByMaritalStatus": "siviilisääty",
       "deathsByMotherTongue": "äidinkieli",
       "deathsByNumberOfChildren": "lasten lukumäärä",
+      "deathsByAge": "ikä",
       "astiaLinks": "Astia-linkitykset",
       "sotapolkuLinks": "Sotapolku-linkitykset"
     }

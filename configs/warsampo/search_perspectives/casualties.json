@@ -205,6 +205,24 @@
                             "createChartData": "createApexBarChartData"
                         }
                     ]
+                },
+                "deathsByAge": {
+                    "sparqlQuery": "deathsByAgeQuery",
+                    "filterTarget": "record",
+                    "resultMapper": "mapIntBarChart",
+                    "sliceVisibilityThreshold": -1,
+                    "dropdownForChartTypes": "true",
+                    "fillEmptyValues": true,
+                    "seriesTitle": "Lukumäärä / Count",
+                    "chartTypes": [
+                        {
+                            "id": "bar",
+                            "createChartData": "createApexBarChartData"
+                        }
+                    ],
+                    "resultMapperConfig": {
+                        "fillEmptyValues": true
+                    }
                 }
             }
         },

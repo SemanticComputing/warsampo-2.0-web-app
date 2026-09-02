@@ -1,5 +1,8 @@
-export const mapIntBarChart = ({ sparqlBindings, config }) => {
+export const mapIntBarChart = data => {
   const results = []
+
+  const sparqlBindings = Array.isArray(data) ? data : data['sparqlBindings']
+  const config = Array.isArray(data) ? null : data['config']
 
   sparqlBindings.forEach((b, index, bindings) => {
     results.push({
