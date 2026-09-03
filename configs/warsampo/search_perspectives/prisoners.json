@@ -203,11 +203,11 @@
             "containerClass": "ten",
             "facetType": "list",
             "filterType": "uriFilter",
-            "predicate": "prisoners:municipality_of_death",
+            "predicate": "crm-org:P70_documents/crm-org:P70i_is_documented_in/casualties:municipality_of_death",
             "searchField": true,
             "sortButton": true,
             "sortBy": "instanceCount",
-            "sortByPredicate": "prisoners:municipality_of_death/skos:prefLabel",
+            "sortByPredicate": "crm-org:P70_documents/crm-org:P70i_is_documented_in/casualties:municipality_of_death/skos:prefLabel",
             "sortDirection": "desc"
         },
         "deathTime": {

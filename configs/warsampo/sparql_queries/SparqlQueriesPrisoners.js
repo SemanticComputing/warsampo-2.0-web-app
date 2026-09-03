@@ -31,7 +31,7 @@ export const prisonerProperties = `
     UNION
     {
       <SUBQUERY_FILTER>
-      ?id prisoners:municipality_of_death ?municipalityOfDeath__id .
+      ?id crm-org:P70_documents/crm-org:P70i_is_documented_in/casualties:municipality_of_death ?municipalityOfDeath__id .
       ?municipalityOfDeath__id skos:prefLabel ?municipalityOfDeath__prefLabel .
     }
     UNION
@@ -82,7 +82,7 @@ export const prisonerPropertiesInstancePage = `
     UNION
     {
       BIND(<ID> AS ?id)
-      ?id prisoners:municipality_of_death ?municipalityOfDeath__id .
+      ?id crm-org:P70_documents/crm-org:P70i_is_documented_in/casualties:municipality_of_death ?municipalityOfDeath__id .
       ?municipalityOfDeath__id skos:prefLabel ?municipalityOfDeath__prefLabel .
     }
     UNION
