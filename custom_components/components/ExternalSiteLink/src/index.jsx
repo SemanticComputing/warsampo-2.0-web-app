@@ -37,7 +37,7 @@ class ExternalSiteLink extends React.Component {
   }
 
   render = () => {
-    const { data, properties, screenSize, perspectiveConfig } = this.props
+    const { data, perspectiveConfig } = this.props
     const openInNewTab = intl.get(`perspectives.${perspectiveConfig.id}.externalSite.openInNewTab`)
 
     return (
@@ -60,8 +60,7 @@ class ExternalSiteLink extends React.Component {
 
 ExternalSiteLink.propTypes = {
   resultClass: PropTypes.string.isRequired,
-  data: PropTypes.object,
-  properties: PropTypes.array.isRequired
+  data: PropTypes.object
 }
 
 export default ExternalSiteLink
