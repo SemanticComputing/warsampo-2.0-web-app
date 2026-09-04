@@ -483,6 +483,205 @@
           "description": "Lähde"
         }
       }
+    },
+    "actors": {
+      "label": "Henkilö",
+      "facetResultsType": "henkilöä",
+      "shortDescription": "",
+      "longDescription": "",
+      "instancePage": {
+        "label": "Henkilö",
+        "description": ""
+      },
+      "properties": {
+        "uri": {
+          "label": "URI",
+          "description": "URI"
+        },
+        "prefLabel": {
+          "label": "Nimi",
+          "description": "Nimi",
+          "textFacetInputPlaceholder": ""
+        },
+        "rank": {
+          "label": "Sotilasarvo",
+          "description": "Sotilasarvo"
+        },
+        "gender": {
+          "label": "Sukupuoli",
+          "description": "Sukupuoli"
+        },
+        "occupation": {
+          "label": "Ammatti",
+          "description": "Ammatti"
+        },
+        "motherTongue": {
+          "label": "Äidinkieli",
+          "description": "Äidinkieli"
+        },
+        "citizenship": {
+          "label": "Kansalaisuus",
+          "description": "Kansalaisuus"
+        },
+        "nationality": {
+          "label": "Kansallisuus",
+          "description": "Kansallisuus"
+        },
+        "maritalStatus": {
+          "label": "Siviilisääty",
+          "description": "Siviilisääty"
+        },
+        "perishingCategory": {
+          "label": "Menehtymisluokka",
+          "description": "Menehtymisluokka"
+        },
+        "buriedIn": {
+          "label": "Hautausmaa",
+          "description": "Hautausmaa"
+        },
+        "municipalityOfDomicile": {
+          "label": "Kotikunta",
+          "description": "Kotikunta"
+        },
+        "municipalityOfDeath": {
+          "label": "Kuolinkunta",
+          "description": "Kuolinkunta"
+        },
+        "deathTime": {
+          "label": "Kuolinaika",
+          "description": "Kuolinaika"
+        },
+        "unit": {
+          "label": "Joukko-osasto",
+          "description": "Joukko-osasto"
+        },
+        "municipalityOfResidence": {
+          "label": "Asuinkunta",
+          "description": "Asuinkunta"
+        },
+        "municipalityOfBurial": {
+          "label": "Hautauskunta",
+          "description": "Hautauskunta"
+        },
+        "placeOfWounding": {
+          "label": "Haavoittumispaikka",
+          "description": "Haavoittumispaikka"
+        },
+        "dateOfWounding": {
+          "label": "Haavoittumispäivä",
+          "description": "Haavoittumispäivä"
+        },
+        "placeOfBurialNumber": {
+          "label": "Hautapaikan numero",
+          "description": "Hautapaikan numero"
+        },
+        "unitCode": {
+          "label": "Joukko-osaston peiteluku",
+          "description": "Joukko-osaston peiteluku"
+        },
+        "numberOfChildren": {
+          "label": "Lasten lukumäärä",
+          "description": "Lasten lukumäärä"
+        },
+        "municipalityOfBirth": {
+          "label": "Synnyinkunta",
+          "description": "Synnyinkunta"
+        },
+        "dateOfBirth": {
+          "label": "Syntymäpäivä",
+          "description": "Syntymäpäivä"
+        },
+        "warsaPage": {
+          "label": "Alkuperäinen Sotasampo-sivu",
+          "description": "Henkilön sivu alkuperäisessä Sotasampo-portaalissa"
+        },
+        "externalPage": {
+          "label": "Muut sivut",
+          "description": "Henkilön sivu muissa ulkoisissa lähteissä"
+        },
+        "article": {
+          "label": "Kansa Taisteli -artikkelit",
+          "description": "Kansa Taisteli -artikkelit, joihin henkilö on (automaattisest) linkitetty"
+        },
+        "municipalityOfGoingMIA": {
+          "label": "Katoamiskunta",
+          "description": "Katoamiskunta"
+        },
+        "placeOfGoingMIA": {
+          "label": "Katoamispaikka",
+          "description": "Katoamispaikka"
+        },
+        "dateOfGoingMIA": {
+          "label": "Katoamispäivä",
+          "description": "Katoamispäivä"
+        },
+        "disappearingEvent": {
+          "label": "Katoamistapahtuman URI",
+          "description": "Katoamistapahtuman URI"
+        },
+        "deathRecord": {
+          "label": "Kuolinasiakirjan URI",
+          "description": "Kuolinasiakirjan URI"
+        },
+        "prisonerRecord": {
+          "label": "Sotavankiasiakirjan URI",
+          "description": "Sotavankiasiakirjan URI"
+        },
+        "municipalityOfCapture": {
+          "label": "Vangiksi jäämisen kunta",
+          "description": "Kunta, jonka alueella henkilö on jäänyt sotavangiksi."
+        },
+        "dateOfCapture": {
+          "label": "Vangiksi jäämisen päivämäärä",
+          "description": "Päivä, jona henkilö on suomalaisten lähteiden mukaan joutunut sotavangiksi."
+        },
+        "descriptionOfCapture": {
+          "label": "Selvitys vangiksi jäämisestä",
+          "description": "Tieto siitä, miten henkilö on jäänyt vangiksi joko hänen oman kertomansa tai muun lähteen mukaan."
+        },
+        "otherCaptivityInformation": {
+          "label": "Muita vankeustietoja",
+          "description": "Muita sotavankeuteen liittyviä tietoja."
+        },
+        "captivity": {
+          "label": "Vankeuspaikat",
+          "description": "Ne kuulustelupaikat, vankileirit, vankilat ja sairaalat, joissa vanki on eri lähteistä saatujen tietojen mukaan ollut sotavankeusaikanaan sekä kussakin paikassa oleskelun päivämäärät."
+        },
+        "sotilaanAani": {
+          "label": "Sotilaan Ääni -propagandalehti",
+          "description": "Linkki digitoituun Sotilaan Ääni -propagandalehteen, jossa henkilö on mainittu."
+        },
+        "dateOfReturn": {
+          "label": "Sotavankeudesta palaamisen päivämäärä",
+          "description": "Päivä, jona henkilö on palannut Suomeen sotavankeudesta"
+        }
+      },
+      "externalSite": {
+        "openInNewTab": "Avaa sivu uuteen välilehteen Sotasammon vanhemmassa versiossa"
+      },
+      "groups": {
+        "personal_info": {
+          "label": "Henkilötiedot"
+        },
+        "wounding": {
+          "label": "Haavoittumistiedot"
+        },
+        "death": {
+          "label": "Kuolintiedot"
+        },
+        "disappearance": {
+          "label": "Katoamistiedot"
+        },
+        "prisoner": {
+          "label": "Sotavankeustiedot"
+        },
+        "return": {
+          "label": "Paluutiedot"
+        },
+        "other_sources": {
+          "label": "Muut lähteet ja linkit"
+        }
+      }
     }
   },
   "aboutThePortalPartOne": "<p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\">Sotasampo 2.0 -hanke on osa laajempaa Sotasampo-kokonaisuutta ja portaalia, jolla on ollut vuoden 2025 loppuun mennessä jo yli 1 300 000 kävijää. Kansainvälisesti palkittu (LODLAM Open Data Price, Venetsia, 2017) Sotasampo kuuluu Sampo-järjestelmien sarjaan ja hyödyntää kansallista linkitetyn avoimen datan infrastruktuuria FIN-CLARIN/DARIAH-FI.</p><p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\">Tavoitteenamme on kehittää Sotasammosta uusi Sampo-UI-perustainen versio, joka mahdollistaa aineistojen data-analyysit ja visualisoinnin. Käyttöliittymä on vielä kehitysvaiheessa, joten kaikkia toiminnallisuuksia ei ole vielä toteutettu ja ohjetekstit käyttöliittymässä ovat vielä puutteelliset. Käytön aikana saattaa lisäksi törmätä bugeihin tai muihin virheisiin, joista voi laittaa palautetta Sotasampo 2.0 -portaalin oman palautelinkin kautta.</p><p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\">Mikäli vastaan tulee <b>dataan liittyviä virheitä</b>, jotka eivät liity kantakortti- tai Sotapolku-linkityksiin, ilmoitathan ne <a href=\"https://www.sotasampo.fi/palaute.html\">alkuperäisen Sotasampo-portaalin palautteen</a> kautta (Sotasampo-portaali > Palaute > Palaute koskee tietojen korjauspyyntöä).</p>",

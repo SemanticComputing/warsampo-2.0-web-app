@@ -1,0 +1,429 @@
+{
+    "id": "actors",
+    "endpoint": {
+        "url": "https://ldf.fi/warsampo-qlever/sparql",
+        "useAuth": false,
+        "prefixesFile": "SparqlQueriesPrefixes.js"
+    },
+    "sparqlQueriesFile": "SparqlQueriesActors.js",
+    "baseURI": "http://ldf.fi/warsa",
+    "URITemplate": "<BASE_URI>/actors/<LOCAL_ID>",
+    "enableDynamicLanguageChange": true,
+    "resultClasses": {
+        "actors": {
+            "instanceConfig": {
+                "propertiesQueryBlock": "actorPropertiesInstancePage",
+                "instancePageResultClasses": {
+                    "overviewPage": {
+                        "tabID": 0,
+                        "tabPath": "table",
+                        "tabIcon": "CalendarViewDay",
+                        "component": "CustomComponent",
+                        "componentName": "PersonPage",
+                        "sparqlQuery": "personPropertiesInstancePage",
+                        "facetClass": "casualties",
+                        "filterTarget": "id",
+                        "resultMapper": "makeObjectList",
+                        "pageType": "instancePage",
+                        "componentConfig": {
+                            "groups": [
+                                {
+                                    "id": "personal_info",
+                                    "properties": [ "prefLabel", "rank", "unit", "municipalityOfDomicile", "occupation", "maritalStatus", "citizenship", "nationality", "motherTongue", "municipalityOfResidence", "unitCode", "numberOfChildren", "municipalityOfBirth", "dateOfBirth", "deathTime", "uri" ],
+                                    "requiredProperties": [ "uri" ],
+                                    "requiredAny": false
+                                },
+                                {
+                                    "id": "wounding",
+                                    "properties": [ "placeOfWounding", "dateOfWounding" ],
+                                    "requiredProperties": [ "placeOfWounding", "dateOfWounding" ],
+                                    "requiredAny": true
+                                },
+                                {
+                                    "id": "disappearance",
+                                    "properties": [ "municipalityOfGoingMIA", "placeOfGoingMIA", "dateOfGoingMIA", "disappearingEvent" ],
+                                    "requiredProperties": [ "disappearingEvent" ],
+                                    "requiredAny": false
+                                },
+                                {
+                                    "id": "prisoner",
+                                    "properties": [ "municipalityOfCapture", "dateOfCapture", "descriptionOfCapture", "otherCaptivityInformation", "captivity", "sotilaanAani", "prisonerRecord" ],
+                                    "requiredProperties": [ "prisonerRecord" ],
+                                    "requiredAny": false
+                                },
+                                {
+                                    "id": "return",
+                                    "properties": [ "dateOfReturn" ],
+                                    "requiredProperties": [ "dateOfReturn" ],
+                                    "requiredAny": false
+                                },
+                                {
+                                    "id": "death",
+                                    "properties": [ "deathTime", "municipalityOfDeath", "perishingCategory", "buriedIn", "municipalityOfBurial", "placeOfBurialNumber", "deathRecord" ],
+                                    "requiredProperties": [ "deathRecord" ],
+                                    "requiredAny": false
+                                },
+                                {
+                                    "id": "other_sources",
+                                    "properties": [ "article", "warsaPage", "externalPage" ],
+                                    "requiredProperties": [ "article", "warsaPage", "externalPage" ],
+                                    "requiredAny": true
+                                }
+                            ]
+                        }
+                    }
+                }
+            }  
+        }
+    },
+    "properties": [
+        {
+            "id": "prefLabel",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "minWidth": 150
+        },
+        {
+            "id": "rank",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false
+        },
+        {
+            "id": "unit",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false
+        },
+        {
+            "id": "deathTime",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false
+        },
+        {
+            "id": "municipalityOfDeath",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false
+        },
+        {
+            "id": "municipalityOfDomicile",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false
+        },
+        {
+            "id": "occupation",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false
+        },
+        {
+            "id": "perishingCategory",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false
+        },
+        {
+            "id": "maritalStatus",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false
+        },
+        {
+            "id": "buriedIn",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false
+        },
+        {
+            "id": "citizenship",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "nationality",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "motherTongue",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "municipalityOfResidence",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "municipalityOfBurial",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "placeOfWounding",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "dateOfWounding",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "placeOfBurialNumber",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "unitCode",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "numberOfChildren",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "municipalityOfBirth",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "dateOfBirth",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "article",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": true,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true,
+            "expandedOnInstancePage": true
+        },
+        {
+            "id": "warsaPage",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": true,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "externalPage",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": true,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true,
+            "expandedOnInstancePage": true
+        },
+        {
+            "id": "uri",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": true,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "deathRecord",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": true,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "disappearingEvent",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": true,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "municipalityOfGoingMIA",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "placeOfGoingMIA",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "dateOfGoingMIA",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "prisonerRecord",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": true,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "descriptionOfCapture",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true,
+            "expandedOnInstancePage": true
+        },
+        {
+            "id": "otherCaptivityInformation",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true,
+            "expandedOnInstancePage": true
+        },
+        {
+            "id": "municipalityOfCapture",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "dateOfCapture",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "captivity",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true,
+            "expandedOnInstancePage": true
+        },
+        {
+            "id": "sotilaanAani",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": true,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true,
+            "expandedOnInstancePage": true
+        },
+        {
+            "id": "dateOfReturn",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true
+        }
+    ]
+}

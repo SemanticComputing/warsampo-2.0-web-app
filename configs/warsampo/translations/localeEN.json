@@ -520,6 +520,205 @@
           "description": "Source"
         }
       }
+    },
+    "actors": {
+      "label": "Actors",
+      "facetResultsType": "actors",
+      "shortDescription": "Perspective description",
+      "longDescription": "<p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\"></p>",
+      "instancePage": {
+        "label": "Person",
+        "description": "<p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\"></p>"
+      },
+      "properties": {
+        "uri": {
+          "label": "URI",
+          "description": "Uniform Resource Identifier"
+        },
+        "prefLabel": {
+          "label": "Name",
+          "description": "Name",
+          "textFacetInputPlaceholder": "Search..."
+        },
+        "rank": {
+          "label": "Rank",
+          "description": "Rank"
+        },
+        "gender": {
+          "label": "Gender",
+          "description": "Gender"
+        },
+        "occupation": {
+          "label": "Occupation",
+          "description": "Occupation"
+        },
+        "motherTongue": {
+          "label": "Mother tongue",
+          "description": "Mother tongue"
+        },
+        "citizenship": {
+          "label": "Citizenship",
+          "description": "Citizenship"
+        },
+        "nationality": {
+          "label": "Nationality",
+          "description": "Nationality"
+        },
+        "maritalStatus": {
+          "label": "Marital status",
+          "description": "Marital status"
+        },
+        "perishingCategory": {
+          "label": "Perishing category",
+          "description": "Perishing category"
+        },
+        "buriedIn": {
+          "label": "Cemetery of burial",
+          "description": "Cemetery of burial"
+        },
+        "municipalityOfDomicile": {
+          "label": "Municipality of domicile",
+          "description": "Municipality of domicile"
+        },
+        "municipalityOfDeath": {
+          "label": "Municipality of death",
+          "description": "Municipality of death"
+        },
+        "deathTime": {
+          "label": "Death time",
+          "description": "Death time"
+        },
+        "unit": {
+          "label": "Unit",
+          "description": "Unit"
+        },
+        "municipalityOfResidence": {
+          "label": "Municipality of residence",
+          "description": "Municipality of residence"
+        },
+        "municipalityOfBurial": {
+          "label": "Municipality of burial",
+          "description": "Municipality of burial"
+        },
+        "placeOfWounding": {
+          "label": "Place of wounding",
+          "description": "Place of wounding"
+        },
+        "dateOfWounding": {
+          "label": "Date of wounding",
+          "description": "Date of wounding"
+        },
+        "placeOfBurialNumber": {
+          "label": "Place of burial (number)",
+          "description": "Place of burial (number)"
+        },
+        "unitCode": {
+          "label": "Military unit identification code",
+          "description": "Military unit identification code"
+        },
+        "numberOfChildren": {
+          "label": "Number of children",
+          "description": "Number of children"
+        },
+        "municipalityOfBirth": {
+          "label": "Municipality of birth",
+          "description": "Municipality of birth"
+        },
+        "dateOfBirth": {
+          "label": "Date of birth",
+          "description": "Date of birth"
+        },
+        "warsaPage": {
+          "label": "Original WarSampo page",
+          "description": "The page for the person in the original WarSampo portal"
+        },
+        "externalPage": {
+          "label": "Other pages",
+          "description": "The pages for the person in other external sources"
+        },
+        "article": {
+          "label": "Kansa Taisteli articles",
+          "description": "Kansa Taisteli articles that have been (automatically) linked to the person"
+        },
+        "municipalityOfGoingMIA": {
+          "label": "Municipality of disappearance",
+          "description": "Municipality of disappearance"
+        },
+        "placeOfGoingMIA": {
+          "label": "Place of disappearance",
+          "description": "Place of disappearance"
+        },
+        "dateOfGoingMIA": {
+          "label": "Date of disappearance",
+          "description": "Date of disappearanec"
+        },
+        "disappearingEvent": {
+          "label": "Disappearance event URI",
+          "description": "Disappearance event URI"
+        },
+        "deathRecord": {
+          "label": "Death record URI",
+          "description": "Death record URI"
+        },
+        "prisonerRecord": {
+          "label": "Prisoner record URI",
+          "description": "Prisoner record URI"
+        },
+        "municipalityOfCapture": {
+          "label": "Municipality of capture",
+          "description": "Municipality of capture"
+        },
+        "dateOfCapture": {
+          "label": "Date of capture",
+          "description": "Date of capture"
+        },
+        "descriptionOfCapture": {
+          "label": "Description of capture",
+          "description": "Description of capture"
+        },
+        "otherCaptivityInformation": {
+          "label": "Other captivity information",
+          "description": "Other captivity information"
+        },
+        "captivity": {
+          "label": "Places of captivity",
+          "description": "Places of captivity"
+        },
+        "sotilaanAani": {
+          "label": "Sotilaan Ääni propaganda magazine",
+          "description": "Sotilaan Ääni propaganda magazine"
+        },
+        "dateOfReturn": {
+          "label": "Date of return from captivity",
+          "description": "Date of return from captivity"
+        }
+      },
+      "externalSite": {
+        "openInNewTab": "Open the page in a new tab on the older version of WarSampo"
+      },
+      "groups": {
+        "personal_info": {
+          "label": "Personal information"
+        },
+        "wounding": {
+          "label": "Wounding information"
+        },
+        "death": {
+          "label": "Death information"
+        },
+        "disappearance": {
+          "label": "Disappearance information"
+        },
+        "prisoner": {
+          "label": "War prisoner information"
+        },
+        "return": {
+          "label": "Return information"
+        },
+        "other_sources": {
+          "label": "Other sources and links"
+        }
+      }
     }
   },
   "aboutThePortalPartOne": "<p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\">The WarSampo 2.0 project is part of the broader WarSampo initiative and portal, which has already had over 1,300,000 visitors by the end of 2025. Internationally recognized (LODLAM Open Data Prize, Venice, 2017), WarSampo is part of the Sampo systems series and utilizes the national linked open data infrastructure FIN-CLARIN/DARIAH-FI.</p><p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\">Our goal is to develop a new Sampo-UI-based version of WarSampo that enables data analysis and visualization of the materials. The user interface is still under development, so not all features have been implemented yet, and the information texts within the interface are still incomplete. You may also encounter bugs or other errors while using the system; you can submit feedback about these via the feedback link on the WarSampo 2.0 portal.</p><p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\">If you encounter <b>data-related errors</b> that are not related to military cards or Sotapolku links, please report them <a href=\"https://www.sotasampo.fi/palaute.html\">via the feedback form on the original WarSampo portal</a> (WarSampo portal > Feedback > The feedback concerns correction of the contained information).</p>",
