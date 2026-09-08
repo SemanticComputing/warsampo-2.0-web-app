@@ -34,17 +34,23 @@ FROM node:22-alpine AS combo-prd
 # wget: busybox wget is already present on alpine
 RUN apk add --no-cache nginx gettext \
     && rm -f /etc/nginx/http.d/default.conf \
-    && mkdir -p /etc/nginx/http.d /etc/nginx/templates \
-    && chgrp -R 0 /etc/nginx \
-    && chmod -R g=u /etc/nginx
+    && mkdir -p /etc/nginx/http.d /etc/nginx/templates
+
+# OpenShift: allow nginx to run as non-root user and still write to its own dirs
+RUN chgrp -R 0 /etc/nginx \
+    && chmod -R g=u /etc/nginx \
+    && chgrp -R 0 /var/lib/nginx \
+    && chmod -R g=u /var/lib/nginx \
+    && chgrp -R 0 /var/log/nginx \
+    && chmod -R g=u /var/log/nginx \
+    && chgrp -R 0 /run/nginx \
+    && chmod -R g=u /run/nginx
 
 # Client static files → nginx webroot (same path as standalone client-prod stage)
 COPY --from=client-build /app/client/dist/public /usr/share/nginx/html
 
 # nginx config template (combo version adds /api/ proxy to Express)
 COPY combo-nginx.conf /etc/nginx/templates/default.conf.template
-
-COPY nginx.conf /etc/nginx/nginx.conf
 
 # Express server (compiled JS + node_modules)
 COPY --from=server-build /app/server /app/server
