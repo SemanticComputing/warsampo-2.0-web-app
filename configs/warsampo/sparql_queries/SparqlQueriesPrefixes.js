@@ -22,4 +22,5 @@ export const prefixes = `
   PREFIX bioc: <http://ldf.fi/schema/bioc/>
   PREFIX analytics: <http://ldf.fi/schema/warsa/analytics/>
   PREFIX prisoners: <http://ldf.fi/schema/warsa/prisoners/>
+  PREFIX geosparql: <http://www.opengis.net/ont/geosparql#>
 `
