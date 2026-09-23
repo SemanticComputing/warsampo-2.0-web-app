@@ -12,7 +12,7 @@
     "resultClasses": {
         "actors": {
             "instanceConfig": {
-                "propertiesQueryBlock": "actorPropertiesInstancePage",
+                "propertiesQueryBlock": "actorPropertiesInstancePageAlt",
                 "instancePageResultClasses": {
                     "overviewPage": {
                         "tabID": 0,
