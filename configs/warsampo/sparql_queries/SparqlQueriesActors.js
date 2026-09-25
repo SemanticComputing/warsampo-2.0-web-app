@@ -541,3 +541,74 @@ export const actorPropertiesInstancePageAlt = `
                           prisoners:date_of_return ?dateOfReturn .
     }
 `
+
+export const eventMapQuery = `
+  SELECT DISTINCT ?id (SAMPLE(?lat_) AS ?lat) (SAMPLE(?long_) AS ?long) ?prefLabel ?dataProviderUrl ?markerColor ?description
+  WHERE {
+    BIND(<ID> AS ?actor)
+    ?actor crm-org:P70i_is_documented_in ?record .
+
+    {
+      ?record (casualties:municipality_of_domicile/casualties:preferred_municipality)|prisoners:municipality_of_domicile ?id .
+      BIND("violet" AS ?markerColor)
+      BIND("Kotikunta / Municipality of domicile" AS ?description)
+    }
+    UNION
+    {
+      ?record warsa:buried_in ?id .
+      BIND("orange" AS ?markerColor)
+      BIND("Hautausmaa / Cemetery of burial" AS ?description)
+    }
+    UNION
+    {
+      ?record (casualties:municipality_of_residence/casualties:preferred_municipality)|prisoners:municipality_of_residence ?id .
+      BIND("violet" AS ?markerColor)
+      BIND("Asuinkunta / Municipality of residence" AS ?description)
+    }
+    UNION
+    {
+      ?record casualties:municipality_of_death/casualties:preferred_municipality ?id .
+      BIND("red" AS ?markerColor)
+      BIND("Kuolinkunta / Municipality of death" AS ?description)
+    }
+    UNION
+    {
+      ?record (casualties:municipality_of_birth/casualties:preferred_municipality)|warsa:municipality_of_birth ?id .
+      BIND("green" AS ?markerColor)
+      BIND("Synnyinkunta / Municipality of birth" AS ?description)
+    }
+    UNION 
+    { 
+      ?record prisoners:captivity/prisoners:location ?id . 
+      BIND("yellow" AS ?markerColor)
+      BIND("Sotavankeus / Captivity" AS ?description)
+    }
+    
+    ?id skos:prefLabel ?prefLabel .
+
+    OPTIONAL {
+      ?id wgs84:lat ?lat__ ; 
+        wgs84:long ?long__ .
+      BIND(xsd:decimal(?lat__) AS ?lat_)
+      BIND(xsd:decimal(?long__) AS ?long_)
+      FILTER(BOUND(?lat_) && BOUND(?long_))
+    }
+
+    OPTIONAL {
+      ?id <http://www.georss.org/georss/point> ?point .
+      BIND(xsd:decimal(REPLACE(?point, "([0-9\\\\.\\\\-]+) ([0-9\\\\.\\\\-]+)", "$1")) AS ?lat_)
+      BIND(xsd:decimal(REPLACE(?point, "([0-9\\\\.\\\\-]+) ([0-9\\\\.\\\\-]+)", "$2")) AS ?long_)
+    }
+
+    FILTER(BOUND(?lat_) && BOUND(?long_) || BOUND(?point))
+
+  }
+  GROUP BY ?id ?prefLabel ?dataProviderUrl ?markerColor ?description
+`
+
+export const externalSiteInstancePageQuery = `
+  SELECT ?id ?url WHERE { 
+    BIND (<ID> as ?id)
+    BIND(CONCAT("https://www.sotasampo.fi/fi/persons/", REPLACE(STR(?id), "^.*\\\\/(.+)", "$1"), "?tab=2") AS ?url)
+  }
+`

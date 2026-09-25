@@ -9,6 +9,15 @@
     "baseURI": "http://ldf.fi/warsa",
     "URITemplate": "<BASE_URI>/actors/<LOCAL_ID>",
     "enableDynamicLanguageChange": true,
+    "maps": {
+        "eventLocations": {
+            "center": [
+                65.184809,
+                27.314050
+            ],
+            "zoom": 4
+        }
+    },
     "resultClasses": {
         "actors": {
             "instanceConfig": {
@@ -71,6 +80,56 @@
                                 }
                             ]
                         }
+                    },
+                    "eventLocations": {
+                        "tabID": 1,
+                        "pageType": "instancePage",
+                        "component": "LeafletMap",
+                        "tabPath": "map",
+                        "tabIcon": "AddLocation",
+                        "sparqlQuery": "eventMapQuery",
+                        "facetClass": "casualties",
+                        "filterTarget": "record",
+                        "resultMapper": "mapInstancePagePlaces",
+                        "instanceConfig": {
+                            "createPopUpContent": "createConfigurablePopUpContent",
+                            "popUpElements": [
+                                { 
+                                    "htmlElement": "h3",
+                                    "arrayParentElement": null,
+                                    "type": "object",
+                                    "source": "sparql",
+                                    "variableName": "prefLabel",
+                                    "isArray": false,
+                                    "makeLink": false,
+                                    "externalLink": false
+                                },
+                                { 
+                                    "htmlElement": "p",
+                                    "arrayParentElement": null,
+                                    "type": "string",
+                                    "source": "sparql",
+                                    "variableName": "description",
+                                    "isArray": false,
+                                    "makeLink": false,
+                                    "externalLink": false
+                                }
+                            ]
+                        },
+                        "showExternalLayers": false,
+                        "showInstanceCountInClusters": false
+                    },
+                    "activityPage": {
+                        "tabID": 2,
+                        "tabPath": "activity",
+                        "tabIcon": "BubbleChart",
+                        "component": "CustomComponent",
+                        "componentName": "ExternalSiteLink",
+                        "sparqlQuery": "externalSiteInstancePageQuery",
+                        "facetClass": "casualties",
+                        "filterTarget": "id",
+                        "resultMapper": "makeObjectList",
+                        "pageType": "instancePage"
                     }
                 }
             }  
