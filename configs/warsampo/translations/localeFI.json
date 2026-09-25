@@ -485,7 +485,7 @@
       }
     },
     "actors": {
-      "label": "Henkilö",
+      "label": "Henkilöt",
       "facetResultsType": "henkilöä",
       "shortDescription": "",
       "longDescription": "",
@@ -680,6 +680,51 @@
         },
         "other_sources": {
           "label": "Muut lähteet ja linkit"
+        }
+      }
+    },
+    "camps": {
+      "label": "Sotavankileirit",
+      "facetResultsType": "sotavankileiriä",
+      "shortDescription": "",
+      "longDescription": "",
+      "instancePage": {
+        "label": "Sotavankileiri",
+        "description": ""
+      },
+      "properties": {
+        "uri": {
+          "label": "URI",
+          "description": "URI"
+        },
+        "prefLabel": {
+          "label": "Nimi",
+          "description": "Nimi",
+          "textFacetInputPlaceholder": ""
+        },
+        "campId": {
+          "label": "Sotavankeuspaikan tunniste",
+          "description": "Sotavankeuspaikan tunniste"
+        },
+        "location": {
+          "label": "Vankeuspaikan sijainti",
+          "description": "Vankeuspaikan sijainti"
+        },
+        "timeOfOperation": {
+          "label": "Toiminta-aika",
+          "description": "Toiminta-aika"
+        },
+        "campInformation": {
+          "label": "Tietoja vankeuspaikasta",
+          "description": "Tietoja vankeuspaikasta"
+        },
+        "lat": {
+          "label": "Leveysaste",
+          "description": "Leveysaste"
+        },
+        "long": {
+          "label": "Pituusaste",
+          "description": "Pituusaste"
         }
       }
     }

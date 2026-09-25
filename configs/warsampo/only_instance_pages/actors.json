@@ -458,7 +458,7 @@
         {
             "id": "captivity",
             "valueType": "object",
-            "makeLink": false,
+            "makeLink": true,
             "externalLink": false,
             "sortValues": true,
             "numberedList": false,

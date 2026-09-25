@@ -1,0 +1,106 @@
+{
+    "id": "camps",
+    "endpoint": {
+        "url": "https://ldf.fi/warsampo-qlever/sparql",
+        "useAuth": false,
+        "prefixesFile": "SparqlQueriesPrefixes.js"
+    },
+    "sparqlQueriesFile": "SparqlQueriesCamps.js",
+    "baseURI": "http://ldf.fi/warsa",
+    "URITemplate": "<BASE_URI>/prisoners/<LOCAL_ID>",
+    "enableDynamicLanguageChange": true,
+    "maps": {},
+    "resultClasses": {
+        "camps": {
+            "instanceConfig": {
+                "propertiesQueryBlock": "campPropertiesInstancePage",
+                "instancePageResultClasses": {
+                    "instancePageTable": {
+                        "tabID": 0,
+                        "component": "InstancePageTable",
+                        "tabPath": "table",
+                        "tabIcon": "CalendarViewDay"
+                    }
+                }
+            }  
+        }
+    },
+    "properties": [
+        {
+            "id": "prefLabel",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "minWidth": 150
+        },
+        {
+            "id": "campId",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true,
+            "expandedOnInstancePage": true
+        },
+        {
+            "id": "location",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true,
+            "expandedOnInstancePage": true
+        },
+        {
+            "id": "timeOfOperation",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true,
+            "expandedOnInstancePage": true
+        },
+        {
+            "id": "campInformation",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true,
+            "expandedOnInstancePage": true
+        },
+        {
+            "id": "lat",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "long",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "uri",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": true,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true
+        }
+    ]
+}

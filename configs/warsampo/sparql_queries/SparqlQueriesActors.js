@@ -275,8 +275,10 @@ export const actorPropertiesInstancePage = `
         BIND(CONCAT(STR(DAY(?endDate)), '.', STR(MONTH(?endDate)), '.', STR(YEAR(?endDate))) AS ?formattedEndDate)
       }
 
-      ?captivity__id prisoners:location/skos:prefLabel ?locationName .
+      ?captivity__id prisoners:location ?location_ .
+      ?location_ skos:prefLabel ?locationName .
       BIND(IF(BOUND(?formattedStartDate) && BOUND(?formattedEndDate), CONCAT(STR(?locationName), ' (', STR(?formattedStartDate), '–', STR(?formattedEndDate), ')'), STR(?locationName)) AS ?captivity__prefLabel)
+      BIND(CONCAT("/camps/page/", REPLACE(STR(?location_), "^.*\\\\/(.+)", "$1")) AS ?captivity__dataProviderUrl)
     }
     UNION
     {
@@ -525,8 +527,10 @@ export const actorPropertiesInstancePageAlt = `
         BIND(CONCAT(STR(DAY(?endDate)), '.', STR(MONTH(?endDate)), '.', STR(YEAR(?endDate))) AS ?formattedEndDate)
       }
 
-      ?captivity__id prisoners:location/skos:prefLabel ?locationName .
+      ?captivity__id prisoners:location ?location_ .
+      ?location_ skos:prefLabel ?locationName .
       BIND(IF(BOUND(?formattedStartDate) && BOUND(?formattedEndDate), CONCAT(STR(?locationName), ' (', STR(?formattedStartDate), '–', STR(?formattedEndDate), ')'), STR(?locationName)) AS ?captivity__prefLabel)
+      BIND(CONCAT("/camps/page/", REPLACE(STR(?location_), "^.*\\\\/(.+)", "$1")) AS ?captivity__dataProviderUrl)
     }
     UNION
     {
