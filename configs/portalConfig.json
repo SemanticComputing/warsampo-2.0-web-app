@@ -5,7 +5,8 @@
     "perspectives": {
         "searchPerspectives": [
             "casualties",
-            "cemeteries"
+            "cemeteries",
+            "prisoners"
         ],
         "onlyInstancePages": [
             "actors",
