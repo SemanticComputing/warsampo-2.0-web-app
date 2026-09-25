@@ -9,7 +9,7 @@
     "baseURI": "http://ldf.fi/warsa",
     "URITemplate": "<BASE_URI>/prisoners/<LOCAL_ID>",
     "facetClass": "warsa:PrisonerRecord",
-    "frontPageImage": "main_page/cemeteries.jpg",
+    "frontPageImage": "main_page/prisoners.jpg",
     "searchMode": "faceted-search",
     "enableDynamicLanguageChange": true,
     "defaultActiveFacets": [
