@@ -9,7 +9,15 @@
     "baseURI": "http://ldf.fi/warsa",
     "URITemplate": "<BASE_URI>/prisoners/<LOCAL_ID>",
     "enableDynamicLanguageChange": true,
-    "maps": {},
+    "maps": {
+        "campLocation": {
+            "center": [
+                65.184809,
+                27.314050
+            ],
+            "zoom": 4
+        }
+    },
     "resultClasses": {
         "camps": {
             "instanceConfig": {
@@ -20,6 +28,34 @@
                         "component": "InstancePageTable",
                         "tabPath": "table",
                         "tabIcon": "CalendarViewDay"
+                    },
+                    "campLocation": {
+                        "tabID": 1,
+                        "pageType": "instancePage",
+                        "component": "LeafletMap",
+                        "tabPath": "map",
+                        "tabIcon": "AddLocation",
+                        "sparqlQuery": "campMapQuery",
+                        "facetClass": "camps",
+                        "filterTarget": "id",
+                        "resultMapper": "mapInstancePagePlaces",
+                        "instanceConfig": {
+                            "createPopUpContent": "createConfigurablePopUpContent",
+                            "popUpElements": [
+                                { 
+                                    "htmlElement": "h3",
+                                    "arrayParentElement": null,
+                                    "type": "object",
+                                    "source": "sparql",
+                                    "variableName": "prefLabel",
+                                    "isArray": false,
+                                    "makeLink": false,
+                                    "externalLink": false
+                                }
+                            ]
+                        },
+                        "showExternalLayers": false,
+                        "showInstanceCountInClusters": false
                     }
                 }
             }  

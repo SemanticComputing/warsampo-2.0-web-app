@@ -45,3 +45,20 @@ export const campPropertiesInstancePage = `
     }
 `
 
+export const campMapQuery = `
+  SELECT DISTINCT ?id (SAMPLE(?lat_) AS ?lat) (SAMPLE(?long_) AS ?long) ?prefLabel ?dataProviderUrl ?markerColor
+  WHERE {
+    VALUES ?id { <ID> }
+    ?id a warsa:PowCamp .
+    ?id skos:prefLabel ?prefLabel .
+
+    ?id wgs84:lat ?lat__ ; 
+      wgs84:long ?long__ .
+
+    BIND(xsd:decimal(?lat__) AS ?lat_)
+    BIND(xsd:decimal(?long__) AS ?long_)
+    FILTER(BOUND(?lat_) && BOUND(?long_))
+  }
+  GROUP BY ?id ?prefLabel ?dataProviderUrl ?markerColor
+`
+
