@@ -162,7 +162,7 @@
         },
         {
             "id": "municipalityOfDeath",
-            "valueType": "object",
+            "valueType": "string",
             "makeLink": false,
             "externalLink": false,
             "sortValues": true,
@@ -283,12 +283,13 @@
             "containerClass": "ten",
             "facetType": "list",
             "filterType": "uriFilter",
-            "predicate": "crm-org:P70_documents/crm-org:P70i_is_documented_in/casualties:municipality_of_death",
+            "predicate": "prisoners:municipality_of_death_literal",
             "searchField": true,
             "sortButton": true,
             "sortBy": "instanceCount",
-            "sortByPredicate": "crm-org:P70_documents/crm-org:P70i_is_documented_in/casualties:municipality_of_death/skos:prefLabel",
-            "sortDirection": "desc"
+            "sortByPredicate": "prisoners:municipality_of_death_literal",
+            "sortDirection": "desc",
+            "literal": true
         },
         "deathTime": {
             "containerClass": "five",

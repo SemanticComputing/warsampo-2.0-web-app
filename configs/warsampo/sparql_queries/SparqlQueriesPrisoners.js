@@ -34,8 +34,7 @@ export const prisonerProperties = `
     UNION
     {
       <SUBQUERY_FILTER>
-      ?id crm-org:P70_documents/crm-org:P70i_is_documented_in/casualties:municipality_of_death ?municipalityOfDeath__id .
-      ?municipalityOfDeath__id skos:prefLabel ?municipalityOfDeath__prefLabel .
+      ?id prisoners:municipality_of_death_literal ?municipalityOfDeath .
     }
     UNION
     {
