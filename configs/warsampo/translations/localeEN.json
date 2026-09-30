@@ -220,6 +220,9 @@
       },
       "casualtyLocation": {
         "description": "Place and date of death:"
+      },
+      "captivityLocationsMap": {
+        "captivitiesAt": "People who were held captive here:"
       }
     }
   },

@@ -215,3 +215,33 @@ export const prisonersByUnitQuery = `
   GROUP BY ?category ?prefLabel
   ORDER BY DESC(?instanceCount)
 `
+
+export const captivityPlacesQuery = `
+  SELECT ?id (SAMPLE(?lat_) AS ?lat) (SAMPLE(?long_) AS ?long)
+  (COUNT(DISTINCT ?record) as ?instanceCount)
+  WHERE {
+    <FILTER>
+    ?record prisoners:captivity/prisoners:location ?id .
+    ?id wgs84:lat ?lat__ ;
+        wgs84:long ?long__ .
+    BIND(xsd:decimal(?lat__) AS ?lat_)
+    BIND(xsd:decimal(?long__) AS ?long_)
+    FILTER(BOUND(?lat_) && BOUND(?long_))
+  }
+  GROUP BY ?id
+`
+
+export const placePropertiesInfoWindow = `
+  ?id skos:prefLabel ?prefLabel__id .
+  BIND(?prefLabel__id AS ?prefLabel__prefLabel)
+`
+
+export const captivitiesAt = `
+  OPTIONAL {
+    <FILTER>
+    ?related__id prisoners:captivity/prisoners:location ?id .
+    ?related__id skos:prefLabel ?related__prefLabel .
+    ?related__id crm-org:P70_documents ?actor_ .
+    BIND(CONCAT("/actors/page/", REPLACE(STR(?actor_), "^.*\\\\/(.+)", "$1")) AS ?related__dataProviderUrl)
+  }
+`

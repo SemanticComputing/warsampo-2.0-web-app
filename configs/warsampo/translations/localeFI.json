@@ -196,6 +196,9 @@
       },
       "casualtyLocation": {
         "description": "Kuolinpaikka ja -aika:"
+      },
+      "captivityLocationsMap": {
+        "captivitiesAt": "Täällä vankina olleet:"
       }
     }
   },

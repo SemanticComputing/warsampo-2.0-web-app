@@ -18,6 +18,13 @@
     "defaultTab": "table",
     "defaultInstancePageTab": "table",
     "maps": {
+        "captivityLocationsMap": {
+            "center": [
+                65.184809,
+                27.314050
+            ],
+            "zoom": 4
+        }
     },
     "resultClasses": {
         "prisoners": {
@@ -123,6 +130,59 @@
                         }
                     ]
                 }
+            }
+        },
+        "captivityLocationsMap": {
+            "tabID": 2,
+            "component": "LeafletMap",
+            "tabPath": "map",
+            "tabIcon": "AddLocation",
+            "sparqlQuery": "captivityPlacesQuery",
+            "facetClass": "prisoners",
+            "filterTarget": "record",
+            "resultMapper": "mapPlaces",
+            "showExternalLayers": true,
+            "instanceConfig": {
+                "propertiesQueryBlock": "placePropertiesInfoWindow",
+                "relatedInstances": "captivitiesAt",
+                "filterTarget": "related__id",
+                "createPopUpContent": "createConfigurablePopUpContent",
+                "popUpElements": [
+                    { 
+                        "htmlElement": "h3",
+                        "arrayParentElement": null,
+                        "type": "object",
+                        "source": "sparql",
+                        "variableName": "prefLabel",
+                        "isArray": false,
+                        "orderBy": null,
+                        "makeLink": false,
+                        "externalLink": false
+                    },
+                    { 
+                        "htmlElement": "p",
+                        "arrayParentElement": null,
+                        "type": "string",
+                        "source": "intl",
+                        "variableName": "leafletMap.resultClasses.captivityLocationsMap.captivitiesAt",
+                        "isArray": false,
+                        "orderBy": null,
+                        "makeLink": false,
+                        "externalLink": false
+                    },
+                    { 
+                        "htmlElement": "li",
+                        "arrayParentElement": "ul",
+                        "type": "object",
+                        "source": "sparql",
+                        "variableName": "related",
+                        "isArray": true,
+                        "orderBy": "prefLabel",
+                        "includeUndefined": true,
+                        "makeLink": true,
+                        "externalLink": false
+                    }
+                ]
             }
         }
     },
