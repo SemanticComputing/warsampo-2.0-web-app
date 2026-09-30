@@ -213,7 +213,7 @@ class LeafletMap extends React.Component {
     // check if should open a popup
     if (this.props.instance && this.state.popupOpen && !this.state.popupBinded &&
       this.props.instance.id === this.state.popupID) {
-      const marker = this.markers[this.props.instance.id]
+      const marker = this.state.popupMarker
       marker
         .bindPopup(
           this.props.createPopUpContent({
@@ -335,6 +335,7 @@ class LeafletMap extends React.Component {
           url: customLayer.inConfig ? useConfigsStore.getState().getStaticFileUrl(customLayer.url) : customLayer.url,
           flavor: 'light',
           lang: 'en',
+          maxDataZoom: customLayer.maxDataZoom || customLayer.maxZoom,
           maxZoom: customLayer.maxZoom,
           minZoom: customLayer.minZoom
         })
@@ -1008,7 +1009,10 @@ class LeafletMap extends React.Component {
 
   markerOnClickFacetResults = event => {
     const { id } = event.target.options
+
+    const marker = event.target
     this.setState({
+      popupMarker: marker,
       popupID: id,
       popupOpen: true
     })

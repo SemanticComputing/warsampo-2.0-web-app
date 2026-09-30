@@ -30,12 +30,14 @@ To build client, server and combo images run:
 docker compose -f compose-prod.yaml build 
 ```
 
-Sampo can be run as split client and server containers where the `API_URL` of the server can be set. The combo image can
-be used to run sampo as one container where the server is hosted on `/api`.
+Sampo-UI can be run as split client and server containers where the `API_URL` of the server can be set. The combo image can
+be used to run Sampo-UI as one container where the server is hosted on `/api`.
 
 ## Documentation
 
-[docs page](docs/README.md)
+ - [GitHub docs page](docs/README.md)
+ - [Sampo-UI framework tool page](https://seco.cs.aalto.fi/tools/sampo-ui/)
+ - [Sampo Model, Data Services, and Series of Semantic Portals](https://seco.cs.aalto.fi/applications/sampo/)
 
 ## Developer guide
 
@@ -47,9 +49,9 @@ Instead, install an appropriate [plugin](https://standardjs.com/index.html#are-t
 editor, it is highly recommended to switch into a supported editor.
 
 ## Version 3.0.0 vs v4.0.0 onwards
-Version 4 is a very major refactoring update that changed the way sampo portals get built. See docs page for more info.
+Version 4 is a very major refactoring update that changed the way Sampo portals get built. See [docs page](docs/README.md) and [migration guide](docs/MIGRATION.md) for more info. Version 3 code is available on the [legacy-v3 branch](https://github.com/SemanticComputing/sampo-ui/tree/legacy-v3) of the repository.
 
-The following research prototype portals used sampo version 3 or earlier as a base:
+The following research prototype portals used Sampo-UI version 3 or earlier as a base:
 
 1. [NameSampo](https://github.com/SemanticComputing/nimisampo.fi)
 2. [Mapping Manuscript Migrations](https://github.com/mapping-manuscript-migrations/mmm-web-app)
@@ -101,3 +103,28 @@ The example fetches only master branch:
 10. Go to the branch of your new repository where you want to merge the changes in upstream.
 Merge, solve conflicts and enjoy:
 `git merge upstream/master`
+
+## Credits
+
+Developed by the [Semantic Computing Research Group (SeCo)](https://seco.cs.aalto.fi/) and the [Ghent Centre for Digital Humanities (GhentCDH)](https://www.ghentcdh.ugent.be/).
+
+Funded by [FIN-CLARIAH](https://www.kielipankki.fi/organization/fin-clariah/) and [Clariah-VL](https://clariahvl.hypotheses.org/).
+
+Supported by [CSC – IT Center for Science](https://csc.fi/en/).
+
+<div>
+<img src="https://www.ldf.fi/img/seco-logo.png" alt="SeCo logo" height="150">
+<img src="https://www.ghentcdh.ugent.be/ghentcdh_logo_blue_text_transparent_bg_landscape.svg" alt="GhentCDH logo" height="150">
+</div>
+
+<div>
+<img src="https://seco.cs.aalto.fi/tools/sampo-ui/tutorial/img/aalto-logo.png" alt="Aalto University logo" height="50">
+<img src="https://seco.cs.aalto.fi/tools/sampo-ui/tutorial/img/university-of-helsinki-logo.png" alt="University of Helsinki logo" height="50">
+<img src="https://seco.cs.aalto.fi/tools/sampo-ui/tutorial/img/heldig-logo.png" alt="HELDIG logo" height="50">
+</div>
+
+<div>
+<img src="https://seco.cs.aalto.fi/tools/sampo-ui/tutorial/img/fin-clarin-logo.png" alt="FIN-CLARIN logo" height="50">
+<img src="https://seco.cs.aalto.fi/tools/sampo-ui/tutorial/img/dariah-fi-logo.png" alt="DARIAH-FI logo" height="50">
+<img src="https://seco.cs.aalto.fi/tools/sampo-ui/tutorial/img/clariah-vl-logo.png" alt="CLARIAH-VL logo" height="50">
+</div>
