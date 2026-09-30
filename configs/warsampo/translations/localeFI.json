@@ -218,6 +218,16 @@
       "count": "Menehtyineiden lukumäärä",
       "listHeadingSingleInstance": "Menehtynyt:",
       "listHeadingMultipleInstances": "Menehtyneet:"
+    },
+    "captivityMigrations": {
+      "legendTitle": "Kaaren väritys",
+      "legendFrom": "Vangiksi jäämisen kunta",
+      "legendTo": "Vankeuspaikka",
+      "from": "Vangiksi jäämisen kunta:",
+      "to": "Vankeuspaikka:",
+      "count": "Sotavankien lukumäärä",
+      "listHeadingSingleInstance": "Sotavanki:",
+      "listHeadingMultipleInstances": "Sotavangit:"
     }
   },
   "perspectives": {

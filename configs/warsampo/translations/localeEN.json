@@ -242,6 +242,16 @@
       "count": "Casualty count",
       "listHeadingSingleInstance": "Casualty:",
       "listHeadingMultipleInstances": "Casualties:"
+    },
+    "captivityMigrations": {
+      "legendTitle": "Arc colouring",
+      "legendFrom": "Municipality of capture",
+      "legendTo": "Place of captivity",
+      "from": "Municipality of capture:",
+      "to": "Place of captivity:",
+      "count": "Prisoner count",
+      "listHeadingSingleInstance": "Prisoner:",
+      "listHeadingMultipleInstances": "Prisoners:"
     }
   },
   "perspectives": {

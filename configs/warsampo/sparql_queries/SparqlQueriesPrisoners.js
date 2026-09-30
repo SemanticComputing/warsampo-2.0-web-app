@@ -245,3 +245,41 @@ export const captivitiesAt = `
     BIND(CONCAT("/actors/page/", REPLACE(STR(?actor_), "^.*\\\\/(.+)", "$1")) AS ?related__dataProviderUrl)
   }
 `
+
+export const migrationsQuery = `
+  SELECT DISTINCT ?id 
+  ?from__id ?from__prefLabel ?from__lat ?from__long ?from__dataProviderUrl
+  ?to__id ?to__prefLabel (SAMPLE(?to__lat_) AS ?to__lat) (SAMPLE(?to__long_) AS ?to__long) ?to__dataProviderUrl
+  (COUNT(DISTINCT ?record) as ?instanceCount)
+  WHERE {
+    <FILTER>
+    ?record prisoners:municipality_of_capture ?from__id ;
+            prisoners:captivity/prisoners:location ?to__id .
+    ?from__id skos:prefLabel ?from__prefLabel ;
+              wgs84:lat ?from__lat ;
+              wgs84:long ?from__long .
+    ?to__id skos:prefLabel ?to__prefLabel ;
+            wgs84:lat ?to__lat__ ;
+            wgs84:long ?to__long__ .
+    BIND(xsd:decimal(?to__lat__) AS ?to__lat_)
+    BIND(xsd:decimal(?to__long__) AS ?to__long_)
+    FILTER(BOUND(?to__lat_) && BOUND(?to__long_))
+    BIND(IRI(CONCAT(STR(?from__id), "-", STR(?to__id))) as ?id)
+    FILTER(?from__id != ?to__id)
+  }
+  GROUP BY ?id 
+  ?from__id ?from__prefLabel ?from__lat ?from__long ?from__dataProviderUrl
+  ?to__id ?to__prefLabel ?to__dataProviderUrl
+  ORDER BY DESC(?instanceCount)
+`
+
+export const migrationsDialogQuery = `
+  SELECT * {
+    <FILTER>
+    ?id prisoners:municipality_of_capture <FROM_ID> ;
+        prisoners:captivity/prisoners:location <TO_ID> ;
+        skos:prefLabel ?prefLabel ;
+        crm-org:P70_documents ?actor_ .
+    BIND(CONCAT("/actors/page/", REPLACE(STR(?actor_), "^.*\\\\/(.+)", "$1")) AS ?dataProviderUrl)
+  }
+`

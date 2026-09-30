@@ -24,6 +24,13 @@
                 27.314050
             ],
             "zoom": 4
+        },
+        "captivityMigrations": {
+            "center": [
+                65.184809,
+                27.314050
+            ],
+            "zoom": 4
         }
     },
     "resultClasses": {
@@ -184,6 +191,33 @@
                     }
                 ]
             }
+        },
+        "captivityMigrations": {
+            "tabID": 3,
+            "component": "Deck",
+            "tabPath": "migrations",
+            "tabIcon": "Redo",
+            "sparqlQuery": "migrationsQuery",
+            "facetClass": "prisoners",
+            "filterTarget": "record",
+            "resultMapper": "makeObjectList",
+            "layerType": "arcLayer",
+            "arcWidthVariable": "instanceCountScaled",
+            "instanceVariable": "record",
+            "showTooltips": true,
+            "postprocess": {
+                "func": "linearScale",
+                "config": {
+                    "variable": "instanceCount",
+                    "minAllowed": 1,
+                    "maxAllowed": 30
+                }
+            }
+        },
+        "captivityMigrationsDialog": {
+            "sparqlQuery": "migrationsDialogQuery",
+            "filterTarget": "id",
+            "resultMapper": "makeObjectList"
         }
     },
     "properties": [
