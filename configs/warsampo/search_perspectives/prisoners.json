@@ -53,9 +53,9 @@
             "tabIcon": "PieChart",
             "facetClass": "casualties",
             "dropdownForResultClasses": true,
-            "defaultResultClass": "deathsByMaritalStatus",
+            "defaultResultClass": "byMaritalStatus",
             "resultClasses": {
-                "deathsByMaritalStatus": {
+                "byMaritalStatus": {
                     "sparqlQuery": "prisonersByMaritalStatusQuery",
                     "filterTarget": "record",
                     "resultMapper": "mapPieChart",
@@ -72,7 +72,7 @@
                         }
                     ]
                 },
-                "deathsByMotherTongue": {
+                "byMotherTongue": {
                     "sparqlQuery": "prisonersByMotherTongueQuery",
                     "filterTarget": "record",
                     "resultMapper": "mapPieChart",
@@ -89,7 +89,7 @@
                         }
                     ]
                 },
-                "deathsByRank": {
+                "byRank": {
                     "sparqlQuery": "prisonersByRankQuery",
                     "filterTarget": "record",
                     "resultMapper": "mapPieChart",
@@ -106,7 +106,7 @@
                         }
                     ]
                 },
-                "deathsByUnit": {
+                "byUnit": {
                     "sparqlQuery": "prisonersByUnitQuery",
                     "filterTarget": "record",
                     "resultMapper": "mapPieChart",

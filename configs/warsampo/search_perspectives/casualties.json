@@ -131,9 +131,9 @@
             "tabIcon": "PieChart",
             "facetClass": "casualties",
             "dropdownForResultClasses": true,
-            "defaultResultClass": "deathsByPerishingCategory",
+            "defaultResultClass": "byPerishingCategory",
             "resultClasses": {
-                "deathsByPerishingCategory": {
+                "byPerishingCategory": {
                     "sparqlQuery": "deathsByPerishingCategoryQuery",
                     "filterTarget": "record",
                     "resultMapper": "mapPieChart",
@@ -150,7 +150,7 @@
                         }
                     ]
                 },
-                "deathsByMaritalStatus": {
+                "byMaritalStatus": {
                     "sparqlQuery": "deathsByMaritalStatusQuery",
                     "filterTarget": "record",
                     "resultMapper": "mapPieChart",
@@ -167,7 +167,7 @@
                         }
                     ]
                 },
-                "deathsByGender": {
+                "byGender": {
                     "sparqlQuery": "deathsByGenderQuery",
                     "filterTarget": "record",
                     "resultMapper": "mapPieChart",
@@ -184,7 +184,7 @@
                         }
                     ]
                 },
-                "deathsByMotherTongue": {
+                "byMotherTongue": {
                     "sparqlQuery": "deathsByMotherTongueQuery",
                     "filterTarget": "record",
                     "resultMapper": "mapPieChart",
@@ -201,7 +201,7 @@
                         }
                     ]
                 },
-                "deathsByNumberOfChildren": {
+                "byNumberOfChildren": {
                     "sparqlQuery": "deathsByNumberOfChildrenQuery",
                     "filterTarget": "record",
                     "resultMapper": "mapPieChart",
@@ -218,7 +218,7 @@
                         }
                     ]
                 },
-                "deathsByAge": {
+                "byAge": {
                     "sparqlQuery": "deathsByAgeQuery",
                     "filterTarget": "record",
                     "resultMapper": "mapIntBarChart",
@@ -236,7 +236,7 @@
                         "fillEmptyValues": true
                     }
                 },
-                "deathsByMunicipalityOfDomicilePie": {
+                "byMunicipalityOfDomicilePie": {
                     "sparqlQuery": "deathsByMunicipalityOfDomicilePieQuery",
                     "filterTarget": "record",
                     "resultMapper": "mapPieChart",
@@ -253,7 +253,7 @@
                         }
                     ]
                 },
-                "deathsByMunicipalityOfBirth": {
+                "byMunicipalityOfBirth": {
                     "sparqlQuery": "deathsByMunicipalityOfBirthQuery",
                     "filterTarget": "record",
                     "resultMapper": "mapPieChart",
@@ -270,7 +270,7 @@
                         }
                     ]
                 },
-                "deathsByMunicipalityOfDeath": {
+                "byMunicipalityOfDeath": {
                     "sparqlQuery": "deathsByMunicipalityOfDeathQuery",
                     "filterTarget": "record",
                     "resultMapper": "mapPieChart",
@@ -287,7 +287,7 @@
                         }
                     ]
                 },
-                "deathsByNationality": {
+                "byNationality": {
                     "sparqlQuery": "deathsByNationalityQuery",
                     "filterTarget": "record",
                     "resultMapper": "mapPieChart",
@@ -304,7 +304,7 @@
                         }
                     ]
                 },
-                "deathsByRank": {
+                "byRank": {
                     "sparqlQuery": "deathsByRankQuery",
                     "filterTarget": "record",
                     "resultMapper": "mapPieChart",
@@ -321,7 +321,7 @@
                         }
                     ]
                 },
-                "deathsByUnit": {
+                "byUnit": {
                     "sparqlQuery": "deathsByUnitQuery",
                     "filterTarget": "record",
                     "resultMapper": "mapPieChart",
@@ -338,7 +338,7 @@
                         }
                     ]
                 },
-                "deathsByCemetery": {
+                "byCemetery": {
                     "sparqlQuery": "deathsByCemeteryQuery",
                     "filterTarget": "record",
                     "resultMapper": "mapPieChart",
