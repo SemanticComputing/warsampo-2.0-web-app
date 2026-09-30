@@ -128,3 +128,91 @@ export const prisonerPropertiesInstancePage = `
       ?source__id skos:prefLabel ?source__prefLabel .
     }
 `
+
+export const prisonersByMaritalStatusQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?record) AS ?instanceCount)
+  WHERE {
+    {
+      <FILTER>
+      ?record a warsa:PrisonerRecord ;
+              prisoners:marital_status ?category .
+      ?category skos:prefLabel ?prefLabel .
+      FILTER(LANG(?prefLabel) = '<LANG>')
+    }
+    UNION
+    {
+      <FILTER>
+      ?record a warsa:PrisonerRecord .
+      FILTER NOT EXISTS {
+        ?record prisoners:marital_status [] .
+      }
+      BIND('unknown' as ?category)
+      BIND('Tuntematon / Unknown' AS ?prefLabel)
+    }
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`
+
+export const prisonersByMotherTongueQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?record) AS ?instanceCount)
+  WHERE {
+    <FILTER>
+    ?record a warsa:PrisonerRecord ;
+            warsa:mother_tongue ?category .
+    ?category skos:prefLabel ?prefLabel .
+    FILTER(LANG(?prefLabel) = '<LANG>')
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`
+
+export const prisonersByRankQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?record) AS ?instanceCount)
+  WHERE {
+    {
+      <FILTER>
+      ?record a warsa:PrisonerRecord ;
+              prisoners:rank ?category .
+      ?category skos:prefLabel ?prefLabel .
+      FILTER(LANG(?prefLabel) = '<LANG>')
+    }
+    UNION
+    {
+      <FILTER>
+      ?record a warsa:PrisonerRecord .
+      FILTER NOT EXISTS {
+        ?record prisoners:rank [] .
+      }
+      BIND('unknown' as ?category)
+      BIND('Tuntematon / Unknown' AS ?prefLabel)
+    }
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`
+
+export const prisonersByUnitQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?record) AS ?instanceCount)
+  WHERE {
+    {
+      <FILTER>
+      ?record a warsa:PrisonerRecord ;
+              prisoners:unit ?category .
+      ?category skos:prefLabel ?prefLabel .
+      FILTER(LANG(?prefLabel) = '<LANG>')
+    }
+    UNION
+    {
+      <FILTER>
+      ?record a warsa:PrisonerRecord .
+      FILTER NOT EXISTS {
+        ?record prisoners:unit [] .
+      }
+      BIND('unknown' as ?category)
+      BIND('Tuntematon / Unknown' AS ?prefLabel)
+    }
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`

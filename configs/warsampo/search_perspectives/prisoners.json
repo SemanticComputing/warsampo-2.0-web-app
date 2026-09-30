@@ -44,6 +44,86 @@
                     }
                 }
             }
+        },
+        "prisonersPieChart": {
+            "tabID": 1,
+            "component": "ApexCharts",
+            "doNotRenderOnMount": true,
+            "tabPath": "pie_chart",
+            "tabIcon": "PieChart",
+            "facetClass": "casualties",
+            "dropdownForResultClasses": true,
+            "defaultResultClass": "deathsByMaritalStatus",
+            "resultClasses": {
+                "deathsByMaritalStatus": {
+                    "sparqlQuery": "prisonersByMaritalStatusQuery",
+                    "filterTarget": "record",
+                    "resultMapper": "mapPieChart",
+                    "sliceVisibilityThreshold": null,
+                    "dropdownForChartTypes": "true",
+                    "chartTypes": [
+                        {
+                            "id": "pie",
+                            "createChartData": "createApexPieChartData"
+                        },
+                        {
+                            "id": "bar",
+                            "createChartData": "createApexBarChartData"
+                        }
+                    ]
+                },
+                "deathsByMotherTongue": {
+                    "sparqlQuery": "prisonersByMotherTongueQuery",
+                    "filterTarget": "record",
+                    "resultMapper": "mapPieChart",
+                    "sliceVisibilityThreshold": null,
+                    "dropdownForChartTypes": "true",
+                    "chartTypes": [
+                        {
+                            "id": "pie",
+                            "createChartData": "createApexPieChartData"
+                        },
+                        {
+                            "id": "bar",
+                            "createChartData": "createApexBarChartData"
+                        }
+                    ]
+                },
+                "deathsByRank": {
+                    "sparqlQuery": "prisonersByRankQuery",
+                    "filterTarget": "record",
+                    "resultMapper": "mapPieChart",
+                    "sliceVisibilityThreshold": 0.001,
+                    "dropdownForChartTypes": "true",
+                    "chartTypes": [
+                        {
+                            "id": "pie",
+                            "createChartData": "createApexPieChartData"
+                        },
+                        {
+                            "id": "bar",
+                            "createChartData": "createApexBarChartData"
+                        }
+                    ]
+                },
+                "deathsByUnit": {
+                    "sparqlQuery": "prisonersByUnitQuery",
+                    "filterTarget": "record",
+                    "resultMapper": "mapPieChart",
+                    "sliceVisibilityThreshold": 0.0025,
+                    "dropdownForChartTypes": "true",
+                    "chartTypes": [
+                        {
+                            "id": "pie",
+                            "createChartData": "createApexPieChartData"
+                        },
+                        {
+                            "id": "bar",
+                            "createChartData": "createApexBarChartData"
+                        }
+                    ]
+                }
+            }
         }
     },
     "properties": [
