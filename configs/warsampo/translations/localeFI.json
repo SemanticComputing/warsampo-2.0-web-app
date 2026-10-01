@@ -117,6 +117,9 @@
       "byRank": "sotilasarvo",
       "byUnit": "joukko-osasto",
       "byCemetery": "hautausmaa",
+      "byOccupation": "ammatti",
+      "byMunicipalityOfResidence": "asuinkunta",
+      "byMunicipalityOfCapture": "vangiksi jäämisen kunta",
       "astiaLinks": "Astia-linkitykset",
       "sotapolkuLinks": "Sotapolku-linkitykset"
     }

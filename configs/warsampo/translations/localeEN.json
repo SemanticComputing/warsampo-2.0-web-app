@@ -136,6 +136,9 @@
       "byRank": "rank",
       "byUnit": "unit",
       "byCemetery": "cemetery",
+      "byOccupation": "occupation",
+      "byMunicipalityOfResidence": "municipality of residence",
+      "byMunicipalityOfCapture": "municipality of capture",
       "astiaLinks": "Astia links",
       "sotapolkuLinks": "Sotapolku links"
     }

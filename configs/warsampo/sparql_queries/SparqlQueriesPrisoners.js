@@ -216,6 +216,214 @@ export const prisonersByUnitQuery = `
   ORDER BY DESC(?instanceCount)
 `
 
+export const prisonersByOccupationQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?record) AS ?instanceCount)
+  WHERE {
+    {
+      <FILTER>
+      ?record a warsa:PrisonerRecord ;
+              bioc:has_occupation ?category .
+      ?category skos:prefLabel ?prefLabel .
+      FILTER(LANG(?prefLabel) = '<LANG>')
+    }
+    UNION
+    {
+      <FILTER>
+      ?record a warsa:PrisonerRecord .
+      FILTER NOT EXISTS {
+        ?record bioc:has_occupation [] .
+      }
+      BIND('unknown' as ?category)
+      BIND('Tuntematon / Unknown' AS ?prefLabel)
+    }
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`
+
+export const prisonersByNumberOfChildrenQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?record) AS ?instanceCount)
+  WHERE {
+    {
+      <FILTER>
+      ?record a warsa:PrisonerRecord ;
+              prisoners:number_of_children ?category .
+      BIND(CONCAT(STR(?category), ' ', IF(STR(?category) = '1', IF('<LANG>' = 'en', 'child', 'lapsi'), IF('<LANG>' = 'en', 'children', 'lasta'))) AS ?prefLabel)
+    }
+    UNION
+    {
+      <FILTER>
+      ?record a warsa:PrisonerRecord .
+      FILTER NOT EXISTS {
+        ?record prisoners:number_of_children [] .
+      }
+      BIND('unknown' as ?category)
+      BIND('Tuntematon / Unknown' AS ?prefLabel)
+    }
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`
+
+export const prisonersByMunicipalityOfResidenceQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?record) AS ?instanceCount)
+  WHERE {
+    {
+      <FILTER>
+      ?record a warsa:PrisonerRecord ;
+              prisoners:municipality_of_residence_literal ?category .
+      BIND(?category AS ?prefLabel)
+    }
+    UNION
+    {
+      <FILTER>
+      ?record a warsa:PrisonerRecord .
+      FILTER NOT EXISTS {
+        ?record prisoners:municipality_of_residence_literal [] .
+      }
+      BIND('unknown' as ?category)
+      BIND('Tuntematon / Unknown' AS ?prefLabel)
+    }
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`
+
+export const prisonersByMunicipalityOfDeathQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?record) AS ?instanceCount)
+  WHERE {
+    {
+      <FILTER>
+      ?record a warsa:PrisonerRecord ;
+              prisoners:municipality_of_death_literal ?category .
+      BIND(?category AS ?prefLabel)
+    }
+    UNION
+    {
+      <FILTER>
+      ?record a warsa:PrisonerRecord .
+      FILTER NOT EXISTS {
+        ?record prisoners:municipality_of_death_literal [] .
+      }
+      BIND('unknown' as ?category)
+      BIND('Tuntematon / Unknown' AS ?prefLabel)
+    }
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`
+
+export const prisonersByMunicipalityOfCaptureQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?record) AS ?instanceCount)
+  WHERE {
+    {
+      <FILTER>
+      ?record a warsa:PrisonerRecord ;
+              prisoners:municipality_of_capture_literal ?category .
+      BIND(?category AS ?prefLabel)
+    }
+    UNION
+    {
+      <FILTER>
+      ?record a warsa:PrisonerRecord .
+      FILTER NOT EXISTS {
+        ?record prisoners:municipality_of_capture_literal [] .
+      }
+      BIND('unknown' as ?category)
+      BIND('Tuntematon / Unknown' AS ?prefLabel)
+    }
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`
+
+export const prisonersByMunicipalityOfBirthQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?record) AS ?instanceCount)
+  WHERE {
+    {
+      <FILTER>
+      ?record a warsa:PrisonerRecord ;
+              warsa:municipality_of_birth_literal ?category .
+      BIND(?category AS ?prefLabel)
+    }
+    UNION
+    {
+      <FILTER>
+      ?record a warsa:PrisonerRecord .
+      FILTER NOT EXISTS {
+        ?record warsa:municipality_of_birth_literal [] .
+      }
+      BIND('unknown' as ?category)
+      BIND('Tuntematon / Unknown' AS ?prefLabel)
+    }
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`
+
+export const prisonersByAgeQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?record) as ?instanceCount)
+  WHERE {
+    {
+      <FILTER>
+      ?record a warsa:PrisonerRecord .
+      
+      ?record prisoners:date_of_capture ?doc . 
+      ?record warsa:date_of_birth ?dob .
+    
+      FILTER(datatype(?doc) = xsd:date)
+      FILTER(datatype(?dob) = xsd:date)
+
+      # calculate age
+      BIND((YEAR(?doc)-YEAR(?dob)-IF(MONTH(?doc) < MONTH(?dob), 1, IF(DAY(?doc) < DAY(?dob), 1, 0))) AS ?age)
+
+      BIND(IF(?age > 120, 'Muu / Other', ?age) as ?category)
+      BIND(?category as ?prefLabel)
+    }
+  	UNION
+    {
+      <FILTER>
+      ?record a warsa:PrisonerRecord .
+      
+      ?record prisoners:date_of_capture ?doc . 
+      ?record warsa:date_of_birth ?dob .
+    
+      FILTER(datatype(?doc) != xsd:date)
+      
+      BIND('Unknown' as ?category)
+      BIND('Tuntematon / Unknown' as ?prefLabel)
+    }
+    UNION
+    {
+      <FILTER>
+      ?record a warsa:PrisonerRecord .
+      
+      ?record prisoners:date_of_capture ?doc . 
+      ?record warsa:date_of_birth ?dob .
+    
+      FILTER(datatype(?dob) != xsd:date)
+      
+      BIND('Unknown' as ?category)
+      BIND('Tuntematon / Unknown' as ?prefLabel)
+    }
+    UNION
+    {
+      <FILTER>
+      ?record a warsa:PrisonerRecord .
+      
+      FILTER NOT EXISTS { 
+        ?record prisoners:date_of_capture [] . 
+        ?record warsa:date_of_birth [] . 
+      }
+      
+      BIND('Unknown' as ?category)
+      BIND('Tuntematon / Unknown' as ?prefLabel)
+    }
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY ASC(?prefLabel)
+`
+
 export const captivityPlacesQuery = `
   SELECT ?id (SAMPLE(?lat_) AS ?lat) (SAMPLE(?long_) AS ?long)
   (COUNT(DISTINCT ?record) as ?instanceCount)

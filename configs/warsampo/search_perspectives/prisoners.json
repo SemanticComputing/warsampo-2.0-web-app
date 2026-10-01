@@ -136,6 +136,126 @@
                             "createChartData": "createApexBarChartData"
                         }
                     ]
+                },
+                "byOccupation": {
+                    "sparqlQuery": "prisonersByOccupationQuery",
+                    "filterTarget": "record",
+                    "resultMapper": "mapPieChart",
+                    "sliceVisibilityThreshold": 0.001,
+                    "dropdownForChartTypes": "true",
+                    "chartTypes": [
+                        {
+                            "id": "pie",
+                            "createChartData": "createApexPieChartData"
+                        },
+                        {
+                            "id": "bar",
+                            "createChartData": "createApexBarChartData"
+                        }
+                    ]
+                },
+                "byNumberOfChildren": {
+                    "sparqlQuery": "prisonersByNumberOfChildrenQuery",
+                    "filterTarget": "record",
+                    "resultMapper": "mapPieChart",
+                    "sliceVisibilityThreshold": null,
+                    "dropdownForChartTypes": "true",
+                    "chartTypes": [
+                        {
+                            "id": "pie",
+                            "createChartData": "createApexPieChartData"
+                        },
+                        {
+                            "id": "bar",
+                            "createChartData": "createApexBarChartData"
+                        }
+                    ]
+                },
+                "byMunicipalityOfBirth": {
+                    "sparqlQuery": "prisonersByMunicipalityOfBirthQuery",
+                    "filterTarget": "record",
+                    "resultMapper": "mapPieChart",
+                    "sliceVisibilityThreshold": 0.0025,
+                    "dropdownForChartTypes": "true",
+                    "chartTypes": [
+                        {
+                            "id": "pie",
+                            "createChartData": "createApexPieChartData"
+                        },
+                        {
+                            "id": "bar",
+                            "createChartData": "createApexBarChartData"
+                        }
+                    ]
+                },
+                "byMunicipalityOfResidence": {
+                    "sparqlQuery": "prisonersByMunicipalityOfResidenceQuery",
+                    "filterTarget": "record",
+                    "resultMapper": "mapPieChart",
+                    "sliceVisibilityThreshold": 0.0025,
+                    "dropdownForChartTypes": "true",
+                    "chartTypes": [
+                        {
+                            "id": "pie",
+                            "createChartData": "createApexPieChartData"
+                        },
+                        {
+                            "id": "bar",
+                            "createChartData": "createApexBarChartData"
+                        }
+                    ]
+                },
+                "byMunicipalityOfCapture": {
+                    "sparqlQuery": "prisonersByMunicipalityOfCaptureQuery",
+                    "filterTarget": "record",
+                    "resultMapper": "mapPieChart",
+                    "sliceVisibilityThreshold": 0.0025,
+                    "dropdownForChartTypes": "true",
+                    "chartTypes": [
+                        {
+                            "id": "pie",
+                            "createChartData": "createApexPieChartData"
+                        },
+                        {
+                            "id": "bar",
+                            "createChartData": "createApexBarChartData"
+                        }
+                    ]
+                },
+                "byMunicipalityOfDeath": {
+                    "sparqlQuery": "prisonersByMunicipalityOfDeathQuery",
+                    "filterTarget": "record",
+                    "resultMapper": "mapPieChart",
+                    "sliceVisibilityThreshold": 0.0025,
+                    "dropdownForChartTypes": "true",
+                    "chartTypes": [
+                        {
+                            "id": "pie",
+                            "createChartData": "createApexPieChartData"
+                        },
+                        {
+                            "id": "bar",
+                            "createChartData": "createApexBarChartData"
+                        }
+                    ]
+                },
+                "byAge": {
+                    "sparqlQuery": "prisonersByAgeQuery",
+                    "filterTarget": "record",
+                    "resultMapper": "mapIntBarChart",
+                    "sliceVisibilityThreshold": -1,
+                    "dropdownForChartTypes": "true",
+                    "fillEmptyValues": true,
+                    "seriesTitle": "Lukumäärä / Count",
+                    "chartTypes": [
+                        {
+                            "id": "bar",
+                            "createChartData": "createApexBarChartData"
+                        }
+                    ],
+                    "resultMapperConfig": {
+                        "fillEmptyValues": true
+                    }
                 }
             }
         },
