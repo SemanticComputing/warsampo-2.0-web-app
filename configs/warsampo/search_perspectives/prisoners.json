@@ -367,6 +367,22 @@
             "numberedList": false
         },
         {
+            "id": "dateOfCapture",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false
+        },
+        {
+            "id": "municipalityOfCapture",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false
+        },
+        {
             "id": "deathTime",
             "valueType": "string",
             "makeLink": false,
@@ -493,6 +509,68 @@
             "sortByPredicate": "prisoners:marital_status/skos:prefLabel",
             "sortDirection": "desc"
         },
+        "municipalityOfBirth": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "predicate": "warsa:municipality_of_birth_literal",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "warsa:municipality_of_birth_literal",
+            "sortDirection": "desc",
+            "literal": true
+        },
+        "municipalityOfResidence": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "predicate": "prisoners:municipality_of_residence_literal",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "prisoners:municipality_of_residence_literal",
+            "sortDirection": "desc",
+            "literal": true
+        },
+        "municipalityOfDomicile": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "predicate": "prisoners:municipality_of_domicile_literal",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "prisoners:municipality_of_domicile_literal",
+            "sortDirection": "desc",
+            "literal": true
+        },
+        "municipalityOfCapture": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "predicate": "prisoners:municipality_of_capture_literal",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "prisoners:municipality_of_capture_literal",
+            "sortDirection": "desc",
+            "literal": true
+        },
+        "dateOfCapture": {
+            "containerClass": "five",
+            "facetType": "integer",
+            "filterType": "dateNoTimespanFilter",
+            "facetValueFilter": "FILTER(datatype(?value) = xsd:date)",
+            "predicate": "prisoners:date_of_capture",
+            "startProperty": "prisoners:date_of_capture",
+            "endProperty": "prisoners:date_of_capture",
+            "min": "1750-01-01",
+            "max": "2010-01-01",
+            "sortByPredicate": "prisoners:date_of_capture",
+            "sortByAscPredicate": "prisoners:date_of_capture",
+            "sortByDescPredicate": "prisoners:date_of_capture"
+        },
         "municipalityOfDeath": {
             "containerClass": "ten",
             "facetType": "list",
@@ -529,6 +607,13 @@
             "sortBy": "instanceCount",
             "sortByPredicate": "prisoners:unit/skos:prefLabel",
             "sortDirection": "desc"
+        },
+        "numberOfChildren": {
+            "containerClass": "five",
+            "facetType": "integer",
+            "filterType": "integerFilterRange",
+            "predicate": "prisoners:number_of_children",
+            "sortByPredicate": "prisoners:number_of_children"
         },
         "article": {
             "containerClass": "ten",

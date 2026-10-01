@@ -29,6 +29,16 @@ export const prisonerProperties = `
     UNION
     {
       <SUBQUERY_FILTER>
+      ?id prisoners:date_of_capture ?dateOfCapture .
+    }
+    UNION
+    {
+      <SUBQUERY_FILTER>
+      ?id prisoners:municipality_of_capture_literal ?municipalityOfCapture .
+    }
+    UNION
+    {
+      <SUBQUERY_FILTER>
       ?id prisoners:date_of_death ?deathTime .
     }
     UNION

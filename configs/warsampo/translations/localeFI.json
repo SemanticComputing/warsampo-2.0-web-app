@@ -478,6 +478,26 @@
           "label": "Siviilisääty",
           "description": "Siviilisääty"
         },
+        "municipalityOfBirth": {
+          "label": "Synnyinkunta",
+          "description": "Synnyinkunta"
+        },
+        "municipalityOfDomicile": {
+          "label": "Kotikunta",
+          "description": "Kotikunta"
+        },
+        "municipalityOfResidence": {
+          "label": "Asuinkunta",
+          "description": "Asuinkunta"
+        },
+        "municipalityOfCapture": {
+          "label": "Vangiksi jäämisen kunta",
+          "description": "Vangiksi jäämisen kunta"
+        },
+        "dateOfCapture": {
+          "label": "Vangiksi jäämisen päivämäärä",
+          "description": "Päivä, jona henkilö on suomalaisten lähteiden mukaan joutunut sotavangiksi."
+        },
         "municipalityOfDeath": {
           "label": "Kuolinkunta",
           "description": "Kuolinkunta"
@@ -489,6 +509,10 @@
         "unit": {
           "label": "Joukko-osasto",
           "description": "Joukko-osasto"
+        },
+        "numberOfChildren": {
+          "label": "Lasten lukumäärä",
+          "description": "Lasten lukumäärä"
         },
         "article": {
           "label": "Kansa Taisteli -artikkelit",

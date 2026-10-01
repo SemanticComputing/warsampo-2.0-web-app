@@ -515,6 +515,26 @@
           "label": "Marital status",
           "description": "Marital status of the casualty"
         },
+        "municipalityOfBirth": {
+          "label": "Municipality of birth",
+          "description": "Municipality of birth"
+        },
+        "municipalityOfDomicile": {
+          "label": "Municipality of domicile",
+          "description": "Municipality of domicile"
+        },
+        "municipalityOfResidence": {
+          "label": "Municipality of residence",
+          "description": "Municipality of residence"
+        },
+        "municipalityOfCapture": {
+          "label": "Municipality of capture",
+          "description": "Municipality of capture"
+        },
+        "dateOfCapture": {
+          "label": "Date of capture",
+          "description": "Date of capture"
+        },
         "municipalityOfDeath": {
           "label": "Municipality of death",
           "description": "Municipality of death of the casualty"
@@ -526,6 +546,10 @@
         "unit": {
           "label": "Unit",
           "description": "Unit of the casualty"
+        },
+        "numberOfChildren": {
+          "label": "Number of children",
+          "description": "Number of children"
         },
         "article": {
           "label": "Kansa Taisteli articles",
