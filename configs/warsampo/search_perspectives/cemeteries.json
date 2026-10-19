@@ -278,6 +278,9 @@
             "filterTarget": "cemetery",
             "resultMapper": "mapPlaces",
             "showExternalLayers": true,
+            "componentConfig": {
+                "maxClusterRadius": 20
+            },
             "instanceConfig": {
                 "propertiesQueryBlock": "placePropertiesInfoWindow",
                 "relatedInstances": "peopleBuriedAt",

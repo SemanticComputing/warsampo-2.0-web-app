@@ -91,6 +91,9 @@
                         "facetClass": "casualties",
                         "filterTarget": "record",
                         "resultMapper": "mapInstancePagePlaces",
+                        "componentConfig": {
+                            "maxClusterRadius": 20
+                        },
                         "instanceConfig": {
                             "createPopUpContent": "createConfigurablePopUpContent",
                             "popUpElements": [

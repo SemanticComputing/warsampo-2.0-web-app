@@ -308,7 +308,7 @@
                     "sparqlQuery": "deathsByRankQuery",
                     "filterTarget": "record",
                     "resultMapper": "mapPieChart",
-                    "sliceVisibilityThreshold": null,
+                    "sliceVisibilityThreshold": 0.001,
                     "dropdownForChartTypes": "true",
                     "chartTypes": [
                         {
@@ -383,6 +383,9 @@
             "filterTarget": "record",
             "resultMapper": "mapPlaces",
             "showExternalLayers": true,
+            "componentConfig": {
+                "maxClusterRadius": 20
+            },
             "instanceConfig": {
                 "propertiesQueryBlock": "placePropertiesInfoWindow",
                 "relatedInstances": "deathsHappenedAt",
