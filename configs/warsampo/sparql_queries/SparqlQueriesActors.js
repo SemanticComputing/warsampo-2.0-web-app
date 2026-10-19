@@ -66,6 +66,13 @@ export const actorPropertiesInstancePage = `
       ?id crm-org:P70i_is_documented_in ?deathRecord__id .
       ?deathRecord__id a warsa:DeathRecord ;
                       warsa:buried_in ?buriedIn__id .
+      OPTIONAL {
+        GRAPH <http://ldf.fi/warsa/casualties_nv> {
+          ?deathRecord__id warsa:buried_in ?buriedIn__id .
+        }
+        BIND("grey" as ?buriedIn__color)
+        BIND("true" as ?buriedIn__unverified)
+      }
       ?buriedIn__id skos:prefLabel ?buriedIn__prefLabel .
       BIND(CONCAT("/cemeteries/page/", REPLACE(STR(?buriedIn__id), "^.*\\\\/(.+)", "$1")) AS ?buriedIn__dataProviderUrl)
     }
@@ -349,6 +356,13 @@ export const actorPropertiesInstancePageAlt = `
       <ID> crm-org:P70i_is_documented_in ?deathRecord__id .
       ?deathRecord__id a warsa:DeathRecord ;
                       warsa:buried_in ?buriedIn__id .
+      OPTIONAL {
+        GRAPH <http://ldf.fi/warsa/casualties_nv> {
+          ?deathRecord__id warsa:buried_in ?buriedIn__id .
+        }
+        BIND("grey" as ?buriedIn__color)
+        BIND("true" as ?buriedIn__unverified)
+      }
       ?buriedIn__id skos:prefLabel ?buriedIn__prefLabel .
       BIND(CONCAT("/cemeteries/page/", REPLACE(STR(?buriedIn__id), "^.*\\\\/(.+)", "$1")) AS ?buriedIn__dataProviderUrl)
     }

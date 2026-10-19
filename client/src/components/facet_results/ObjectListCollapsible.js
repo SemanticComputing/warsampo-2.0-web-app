@@ -92,6 +92,12 @@ const ObjectListCollapsible = props => {
               <FeedbackOutlinedIcon />
             </IconButton>
           </Tooltip>}
+          {itemData.unverified && 
+          <Tooltip title={intl.get(`unverifiedTooltip`)} enterDelay={300} placement="right" arrow>
+            <IconButton size='large'>
+              <FeedbackOutlinedIcon />
+            </IconButton>
+          </Tooltip>}
           {addThreeDots &&
             <span className={classes.threeDots} onClick={() => props.onExpandClick(props.rowId)}> ...</span>}
           {showSource && itemData.source &&

@@ -203,7 +203,14 @@ export const peopleBuriedAt = `
   OPTIONAL {
     <FILTER>
     ?related__id warsa:buried_in ?id .
-    ?related__id skos:prefLabel ?related__prefLabel .
+    ?related__id skos:prefLabel ?related__prefLabel_ .
+    OPTIONAL {
+      GRAPH <http://ldf.fi/warsa/casualties_nv> {
+        ?related__id warsa:buried_in ?id .
+      }
+      BIND(" (?)" as ?related__prefLabel_tail_)
+    }
+    BIND(CONCAT(?related__prefLabel_, COALESCE(?related__prefLabel_tail_, "")) AS ?related__prefLabel)
     BIND(CONCAT("/casualties/page/", REPLACE(STR(?related__id), "^.*\\\\/(.+)", "$1")) AS ?related__dataProviderUrl)
   }
 `
@@ -223,7 +230,16 @@ export const casualtiesInstancePageQuery = `
       BIND (<ID> as ?id)
       ?id ^warsa:buried_in ?buriedCasualties__id .
       ?buriedCasualties__id skos:prefLabel ?buriedCasualties__prefLabel .
-      BIND (?prefLabel__id as ?prefLabel__prefLabel)
+
+      OPTIONAL {
+        GRAPH <http://ldf.fi/warsa/casualties_nv> {
+          ?buriedCasualties__id warsa:buried_in ?id .
+        }
+        BIND("grey" as ?buriedCasualties__color)
+        BIND("true" as ?buriedCasualties__unverified)
+      }
+
+      BIND(?prefLabel__id as ?prefLabel__prefLabel)
       BIND(CONCAT("/casualties/page/", REPLACE(STR(?buriedCasualties__id), "^.*\\\\/(.+)", "$1")) AS ?buriedCasualties__dataProviderUrl)
     }
   }

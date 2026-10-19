@@ -130,6 +130,13 @@ export const casualtyPropertiesInstancePage = `
       BIND(<ID> AS ?id)
       ?id warsa:buried_in ?buriedIn__id .
       ?buriedIn__id skos:prefLabel ?buriedIn__prefLabel .
+      OPTIONAL {
+        GRAPH <http://ldf.fi/warsa/casualties_nv> {
+          ?id warsa:buried_in ?buriedIn__id .
+        }
+        BIND("grey" as ?buriedIn__color)
+        BIND("true" as ?buriedIn__unverified)
+      }
       BIND(CONCAT("/cemeteries/page/", REPLACE(STR(?buriedIn__id), "^.*\\\\/(.+)", "$1")) AS ?buriedIn__dataProviderUrl)
     }
     UNION
@@ -412,8 +419,12 @@ export const deathsByRankQuery = `
       <FILTER>
       ?record a warsa:DeathRecord ;
               casualties:rank ?category .
-      ?category skos:prefLabel ?prefLabel .
-      FILTER(LANG(?prefLabel) = '<LANG>')
+      OPTIONAL {
+        ?category skos:prefLabel ?prefLabel_primary .
+        FILTER(LANG(?prefLabel_primary) = '<LANG>')
+      }
+      ?category skos:prefLabel ?prefLabel_fi .
+      BIND(COALESCE(?prefLabel_primary, ?prefLabel_fi) AS ?prefLabel)
     }
     UNION
     {
