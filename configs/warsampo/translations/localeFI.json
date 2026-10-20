@@ -528,7 +528,7 @@
     "actors": {
       "label": "Henkilöt",
       "facetResultsType": "henkilöä",
-      "shortDescription": "",
+      "shortDescription": "Näkymä, jossa voi hakea henkilöitä.",
       "longDescription": "",
       "instancePage": {
         "label": "Henkilö",

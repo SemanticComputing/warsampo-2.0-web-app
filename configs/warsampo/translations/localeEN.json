@@ -275,7 +275,7 @@
     "casualties": {
       "label": "Casualties",
       "facetResultsType": "casualties",
-      "shortDescription": "Perspective description",
+      "shortDescription": "Perspective for searching, browsing and exploring casualties",
       "longDescription": "<p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\"></p>",
       "instancePage": {
         "label": "Casualty",
@@ -399,7 +399,7 @@
     "cemeteries": {
       "label": "War cemeteries",
       "facetResultsType": "war cemeteries",
-      "shortDescription": "Perspective description",
+      "shortDescription": "Perspective for searching, browsing and exploring war cemeteries",
       "longDescription": "<p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\"></p>",
       "instancePage": {
         "label": "War cemetery",
@@ -484,7 +484,7 @@
     "prisoners": {
       "label": "War prisoners",
       "facetResultsType": "war prisoners",
-      "shortDescription": "Perspective description",
+      "shortDescription": "Perspective for searching, browsing and exploring war prisoners",
       "longDescription": "",
       "instancePage": {
         "label": "War prisoner",
@@ -565,7 +565,7 @@
     "actors": {
       "label": "Actors",
       "facetResultsType": "actors",
-      "shortDescription": "Perspective description",
+      "shortDescription": "Perspective for searching, browsing and exploring actors",
       "longDescription": "<p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\"></p>",
       "instancePage": {
         "label": "Person",
