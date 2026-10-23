@@ -44,6 +44,12 @@ services:
       timeout: 10s
       retries: 3
       start_period: 10s
+    # extra_hosts:
+    #   - "host.docker.internal:host-gateway" # enable using local endpoints on linux, e.g., http://localhost:7019/ -->  http://host.docker.internal:7019/
+    develop:
+      watch:
+        - action: restart
+          path: ./configs
 
 
 volumes:
