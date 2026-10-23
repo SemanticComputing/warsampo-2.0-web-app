@@ -42,6 +42,7 @@
         "perspective": "casualties" 
     },
     "layoutConfig": {
+        "customCssFile": "custom.css",
         "colorPalette": {
             "primary": {
                 "main": "#212121"
