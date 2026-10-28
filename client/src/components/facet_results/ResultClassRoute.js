@@ -90,7 +90,7 @@ const ResultClassRoute = props => {
           updateFacetOption={props.updateFacetOption}
           sortResults={props.sortResults}
           showError={props.showError}
-          // pass URI for instance page queries
+          // Pass URI for instance page queries
           {...(resultClassConfig.pageType && resultClassConfig.pageType === 'instancePage' ? { uri: perspectiveState.instanceTableData.id } : {})}
         />
       )
