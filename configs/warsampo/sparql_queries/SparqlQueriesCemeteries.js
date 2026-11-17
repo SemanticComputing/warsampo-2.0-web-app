@@ -164,6 +164,13 @@ export const cemeteryPropertiesInstancePage = `
       ?source__id skos:prefLabel ?source__prefLabel .
       FILTER(LANG(?source__prefLabel) = '<LANG>')
     }
+    UNION
+    {
+      BIND(<ID> AS ?id)
+      ?id foaf:page ?externalPage__id .
+      BIND(?externalPage__id AS ?externalPage__prefLabel)
+      BIND(?externalPage__id AS ?externalPage__dataProviderUrl)
+    }
 `
 
 

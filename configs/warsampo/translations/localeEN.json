@@ -478,6 +478,10 @@
         "buriedCasualties": {
           "label": "Buried casualties",
           "description": "Casualties buried in the cemetery"
+        },
+        "externalPage": {
+          "label": "Other pages",
+          "description": "The pages for the cemetery in other external sources"
         }
       }
     },
