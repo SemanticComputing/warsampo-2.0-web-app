@@ -471,7 +471,8 @@
             "sortButton": true,
             "sortBy": "instanceCount",
             "sortByPredicate": "prisoners:rank/skos:prefLabel",
-            "sortDirection": "desc"
+            "sortDirection": "desc",
+            "pieChartButton": true
         },
         "occupation": {
             "containerClass": "ten",
@@ -483,7 +484,8 @@
             "sortButton": true,
             "sortBy": "instanceCount",
             "sortByPredicate": "bioc:has_occupation/skos:prefLabel",
-            "sortDirection": "desc"
+            "sortDirection": "desc",
+            "pieChartButton": true
         },
         "motherTongue": {
             "containerClass": "ten",
@@ -495,7 +497,8 @@
             "sortButton": true,
             "sortBy": "instanceCount",
             "sortByPredicate": "warsa:mother_tongue/skos:prefLabel",
-            "sortDirection": "desc"
+            "sortDirection": "desc",
+            "pieChartButton": true
         },
         "maritalStatus": {
             "containerClass": "ten",
@@ -507,7 +510,8 @@
             "sortButton": true,
             "sortBy": "instanceCount",
             "sortByPredicate": "prisoners:marital_status/skos:prefLabel",
-            "sortDirection": "desc"
+            "sortDirection": "desc",
+            "pieChartButton": true
         },
         "municipalityOfBirth": {
             "containerClass": "ten",
