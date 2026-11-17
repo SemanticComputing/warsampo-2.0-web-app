@@ -100,6 +100,8 @@ const InfoHeader = props => {
             </Typography>
             <Tooltip title={intl.get('infoHeader.toggleInstructions')}>
               <InfoIconSpan
+                tabIndex={0}
+                role="img"
                 aria-label='toggle instructions'
                 size='large'
                 sx={(theme) => ({
