@@ -305,41 +305,65 @@ class FacetBar extends React.Component {
           }
         }}
       >
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls={`${facetID}-content`}
-          id={`${facetID}-header`}
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            paddingLeft: '8px'
+          }}
         >
-          <FacetHeader
-            portalConfig={this.props.portalConfig}
-            perspectiveConfig={this.props.perspectiveConfig}
-            facetID={facetID}
-            facetLabel={label}
-            facet={facet}
-            facetConstrainSelf={facetConstrainSelf}
-            facetConstrainSelfUpdateID={this.props.facetStateConstrainSelf
-              ? this.props.facetStateConstrainSelf.facetUpdateID
-              : null}
-            isActive={isActive}
-            facetClass={this.props.facetClass}
-            resultClass={this.props.resultClass}
-            perspectiveState={this.props.perspectiveState}
-            fetchFacet={this.props.fetchFacet}
-            fetchFacetConstrainSelf={this.props.fetchFacetConstrainSelf}
-            fetchResults={this.props.fetchResults}
-            clearFacet={this.props.clearFacet}
-            updateFacetOption={this.props.updateFacetOption}
-            facetDescription={description}
-            rootUrl={this.props.rootUrl}
-            layoutConfig={this.props.layoutConfig}
-            mapBoxAccessToken={this.props.mapBoxAccessToken}
-            mapBoxStyle={this.props.mapBoxStyle}
-            apexChartsConfig={this.props.apexChartsConfig}
-            leafletConfig={this.props.leafletConfig}
-            networkConfig={this.props.networkConfig}
-            someFacetIsFetching={someFacetIsFetching}
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              flexGrow: 1
+            }}
+          >
+            <FacetHeader
+              portalConfig={this.props.portalConfig}
+              perspectiveConfig={this.props.perspectiveConfig}
+              facetID={facetID}
+              facetLabel={label}
+              facet={facet}
+              facetConstrainSelf={facetConstrainSelf}
+              facetConstrainSelfUpdateID={this.props.facetStateConstrainSelf
+                ? this.props.facetStateConstrainSelf.facetUpdateID
+                : null}
+              isActive={isActive}
+              facetClass={this.props.facetClass}
+              resultClass={this.props.resultClass}
+              perspectiveState={this.props.perspectiveState}
+              fetchFacet={this.props.fetchFacet}
+              fetchFacetConstrainSelf={this.props.fetchFacetConstrainSelf}
+              fetchResults={this.props.fetchResults}
+              clearFacet={this.props.clearFacet}
+              updateFacetOption={this.props.updateFacetOption}
+              facetDescription={description}
+              rootUrl={this.props.rootUrl}
+              layoutConfig={this.props.layoutConfig}
+              mapBoxAccessToken={this.props.mapBoxAccessToken}
+              mapBoxStyle={this.props.mapBoxStyle}
+              apexChartsConfig={this.props.apexChartsConfig}
+              leafletConfig={this.props.leafletConfig}
+              networkConfig={this.props.networkConfig}
+              someFacetIsFetching={someFacetIsFetching}
+              handleClick={this.handleAccordionChange(facetID)}
+            />
+          </Box>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls={`${facetID}-content`}
+            id={`${facetID}-header`}
+            sx={{
+              flexGrow: 0,
+              width: 40,
+              paddingRight: '8px',
+              '& .MuiAccordionSummary-content': {
+                display: 'none'
+              }
+            }}
           />
-        </AccordionSummary>
+        </Box>
         <AccordionDetails
           sx={theme => ({
             paddingTop: 0,

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import intl from 'react-intl-universal'
 import { withStyles } from 'tss-react/mui'
 import { styled } from '@mui/material/styles'
+import Box from '@mui/material/Box'
 import IconButton from '@mui/material/IconButton'
 import Tooltip from '@mui/material/Tooltip'
 import Menu from '@mui/material/Menu'
@@ -395,32 +396,53 @@ class FacetHeader extends React.Component {
 
     return (
       <div className={classes.headingContainer}>
-        <Typography
-          sx={{
-            fontSize: '0.875rem'
+        <Box 
+          component="button"
+          type="button"
+          aria-expanded={this.props.isActive}
+          aria-controls={`${this.props.facetID}-content`}
+          onClick={this.props.handleClick}
+          sx={{ 
+            display: 'flex', 
+            alignItems: 'center', 
+            flexGrow: 1,
+            background: 'none',
+            color: 'inherit',
+            font: 'inherit',
+            border: 0,
+            cursor: 'pointer',
+            padding: 0
           }}
-          variant='body1'
         >
-          {facetLabel}
-        </Typography>
-        {facetDescription &&
-          <Tooltip
-            title={facetDescription}
-            enterDelay={300}
+          <Typography
+            sx={{
+              fontSize: '0.875rem'
+            }}
+            variant='body1'
           >
-            <InfoIconSpan 
-              aria-label='description' 
-              size='large' 
-              sx={(theme) => ({ 
-                color: 'text.secondary', 
-                '&:hover': {
-                  backgroundColor: theme.palette.action.hover
-                }
-                })}
-              >
-              <InfoIcon />
-            </InfoIconSpan>
-          </Tooltip>}
+            {facetLabel}
+          </Typography>
+          {facetDescription &&
+            <Tooltip
+              title={facetDescription}
+              enterDelay={300}
+            >
+              <InfoIconSpan 
+                tabIndex={0}
+                role="img"
+                aria-label='description' 
+                size='large' 
+                sx={(theme) => ({ 
+                  color: 'text.secondary', 
+                  '&:hover': {
+                    backgroundColor: theme.palette.action.hover
+                  }
+                  })}
+                >
+                <InfoIcon />
+              </InfoIconSpan>
+            </Tooltip>}
+        </Box>
         {showButtons &&
           <div className={classes.facetHeaderButtons}>
             {this.renderFacetMenu()}
@@ -449,7 +471,8 @@ FacetHeader.propTypes = {
   facetDescription: PropTypes.string.isRequired,
   rootUrl: PropTypes.string.isRequired,
   layoutConfig: PropTypes.object.isRequired,
-  someFacetIsFetching: PropTypes.bool.isRequired
+  someFacetIsFetching: PropTypes.bool.isRequired,
+  handleClick: PropTypes.func.isRequired
 }
 
 export const FacetHeaderComponent = FacetHeader
