@@ -8,15 +8,15 @@ import AccordionDetails from '@mui/material/AccordionDetails'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
-// import Divider from '@mui/material/Divider';
-import IconButton from '@mui/material/IconButton'
 import InfoIcon from '@mui/icons-material/InfoOutlined'
 import Tooltip from '@mui/material/Tooltip'
 import intl from 'react-intl-universal'
 
-const IconButtonInfoIconButton = styled(IconButton)(({ theme }) => ({
+const InfoIconSpan = styled('span')(({ theme }) => ({
   padding: 0,
-  marginLeft: theme.spacing(0.5)
+  marginLeft: theme.spacing(0.5),
+  display: 'inline-flex',
+  alignItems: 'center'
 }))
 
 /**
@@ -99,12 +99,13 @@ const InfoHeader = props => {
                 intl.get(`perspectives.${props.resultClass}.instancePage.label`)}
             </Typography>
             <Tooltip title={intl.get('infoHeader.toggleInstructions')}>
-              <IconButtonInfoIconButton
+              <InfoIconSpan
                 aria-label='toggle instructions'
                 size='large'
                 sx={(theme) => ({
                   padding: 0,
                   marginLeft: '4px !important',
+                  color: 'text.secondary',
                   '& .MuiSvgIcon-root': {
                     fontSize:
                     props.layoutConfig.infoHeader.reducedHeight.infoIconFontSize,
@@ -118,7 +119,7 @@ const InfoHeader = props => {
                 })}
               >
                 <InfoIcon />
-              </IconButtonInfoIconButton>
+              </InfoIconSpan>
             </Tooltip>
           </Box>
           {props.pageType === 'instancePage' && (
