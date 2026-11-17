@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import intl from 'react-intl-universal'
 import { withStyles } from 'tss-react/mui'
+import { styled } from '@mui/material/styles'
 import IconButton from '@mui/material/IconButton'
 import Tooltip from '@mui/material/Tooltip'
 import Menu from '@mui/material/Menu'
@@ -42,6 +43,15 @@ const styles = (theme) => ({
     marginLeft: 'auto'
   }
 })
+
+const InfoIconSpan = styled('span')(({ theme }) => ({
+  backgroundColor: 'transparent',
+  borderRadius: '50%',
+  transition: 'background-color 150ms cubic-bezier(0.4, 0, 0.2, 1)',
+  padding: '4px',
+  display: 'inline-flex',
+  alignItems: 'center'
+}))
 
 /**
  * A component for rendering a header and optional settings dropdown for a facet component.
@@ -398,9 +408,18 @@ class FacetHeader extends React.Component {
             title={facetDescription}
             enterDelay={300}
           >
-            <IconButton aria-label='description' size='large'>
+            <InfoIconSpan 
+              aria-label='description' 
+              size='large' 
+              sx={(theme) => ({ 
+                color: 'text.secondary', 
+                '&:hover': {
+                  backgroundColor: theme.palette.action.hover
+                }
+                })}
+              >
               <InfoIcon />
-            </IconButton>
+            </InfoIconSpan>
           </Tooltip>}
         {showButtons &&
           <div className={classes.facetHeaderButtons}>
