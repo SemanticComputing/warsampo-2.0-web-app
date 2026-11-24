@@ -9,9 +9,6 @@ export const campPropertiesInstancePage = `
       BIND(?id as ?uri__id)
       BIND(?id as ?uri__dataProviderUrl)
       BIND(?id as ?uri__prefLabel)
-      BIND(CONCAT("https://www.sotasampo.fi/fi/persons/", REPLACE(STR(?id), "^.*\\\\/(.+)", "$1")) AS ?warsaPage__id)
-      BIND(?warsaPage__id AS ?warsaPage__prefLabel)
-      BIND(?warsaPage__id AS ?warsaPage__dataProviderUrl)
     }
     UNION
     {
