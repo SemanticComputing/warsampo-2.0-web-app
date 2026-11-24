@@ -175,7 +175,7 @@ export const cemeteryPropertiesInstancePage = `
 
 
 export const cemeteryPlacesQuery = `
-  SELECT ?id ?lat ?long
+  SELECT ?id ?lat ?long ?markerColor
   (COUNT(DISTINCT ?cemetery) as ?instanceCount)
   WHERE {
     <FILTER>
@@ -185,8 +185,9 @@ export const cemeteryPlacesQuery = `
     FILTER(datatype(?lat) = xsd:double)
     FILTER(datatype(?long) = xsd:double)
     BIND(?cemetery as ?id)
+    BIND("blue" AS ?markerColor)
   }
-  GROUP BY ?id ?lat ?long
+  GROUP BY ?id ?lat ?long ?markerColor
 `
 
 export const placePropertiesInfoWindow = `
