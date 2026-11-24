@@ -607,7 +607,7 @@ export const eventMapQuery = `
     VALUES (?p ?markerColor ?description) {
       ( warsa:buried_in "orange" "Hautausmaa / Cemetery of burial")
       ( casualties:municipality_of_domicile "violet" "Kotikunta / Municipality of domicile")
-      ( casualties:municipality_of_residence "yellow" "Asuinkunta / Municipality of residence")
+      ( casualties:municipality_of_residence "blue" "Asuinkunta / Municipality of residence")
       ( casualties:municipality_of_death "red" "Kuolinkunta / Municipality of death")
       ( casualties:municipality_of_birth "green" "Synnyinkunta / Municipality of birth")
     }

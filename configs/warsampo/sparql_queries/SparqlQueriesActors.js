@@ -580,7 +580,7 @@ export const eventMapQuery = `
     UNION
     {
       ?record (casualties:municipality_of_residence/casualties:preferred_municipality)|prisoners:municipality_of_residence ?id .
-      BIND("violet" AS ?markerColor)
+      BIND("blue" AS ?markerColor)
       BIND("Asuinkunta / Municipality of residence" AS ?description)
     }
     UNION
@@ -598,7 +598,7 @@ export const eventMapQuery = `
     UNION 
     { 
       ?record prisoners:captivity/prisoners:location ?id . 
-      BIND("yellow" AS ?markerColor)
+      BIND("black" AS ?markerColor)
       BIND("Sotavankeus / Captivity" AS ?description)
     }
     
