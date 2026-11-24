@@ -600,6 +600,7 @@ export const eventMapQuery = `
       ?record prisoners:captivity/prisoners:location ?id . 
       BIND("black" AS ?markerColor)
       BIND("Sotavankeus / Captivity" AS ?description)
+      BIND(CONCAT("/camps/page/", REPLACE(STR(?id), "^.*\\\\/(.+)", "$1")) AS ?dataProviderUrl)
     }
     
     ?id skos:prefLabel ?prefLabel .
