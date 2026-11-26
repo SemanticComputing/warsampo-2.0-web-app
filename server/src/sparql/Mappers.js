@@ -527,7 +527,7 @@ const getChoroplethMapColor = ({ value, clusters }) => {
   ]
   let heatmapColor
   colors.forEach((color, index) => {
-    if (value >= Number(clusters[index][0]) && value <= Number(clusters[index][clusters[index].length - 1])) {
+    if (value >= Number(clusters[index]?.[0]) && value <= Number(clusters[index]?.[clusters[index].length - 1])) {
       heatmapColor = color
     }
   })
