@@ -283,7 +283,7 @@
                         "variableName": "prefLabel",
                         "isArray": false,
                         "orderBy": null,
-                        "makeLink": false,
+                        "makeLink": true,
                         "externalLink": false
                     },
                     { 
