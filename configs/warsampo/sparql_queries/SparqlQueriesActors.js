@@ -100,6 +100,7 @@ export const actorPropertiesInstancePage = `
       BIND(<ID> AS ?id)
       ?id crm-org:P70i_is_documented_in/(casualties:unit|prisoners:unit) ?unit__id .
       ?unit__id skos:prefLabel ?unit__prefLabel .
+      BIND(CONCAT("https://www.sotasampo.fi/fi/units/", REPLACE(STR(?unit__id), "^.*\\\\/(.+)", "$1")) AS ?unit__dataProviderUrl)
     }
     UNION
     {
@@ -386,6 +387,7 @@ export const actorPropertiesInstancePageAlt = `
     {
       <ID> crm-org:P70i_is_documented_in/(casualties:unit|prisoners:unit) ?unit__id .
       ?unit__id skos:prefLabel ?unit__prefLabel .
+      BIND(CONCAT("https://www.sotasampo.fi/fi/units/", REPLACE(STR(?unit__id), "^.*\\\\/(.+)", "$1")) AS ?unit__dataProviderUrl)
     }
     UNION
     {

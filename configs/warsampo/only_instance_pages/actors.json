@@ -159,8 +159,8 @@
         {
             "id": "unit",
             "valueType": "object",
-            "makeLink": false,
-            "externalLink": false,
+            "makeLink": true,
+            "externalLink": true,
             "sortValues": true,
             "numberedList": false
         },
