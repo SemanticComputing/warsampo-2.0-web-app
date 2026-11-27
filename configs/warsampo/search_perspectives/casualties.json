@@ -57,9 +57,9 @@
                 "propertiesQueryBlock": "casualtyProperties",
                 "paginatedResultsAlwaysExpandRows": false,
                 "paginatedResultsRowContentMaxHeight": 190,
-                "pagesize": 10,
-                "sortBy": null,
-                "sortDirection": null
+                "pagesize": 15,
+                "sortBy": "prefLabel",
+                "sortDirection": "asc"
             },
             "instanceConfig": {
                 "propertiesQueryBlock": "casualtyPropertiesInstancePage",
