@@ -576,6 +576,7 @@ export const eventMapQuery = `
       ?record warsa:buried_in ?id .
       BIND("orange" AS ?markerColor)
       BIND("Hautausmaa / Cemetery of burial" AS ?description)
+      BIND(CONCAT("/cemeteries/page/", REPLACE(STR(?id), "^.*\\\\/(.+)", "$1")) AS ?dataProviderUrl)
     }
     UNION
     {
