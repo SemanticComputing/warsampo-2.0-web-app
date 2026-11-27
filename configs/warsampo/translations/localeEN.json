@@ -614,8 +614,8 @@
           "description": "Marital status"
         },
         "perishingCategory": {
-          "label": "Perishing category",
-          "description": "Perishing category"
+          "label": "Perishing category / cause of death",
+          "description": "Perishing category (from death record) / cause of death (from prisoner record)"
         },
         "buriedIn": {
           "label": "Cemetery of burial",

@@ -78,6 +78,14 @@ export const actorPropertiesInstancePage = `
     }
     UNION
     {
+      BIND(<ID> as ?id)
+      ?id crm-org:P70i_is_documented_in ?prisonerRecord__id .
+      ?prisonerRecord__id a warsa:PrisonerRecord ;
+                          prisoners:place_of_burial_literal ?buriedIn__id .
+      BIND(?buriedIn__id AS ?buriedIn__prefLabel)
+    }
+    UNION
+    {
       BIND(<ID> AS ?id)
       ?id crm-org:P70i_is_documented_in/(casualties:municipality_of_domicile|prisoners:municipality_of_domicile) ?municipalityOfDomicile__id .
       ?municipalityOfDomicile__id skos:prefLabel ?municipalityOfDomicile__prefLabel .
@@ -324,6 +332,14 @@ export const actorPropertiesInstancePage = `
       ?prisonerRecord__id a warsa:PrisonerRecord ;
                           prisoners:date_of_return ?dateOfReturn .
     }
+    UNION
+    {
+      BIND(<ID> AS ?id)
+      ?id crm-org:P70i_is_documented_in ?prisonerRecord__id .
+      ?prisonerRecord__id a warsa:PrisonerRecord ;
+                          prisoners:cause_of_death ?perishingCategory__id .
+      BIND(?perishingCategory__id AS ?perishingCategory__prefLabel)
+    }
 `
 
 export const actorPropertiesInstancePageAlt = `
@@ -388,6 +404,13 @@ export const actorPropertiesInstancePageAlt = `
       }
       ?buriedIn__id skos:prefLabel ?buriedIn__prefLabel .
       BIND(CONCAT("/cemeteries/page/", REPLACE(STR(?buriedIn__id), "^.*\\\\/(.+)", "$1")) AS ?buriedIn__dataProviderUrl)
+    }
+    UNION
+    {
+      <ID> crm-org:P70i_is_documented_in ?prisonerRecord__id .
+      ?prisonerRecord__id a warsa:PrisonerRecord ;
+                          prisoners:place_of_burial_literal ?buriedIn__id .
+      BIND(?buriedIn__id AS ?buriedIn__prefLabel)
     }
     UNION
     {
@@ -600,6 +623,13 @@ export const actorPropertiesInstancePageAlt = `
       <ID> crm-org:P70i_is_documented_in ?prisonerRecord__id .
       ?prisonerRecord__id a warsa:PrisonerRecord ;
                           prisoners:date_of_return ?dateOfReturn .
+    }
+    UNION
+    {
+      <ID> crm-org:P70i_is_documented_in ?prisonerRecord__id .
+      ?prisonerRecord__id a warsa:PrisonerRecord ;
+                          prisoners:cause_of_death ?perishingCategory__id .
+      BIND(?perishingCategory__id AS ?perishingCategory__prefLabel)
     }
 `
 

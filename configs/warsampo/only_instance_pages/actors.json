@@ -202,7 +202,8 @@
             "makeLink": false,
             "externalLink": false,
             "sortValues": true,
-            "numberedList": false
+            "numberedList": false,
+            "expandedOnInstancePage": true
         },
         {
             "id": "maritalStatus",
@@ -218,7 +219,8 @@
             "makeLink": true,
             "externalLink": false,
             "sortValues": true,
-            "numberedList": false
+            "numberedList": false,
+            "expandedOnInstancePage": true
         },
         {
             "id": "citizenship",

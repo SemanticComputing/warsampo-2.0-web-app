@@ -577,8 +577,8 @@
           "description": "Siviilisääty"
         },
         "perishingCategory": {
-          "label": "Menehtymisluokka",
-          "description": "Menehtymisluokka"
+          "label": "Menehtymisluokka / kuolinsyy",
+          "description": "Menehtymisluokka (kuolinasiakirjasta) / kuolinsyy (sotavankiasiakirjasta)"
         },
         "buriedIn": {
           "label": "Hautausmaa",
