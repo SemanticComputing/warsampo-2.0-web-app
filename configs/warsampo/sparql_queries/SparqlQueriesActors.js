@@ -605,6 +605,12 @@ export const eventMapQuery = `
       BIND("Sotavankeus / Captivity" AS ?description)
       BIND(CONCAT("/camps/page/", REPLACE(STR(?id), "^.*\\\\/(.+)", "$1")) AS ?dataProviderUrl)
     }
+    UNION
+    {
+      ?record prisoners:municipality_of_capture ?id .
+      BIND("grey" AS ?markerColor)
+      BIND("Vangiksi jäämisen kunta / Municipality of capture" AS ?description)
+    }
     
     ?id skos:prefLabel ?prefLabel .
 
