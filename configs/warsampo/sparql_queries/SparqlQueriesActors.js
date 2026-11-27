@@ -271,6 +271,13 @@ export const actorPropertiesInstancePage = `
       BIND(<ID> AS ?id)
       ?id crm-org:P70i_is_documented_in ?prisonerRecord__id .
       ?prisonerRecord__id a warsa:PrisonerRecord ;
+                          prisoners:sotilaan_aani ?sotilaanAaniReference .
+    }
+    UNION
+    {
+      BIND(<ID> AS ?id)
+      ?id crm-org:P70i_is_documented_in ?prisonerRecord__id .
+      ?prisonerRecord__id a warsa:PrisonerRecord ;
                           prisoners:propaganda_magazine ?otherPropagandaMagazineReference .
     }
     UNION
@@ -541,6 +548,12 @@ export const actorPropertiesInstancePageAlt = `
                           warsa:sotilaan_aani_magazine ?sotilaanAani__id .
       ?sotilaanAani__id skos:prefLabel ?sotilaanAani__prefLabel ;
                         sch:contentUrl ?sotilaanAani__dataProviderUrl .
+    }
+    UNION
+    {
+      <ID> crm-org:P70i_is_documented_in ?prisonerRecord__id .
+      ?prisonerRecord__id a warsa:PrisonerRecord ;
+                          prisoners:sotilaan_aani ?sotilaanAaniReference .
     }
     UNION
     {

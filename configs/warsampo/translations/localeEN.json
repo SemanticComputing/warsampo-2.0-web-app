@@ -730,8 +730,20 @@
           "description": "Places of captivity"
         },
         "sotilaanAani": {
-          "label": "Sotilaan Ääni propaganda magazine",
-          "description": "Sotilaan Ääni propaganda magazine"
+          "label": "Sotilaan Ääni propaganda magazine, link",
+          "description": "Sotilaan Ääni propaganda magazine, link"
+        },
+        "sotilaanAaniReference": {
+          "label": "Sotilaan Ääni propaganda magazine, reference",
+          "description": "Sotilaan Ääni propaganda magazine, reference"
+        },
+        "otherPropagandaMagazineReference": {
+          "label": "Other propaganda magazine, reference",
+          "description": "Other propaganda magazine, reference"
+        },
+        "otherPropagandaMagazineLink": {
+          "label": "Other propaganda magazine, link",
+          "description": "Other propaganda magazine, link"
         },
         "dateOfReturn": {
           "label": "Date of return from captivity",

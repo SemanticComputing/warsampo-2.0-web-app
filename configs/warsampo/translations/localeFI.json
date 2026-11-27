@@ -693,8 +693,20 @@
           "description": "Ne kuulustelupaikat, vankileirit, vankilat ja sairaalat, joissa vanki on eri lähteistä saatujen tietojen mukaan ollut sotavankeusaikanaan sekä kussakin paikassa oleskelun päivämäärät."
         },
         "sotilaanAani": {
-          "label": "Sotilaan Ääni -propagandalehti",
+          "label": "Sotilaan Ääni -propagandalehti, linkki",
           "description": "Linkki digitoituun Sotilaan Ääni -propagandalehteen, jossa henkilö on mainittu."
+        },
+        "sotilaanAaniReference": {
+          "label": "Sotilaan Ääni -propagandalehti, viittaus",
+          "description": "Sotilaan Ääni -propagandalehdet, joissa henkilö on mainittu."
+        },
+        "otherPropagandaMagazineReference": {
+          "label": "Muu propagandalehti, viittaus",
+          "description": "Neuvostoliittolaiset suomen- ja venäjänkieliset propagandalehdet (pl. Sotilaan Ääni), joissa henkilö on mainittu."
+        },
+        "otherPropagandaMagazineLink": {
+          "label": "Muu propagandalehti, linkki",
+          "description": "Linkki digitoituun propagandalehteen, jossa henkilö on mainittu."
         },
         "dateOfReturn": {
           "label": "Sotavankeudesta palaamisen päivämäärä",

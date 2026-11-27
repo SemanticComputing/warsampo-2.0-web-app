@@ -56,7 +56,7 @@
                                 },
                                 {
                                     "id": "prisoner",
-                                    "properties": [ "municipalityOfCapture", "dateOfCapture", "descriptionOfCapture", "otherCaptivityInformation", "captivity", "sotilaanAani", "otherPropagandaMagazineReference", "otherPropagandaMagazineLink", "prisonerRecord" ],
+                                    "properties": [ "municipalityOfCapture", "dateOfCapture", "descriptionOfCapture", "otherCaptivityInformation", "captivity", "sotilaanAaniReference", "sotilaanAani", "otherPropagandaMagazineReference", "otherPropagandaMagazineLink", "prisonerRecord" ],
                                     "requiredProperties": [ "prisonerRecord" ],
                                     "requiredAny": false
                                 },
@@ -462,6 +462,16 @@
             "id": "captivity",
             "valueType": "object",
             "makeLink": true,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true,
+            "expandedOnInstancePage": true
+        },
+        {
+            "id": "sotilaanAaniReference",
+            "valueType": "string",
+            "makeLink": false,
             "externalLink": false,
             "sortValues": true,
             "numberedList": false,
